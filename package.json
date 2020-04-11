@@ -6,5 +6,7 @@
     },
     "devDependencies": {
         "lerna": "^3.20.2"
-    }
+    },
+    "author": "The Sass Collective Authors",
+    "license": "MIT"
 }
