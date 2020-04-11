@@ -1,0 +1,17 @@
+{
+    "name": "@sass-collective/strip-unit",
+    "version": "1.0.0",
+    "scripts": {},
+    "devDependencies": {},
+    "dependencies": {
+        "sass": "^1.26.3"
+    },
+    "keywords": [
+        "css",
+        "sass",
+        "value",
+        "strip",
+        "front-end"
+    ],
+    "author": "The Sass Collective Authors"
+}
