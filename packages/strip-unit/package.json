@@ -1,7 +1,8 @@
 {
     "name": "@sass-collective/strip-unit",
     "version": "1.0.0",
-    "scripts": {},
+    "description": "Strip unit on CSS value.",
+    "main": "index.scss",
     "devDependencies": {},
     "dependencies": {
         "sass": "^1.26.3"
@@ -13,5 +14,7 @@
         "strip",
         "front-end"
     ],
-    "author": "The Sass Collective Authors"
+    "author": "The Sass Collective Authors",
+    "license": "MIT",
+    "homepage": "https://github.com/sass-collective/packages/strip-unit"
 }

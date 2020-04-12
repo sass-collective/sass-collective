@@ -1,0 +1,19 @@
+// ============================================================================================= //
+//                                           FUNCTIONS                                           //
+// ============================================================================================= //
+
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
+@function strip-unit($value) {
+    @if meta.type-of($value) == "string" {
+        @error "The value #{$value} need to be number not a string.";
+    }
+
+    @if meta.type-of($value) == "number" and not math.is-unitless($value) {
+        @return $value / ($value * 0 + 1);
+    }
+
+    @return $value;
+}
