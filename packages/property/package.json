@@ -18,7 +18,12 @@
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
-    "homepage": "https://github.com/sass-collective/packages/property",
+    "homepage": "https://github.com/sass-collective/sass-collective/tree/master/packages/property",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sass-collective/sass-collective.git",
+        "directory": "packages/property"
+    },
     "publishConfig": {
         "access": "public"
     }
