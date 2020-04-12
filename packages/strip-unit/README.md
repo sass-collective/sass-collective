@@ -1,4 +1,4 @@
-![Sass Rem](.repo/banner.png)
+![Sass Strip Unit](.repo/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
