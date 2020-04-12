@@ -1,0 +1,27 @@
+// ============================================================================================= //
+//                                            MIXINS                                             //
+// ============================================================================================= //
+
+@use "sass:list";
+@use "sass:map";
+@use "./variables";
+
+@mixin direction($direction: right, $root-selector: null) {
+    @if not map.has-key(variables.$directions, $direction) {
+        @error "Invalid direction, #{$direction} doesn't exist. Choose one of #{map.keys(variables.$directions)}.";
+    }
+
+    $direction: map.get(variables.$directions, $direction);
+
+    @if $root-selector {
+        [dir="#{$direction}"] #{$root-selector} &,
+        #{$root-selector}[dir="#{$direction}"] & {
+            @content;
+        }
+    } @else {
+        [dir="#{$direction}"] &,
+        &[dir="#{$direction}"] {
+            @content;
+        }
+    }
+}

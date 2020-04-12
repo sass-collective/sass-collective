@@ -1,0 +1,35 @@
+{
+    "name": "@sass-collective/direction",
+    "version": "1.0.0",
+    "description": "Manage content direction for languages right-to-left.",
+    "main": "index.scss",
+    "devDependencies": {},
+    "dependencies": {
+        "sass": "^1.26.3"
+    },
+    "files": [
+        "*.scss"
+    ],
+    "keywords": [
+        "css",
+        "sass",
+        "direction",
+        "ltr",
+        "rtl",
+        "left-to-right",
+        "right-to-left",
+        "languages",
+        "front-end"
+    ],
+    "author": "The Sass Collective Authors",
+    "license": "MIT",
+    "homepage": "https://github.com/sass-collective/sass-collective/tree/master/packages/direction",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sass-collective/sass-collective.git",
+        "directory": "packages/direction"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

@@ -1,0 +1,106 @@
+![Sass Direction](.repo/banner.png)
+
+[![Version](https://flat.badgen.net/npm/v/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
+[![Download](https://flat.badgen.net/npm/dt/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
+[![License](https://flat.badgen.net/npm/license/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
+
+## Introduction
+
+Manage content direction for languages right-to-left.
+
+## Install
+
+    npm install @sass-collective/direction --save
+    
+## Usage
+
+### Mixin
+
+```scss
+direction($direction: right, $root-selector: null);
+```
+
+### Module System
+
+```scss
+@use "@sass-collective/direction";
+
+p {
+    margin-left: 20px;
+    margin-right: 0;
+
+    // RTL
+    @include direction.direction {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // LTR
+    @include direction.direction(left) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // Root Selector
+    @include direction.direction($root-selector: div) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+```
+
+### Legacy @import
+
+```scss
+@import "@sass-collective/direction";
+
+p {
+    margin-left: 20px;
+    margin-right: 0;
+
+    // RTL
+    @include sass-direction {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // LTR
+    @include sass-direction(left) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // Root Selector
+    @include sass-direction($root-selector: div) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+```
+
+### CSS
+
+```css
+p {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/** RTL **/
+[dir="rtl"] p {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/** LTR **/
+[dir="ltr"] p {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/** Root Selector **/
+[dir="rtl"] div p {
+    margin-left: 0;
+    margin-right: 20px;
+}
+```
