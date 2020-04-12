@@ -1,0 +1,22 @@
+{
+    "name": "@sass-collective/prop",
+    "version": "1.0.0",
+    "description": "Generate CSS property with CSS custom properties option.",
+    "main": "index.scss",
+    "devDependencies": {},
+    "dependencies": {
+        "sass": "^1.26.3"
+    },
+    "keywords": [
+        "css",
+        "sass",
+        "css-custom-properties",
+        "css-variables",
+        "property",
+        "prop",
+        "front-end"
+    ],
+    "author": "The Sass Collective Authors",
+    "license": "MIT",
+    "homepage": "https://github.com/sass-collective/packages/prop"
+}
