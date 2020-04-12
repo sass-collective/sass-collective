@@ -19,6 +19,12 @@ Manage content direction for languages right-to-left.
 ```scss
 direction($direction: right, $root-selector: null);
 ```
+#### Options
+
+| Names                 | Default      | Values                        |
+| --------------------- | ------------ | ----------------------------- |
+| ``$direction``        | ``right``    | ``left`` or ``right``         |
+| ``$root-selector``    | null         | Class, ID or HTML element.    |
 
 ### Module System
 
