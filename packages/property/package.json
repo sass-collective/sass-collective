@@ -1,5 +1,5 @@
 {
-    "name": "@sass-collective/prop",
+    "name": "@sass-collective/property",
     "version": "1.0.0",
     "description": "Generate CSS property with CSS custom properties option.",
     "main": "index.scss",
