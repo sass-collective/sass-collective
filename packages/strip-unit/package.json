@@ -16,5 +16,8 @@
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
-    "homepage": "https://github.com/sass-collective/packages/strip-unit"
+    "homepage": "https://github.com/sass-collective/packages/strip-unit",
+    "publishConfig": {
+        "access": "public"
+    }
 }
