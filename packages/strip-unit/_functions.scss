@@ -8,7 +8,7 @@
 
 @function strip-unit($value) {
     @if meta.type-of($value) == "string" {
-        @error "The value #{$value} need to be number not a string.";
+        @error "Invalid value, this need to be a number not a string.";
     }
 
     @if meta.type-of($value) == "number" and not math.is-unitless($value) {
