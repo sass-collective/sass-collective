@@ -5,7 +5,7 @@
         "npm": ">=6.0.0"
     },
     "devDependencies": {
-        "lerna": "^3.20.2"
+        "lerna": "^3.22.1"
     },
     "author": "The Sass Collective Authors",
     "license": "MIT"
