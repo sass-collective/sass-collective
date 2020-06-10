@@ -3,9 +3,8 @@
     "version": "1.0.0",
     "description": "Manage content direction for languages right-to-left.",
     "main": "index.scss",
-    "devDependencies": {},
     "dependencies": {
-        "sass": "^1.26.5"
+        "sass": "^1.26.8"
     },
     "files": [
         "*.scss"

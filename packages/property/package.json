@@ -3,9 +3,8 @@
     "version": "1.0.1",
     "description": "Generate CSS property with CSS custom properties option.",
     "main": "index.scss",
-    "devDependencies": {},
     "dependencies": {
-        "sass": "^1.26.5"
+        "sass": "^1.26.8"
     },
     "files": [
         "*.scss"
