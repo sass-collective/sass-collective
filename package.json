@@ -1,6 +1,9 @@
 {
     "private": true,
     "description": "The Sass Collective Collection.",
+    "scripts": {
+        "postinstall": "lerna bootstrap --hoist"
+    },
     "engines": {
         "node": ">=10.0.0",
         "npm": ">=6.0.0"
