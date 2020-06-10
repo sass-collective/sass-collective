@@ -1,5 +1,12 @@
 {
     "version": "independent",
+    "command": {
+        "publish": {
+            "ignoreChanges": [
+                "*.md"
+            ]
+        }
+    },
     "packages": [
         "packages/*"
     ]
