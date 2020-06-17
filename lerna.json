@@ -2,6 +2,7 @@
     "version": "independent",
     "command": {
         "publish": {
+            "message": ":bookmark: chore(release): publish",
             "ignoreChanges": [
                 "*.md"
             ]
