@@ -11,7 +11,7 @@
     $is-important: if($important, "!important", "");
 
     @if meta.type-of($value) == "map" and map.has-key($value, "varname") {
-        #{$property}: functions.set-custom-prop(map.get($value, "varname"), map.get($value, "fallback")) #{$is-important};
+        #{$property}: functions.custom-prop(map.get($value, "varname"), map.get($value, "fallback")) #{$is-important};
     } @else {
         #{$property}: $value #{$is-important};
     }

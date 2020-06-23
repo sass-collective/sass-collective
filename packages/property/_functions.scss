@@ -2,6 +2,16 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
-@function set-custom-prop($name, $fallback) {
-    @return var(--#{$name}, $fallback);
+@function custom-prop($name, $fallback: "") {
+    $values: (--#{$name}, unquote($fallback));
+
+    @return var($values);
+}
+
+//
+// @deprecated
+//
+
+@function set-custom-prop($name, $fallback: "") {
+    @return custom-prop($name, $fallback);
 }

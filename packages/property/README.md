@@ -14,6 +14,12 @@ Generate CSS property with CSS Custom Properties option.
     
 ## Usage
 
+### Function
+
+```scss
+custom-prop($name, $fallback: "");
+```
+
 ### Mixin
 
 ```scss
@@ -31,7 +37,7 @@ body {
     
     // CSS Custom Properties
     @include property.prop("font-size", (
-        varname: "var-name",
+        varname: font-size,
         fallback: 16px
     ));
 }
@@ -48,7 +54,7 @@ body {
         
     // CSS Custom Properties
     @include sass-property("font-size", (
-        varname: "var-name",
+        varname: font-size,
         fallback: 16px
     ));
 }
@@ -58,7 +64,7 @@ body {
 
 ```css
 body {
-    font-family: "Arial";
-    font-size: var(--var-name, 16px);
+    font-family: "Arial, sans-serif";
+    font-size: var(--font-size, 16px);
 }
 ```
