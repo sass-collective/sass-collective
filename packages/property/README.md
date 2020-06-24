@@ -31,9 +31,17 @@ prop($property, $value, $important: false);
 ```scss
 @use "@sass-collective/property";
 
+// Function
+
+body {
+    font-size: property.custom-prop(font-size, 16px);
+}
+
+// Mixin
+
 body {
     // Classic
-    @include property.prop("font-family", "Arial, sans-serif");
+    @include property.prop("font-size", 16px);
     
     // CSS Custom Properties
     @include property.prop("font-size", (
@@ -48,9 +56,17 @@ body {
 ```scss
 @import "@sass-collective/property";
 
+// Function
+
+body {
+    font-size: sass-custom-prop(font-size, 16px);
+}
+
+// Mixin
+
 body {
     // Classic
-    @include sass-property("font-family", "Arial, sans-serif");
+    @include sass-property("font-size", 16px);
         
     // CSS Custom Properties
     @include sass-property("font-size", (
@@ -64,7 +80,6 @@ body {
 
 ```css
 body {
-    font-family: "Arial, sans-serif";
     font-size: var(--font-size, 16px);
 }
 ```
