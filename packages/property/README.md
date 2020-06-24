@@ -66,10 +66,10 @@ body {
 
 body {
     // Classic
-    @include sass-property("font-size", 16px);
+    @include sass-prop("font-size", 16px);
         
     // CSS Custom Properties
-    @include sass-property("font-size", (
+    @include sass-prop("font-size", (
         varname: my-font-size,
         fallback: 16px
     ));
