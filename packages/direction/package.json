@@ -4,7 +4,7 @@
     "description": "Manage content direction for languages right-to-left.",
     "main": "index.scss",
     "dependencies": {
-        "sass": "^1.26.8"
+        "sass": "^1.26.9"
     },
     "files": [
         "*.scss"
