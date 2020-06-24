@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## v1.2.0 (2020-06-24)
+
+### Added
+
+* Added ``custom-prop`` function
+
+### Changed
+
+* Bump to Sass 1.26.9
+
+### Deprecated
+
+* Deprecated ``set-custom-prop`` function
+
 ## v1.1.0 (2020-06-18)
 
 ### Changed
