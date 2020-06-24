@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v1.1.1 (2020-06-24)
+
+### Changed
+
+* Bump to Sass 1.26.9
+
 ## v1.1.0 (2020-06-18)
 
 ### Changed
