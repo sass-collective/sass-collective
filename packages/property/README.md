@@ -45,7 +45,7 @@ body {
     
     // CSS Custom Properties
     @include property.prop("font-size", (
-        varname: font-size,
+        varname: my-font-size,
         fallback: 16px
     ));
 }
@@ -70,7 +70,7 @@ body {
         
     // CSS Custom Properties
     @include sass-property("font-size", (
-        varname: font-size,
+        varname: my-font-size,
         fallback: 16px
     ));
 }
@@ -80,6 +80,6 @@ body {
 
 ```css
 body {
-    font-size: var(--font-size, 16px);
+    font-size: var(--my-font-size, 16px);
 }
 ```
