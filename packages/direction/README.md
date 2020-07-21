@@ -1,4 +1,4 @@
-![Sass Direction](.repo/banner.png)
+![Sass Direction](.github/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)

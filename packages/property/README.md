@@ -1,4 +1,4 @@
-![Sass Property](.repo/banner.png)
+![Sass Property](.github/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
