@@ -24,10 +24,7 @@
     "homepage": "https://github.com/sass-collective/sass-collective/tree/master/packages/property",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sass-collective/sass-collective.git",
+        "url": "https://github.com/sass-collective/sass-collective.git",
         "directory": "packages/property"
-    },
-    "publishConfig": {
-        "access": "public"
     }
 }
