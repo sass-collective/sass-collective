@@ -1,5 +1,5 @@
 {
-    "version": "independent",
+    "version": "1.2.0",
     "command": {
         "publish": {
             "message": ":bookmark: chore(release): publish",
