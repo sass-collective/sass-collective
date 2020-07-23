@@ -1,5 +1,6 @@
 ## Files
 *.orig
+*.lerna_backup
 
 ## Folders
 /.idea
