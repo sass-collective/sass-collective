@@ -1,0 +1,21 @@
+// ============================================================================================= //
+//                                            MIXINS                                             //
+// ============================================================================================= //
+
+@mixin suffix($key, $selector: false, $root-selector: false) {
+    @if $selector {
+        @if $root-selector {
+            #{$root-selector} #{$selector}\@#{$key} & {
+                @content;
+            }
+        } @else {
+            #{$selector}\@#{$key} & {
+                @content;
+            }
+        }
+    } @else {
+        &\@#{$key} {
+            @content;
+        }
+    }
+}
