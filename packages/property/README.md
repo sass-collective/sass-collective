@@ -1,7 +1,8 @@
 ![Sass Property](.github/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
-[![Download](https://flat.badgen.net/npm/dt/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
+[![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
+[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/property)](https://david-dm.org/sass-collective/sass-collective?path=packages/property)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
 
 ## Introduction
