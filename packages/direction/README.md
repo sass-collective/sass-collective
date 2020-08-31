@@ -1,7 +1,8 @@
 ![Sass Direction](.github/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
-[![Download](https://flat.badgen.net/npm/dt/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
+[![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
+[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/direction)](https://david-dm.org/sass-collective/sass-collective?path=packages/direction)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
 
 ## Introduction

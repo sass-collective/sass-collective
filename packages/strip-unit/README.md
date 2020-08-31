@@ -1,7 +1,8 @@
 ![Sass Strip Unit](.github/banner.png)
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
-[![Download](https://flat.badgen.net/npm/dt/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
+[![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
+[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/strip-unit)](https://david-dm.org/sass-collective/sass-collective?path=packages/strip-unit)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
 
 ## Introduction
