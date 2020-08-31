@@ -1,3 +1,11 @@
 # Sass Collective
 
 The Sass Collective Collection.
+
+## Packages
+
+| Package | Version | Dependencies |
+|---|---|---|
+| ``direction`` | [![Version](https://flat.badgen.net/npm/v/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction) | [![dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/direction)](https://david-dm.org/sass-collective/sass-collective?path=packages/direction) |
+| ``property`` | [![Version](https://flat.badgen.net/npm/v/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property) | [![dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/property)](https://david-dm.org/sass-collective/sass-collective?path=packages/property) |
+| ``strip-unit`` | [![Version](https://flat.badgen.net/npm/v/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit) | [![dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/strip-unit)](https://david-dm.org/sass-collective/sass-collective?path=packages/strip-unit) |
