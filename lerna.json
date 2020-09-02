@@ -1,5 +1,8 @@
 {
     "version": "independent",
+    "packages": [
+        "packages/*"
+    ],
     "command": {
         "publish": {
             "message": ":bookmark: chore(release): publish",
@@ -7,8 +10,5 @@
                 "*.md"
             ]
         }
-    },
-    "packages": [
-        "packages/*"
-    ]
+    }
 }
