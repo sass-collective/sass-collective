@@ -1,9 +1,9 @@
 ## Files
 *.orig
 *.lerna_backup
+/packages/*/package-lock.json
 
 ## Folders
 /.idea
 /node_modules
 /packages/*/node_modules
-/packages/*/package-lock.json
