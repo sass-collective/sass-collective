@@ -4,7 +4,7 @@
     "description": "Strip unit on CSS value.",
     "main": "index.scss",
     "dependencies": {
-        "sass": "^1.26.10"
+        "sass": "^1.32.2"
     },
     "files": [
         "*.scss"
