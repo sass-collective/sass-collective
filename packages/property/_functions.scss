@@ -2,18 +2,27 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
-@function custom-prop($name, $fallback: null) {
-    $values: (--#{$name}, $fallback);
+@use "sass:meta";
+@use "sass:map";
 
-    @return var($values);
+@function create($name, $fallback: null) {
+    @return (
+        varname: $name,
+        fallback: $fallback
+    );
 }
 
-//
-// @deprecated
-//
-// Will be removed in version 2.0.0
-//
+@function is-custom-prop($array) {
+    @return meta.type-of($array) == "map" and map.has-key($array, "varname");
+}
 
-@function set-custom-prop($name, $fallback: null) {
-    @return custom-prop($name, $fallback);
+@function custom-prop($custom-prop) {
+    $name: map.get($custom-prop, "varname");
+    $fallback: map.get($custom-prop, "fallback");
+
+    @if $fallback != null {
+        @return var($name, $fallback);
+    } @else {
+        @return var($name);
+    }
 }

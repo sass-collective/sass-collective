@@ -10,8 +10,8 @@
 @mixin prop($property, $value, $important: false) {
     $is-important: if($important, "!important", "");
 
-    @if meta.type-of($value) == "map" and map.has-key($value, "varname") {
-        #{$property}: functions.custom-prop(map.get($value, "varname"), map.get($value, "fallback")) #{$is-important};
+    @if functions.is-custom-prop($value) {
+        #{$property}: functions.custom-prop($value) #{$is-important};
     } @else {
         #{$property}: $value #{$is-important};
     }
