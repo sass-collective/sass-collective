@@ -12,14 +12,8 @@ Generate CSS property with CSS Custom Properties option.
 ## Install
 
     npm install @sass-collective/property --save
-    
+
 ## Usage
-
-### Function
-
-```scss
-custom-prop($name, $fallback: "");
-```
 
 ### Mixin
 
@@ -27,26 +21,37 @@ custom-prop($name, $fallback: "");
 prop($property, $value, $important: false);
 ```
 
+### Function
+
+```scss
+custom-prop($custom-prop);
+```
+
 ### Module System
 
 ```scss
 @use "@sass-collective/property";
 
+$style: create(--foo-font-size, 16px);
+
 // Function
 
 body {
-    font-size: property.custom-prop(font-size, 16px);
+    font-size: property.custom-prop($style);
 }
 
 // Mixin
 
 body {
     // Classic
-    @include property.prop("font-size", 16px);
-    
-    // CSS Custom Properties
-    @include property.prop("font-size", (
-        varname: my-font-size,
+    @include property.prop(font-size, 16px);
+
+    // CSS Custom Properties...
+    @include property.prop(font-size, $style);
+
+    // ...or with manual array
+    @include property.prop(font-size, (
+        varname: --foo-font-size,
         fallback: 16px
     ));
 }
@@ -56,6 +61,8 @@ body {
 
 ```scss
 @import "@sass-collective/property";
+
+$style: create(--foo-font-size, 16px);
 
 // Function
 
@@ -67,11 +74,14 @@ body {
 
 body {
     // Classic
-    @include sass-prop("font-size", 16px);
-        
-    // CSS Custom Properties
-    @include sass-prop("font-size", (
-        varname: my-font-size,
+    @include sass-prop(font-size, 16px);
+
+    // CSS Custom Properties...
+    @include sass-prop(font-size, $style);
+
+    // ...or with manual array
+    @include sass-prop(font-size, (
+        varname: --foo-font-size,
         fallback: 16px
     ));
 }
@@ -81,6 +91,6 @@ body {
 
 ```css
 body {
-    font-size: var(--my-font-size, 16px);
+    font-size: var(--foo-font-size, 16px);
 }
 ```
