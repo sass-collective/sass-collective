@@ -1,0 +1,47 @@
+// ============================================================================================= //
+//                                           PROPERTY                                            //
+// ============================================================================================= //
+
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+
+// ------------------------------------------------------------------------- //
+// FUNCTIONS
+// ------------------------------------------------------------------------- //
+
+@function create($name, $fallback: null) {
+    @return (
+        varname: $name,
+        fallback: $fallback
+    );
+}
+
+@function is-custom-prop($array) {
+    @return meta.type-of($array) == "map" and map.has-key($array, "varname");
+}
+
+@function custom-prop($custom-prop) {
+    $name: map.get($custom-prop, "varname");
+    $fallback: map.get($custom-prop, "fallback");
+
+    @if $fallback != null {
+        @return var($name, $fallback);
+    } @else {
+        @return var($name);
+    }
+}
+
+// ------------------------------------------------------------------------- //
+// MIXINS
+// ------------------------------------------------------------------------- //
+
+@mixin prop($property, $value, $important: false) {
+    $is-important: if($important, "!important", "");
+
+    @if is-custom-prop($value) {
+        #{$property}: custom-prop($value) #{$is-important};
+    } @else {
+        #{$property}: $value #{$is-important};
+    }
+}

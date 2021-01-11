@@ -2,17 +2,4 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
-@use "sass:meta";
-@use "sass:map";
-@use "sass:string";
-@use "./functions";
-
-@mixin prop($property, $value, $important: false) {
-    $is-important: if($important, "!important", "");
-
-    @if functions.is-custom-prop($value) {
-        #{$property}: functions.custom-prop($value) #{$is-important};
-    } @else {
-        #{$property}: $value #{$is-important};
-    }
-}
+@forward "./property" show prop;
