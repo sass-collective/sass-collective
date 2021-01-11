@@ -43,6 +43,7 @@ body {
 // Mixin
 
 body {
+    
     // Classic
     @include property.prop(font-size, 16px);
 
@@ -62,7 +63,7 @@ body {
 ```scss
 @import "@sass-collective/property";
 
-$style: create(--foo-font-size, 16px);
+$style: sass-create(--foo-font-size, 16px);
 
 // Function
 
@@ -73,6 +74,7 @@ body {
 // Mixin
 
 body {
+    
     // Classic
     @include sass-prop(font-size, 16px);
 
