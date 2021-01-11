@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v1.2.0 (2020-07-22)
+
+### Changed
+
+* Internal refactoring
+
 ## v1.1.1 (2020-06-24)
 
 ### Changed
