@@ -1,4 +1,5 @@
 ## Files
+*.log
 *.orig
 *.lerna_backup
 /packages/*/package-lock.json
