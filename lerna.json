@@ -5,9 +5,9 @@
     ],
     "command": {
         "publish": {
-            "message": ":bookmark: chore(release): publish",
+            "message": "chore(release): publish version",
             "ignoreChanges": [
-                "*.md"
+                "**/*.md"
             ]
         }
     }
