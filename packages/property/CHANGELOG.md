@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+## v2.0.0 (2021-01-12)
+
+### Added
+
+* Added ``create`` function
+* Added ``is-custom-prop`` function
+
+### Changed
+
+* Changed ``@use / @forward`` architecture
+* Changed ``custom-prop`` function options
+
+### Removed
+
+* Removed ``set-custom-prop`` function
+
 ## v1.2.1 (2020-07-22)
 
 ### Changed

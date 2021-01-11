@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.0.0 (2021-01-12)
+
+### Changed
+
+* Changed ``@use / @forward`` architecture
+
 ## v1.2.0 (2020-07-22)
 
 ### Changed
