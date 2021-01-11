@@ -32,7 +32,7 @@ custom-prop($custom-prop);
 ```scss
 @use "@sass-collective/property";
 
-$style: create(--foo-font-size, 16px);
+$style: property.create(--foo-font-size, 16px);
 
 // Function
 
