@@ -2,4 +2,4 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
-@forward "./property" show create, is-custom-prop, custom-prop;
+@forward "./property" show create, get-varname, get-fallback, is-custom-prop, custom-prop;

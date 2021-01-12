@@ -34,27 +34,21 @@ custom-prop($custom-prop);
 
 $style: property.create(--foo-font-size, 16px);
 
-// Function
+// Using the function
 
 body {
     font-size: property.custom-prop($style);
 }
 
-// Mixin
+// Using the mixin
 
 body {
     
     // Classic
     @include property.prop(font-size, 16px);
 
-    // CSS Custom Properties...
+    // CSS Custom Properties
     @include property.prop(font-size, $style);
-
-    // ...or with manual array
-    @include property.prop(font-size, (
-        varname: --foo-font-size,
-        fallback: 16px
-    ));
 }
 ```
 
@@ -65,27 +59,21 @@ body {
 
 $style: sass-create(--foo-font-size, 16px);
 
-// Function
+// Using the function
 
 body {
     font-size: sass-custom-prop(font-size, 16px);
 }
 
-// Mixin
+// Using the mixin
 
 body {
     
     // Classic
     @include sass-prop(font-size, 16px);
 
-    // CSS Custom Properties...
+    // CSS Custom Properties
     @include sass-prop(font-size, $style);
-
-    // ...or with manual array
-    @include sass-prop(font-size, (
-        varname: --foo-font-size,
-        fallback: 16px
-    ));
 }
 ```
 
@@ -93,6 +81,11 @@ body {
 
 ```css
 body {
+
+    /* Classic */
+    font-size: 16px;
+
+    /* CSS Custom Properties **/
     font-size: var(--foo-font-size, 16px);
 }
 ```

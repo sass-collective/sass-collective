@@ -17,13 +17,21 @@
     );
 }
 
+@function get-varname($custom-prop) {
+    @return map.get($custom-prop, "varname");
+}
+
+@function get-fallback($custom-prop) {
+    @return map.get($custom-prop, "fallback");
+}
+
 @function is-custom-prop($array) {
     @return meta.type-of($array) == "map" and map.has-key($array, "varname");
 }
 
 @function custom-prop($custom-prop) {
-    $name: map.get($custom-prop, "varname");
-    $fallback: map.get($custom-prop, "fallback");
+    $name: get-varname($custom-prop);
+    $fallback: get-fallback($custom-prop);
 
     @if $fallback != null {
         @return var($name, $fallback);
