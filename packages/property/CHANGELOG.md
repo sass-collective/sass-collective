@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v2.1.0 (2021-01-12)
+
+### Added
+
+* Added ``get-varname`` function
+* Added ``get-fallback`` function
+
 ## v2.0.0 (2021-01-12)
 
 ### Added
