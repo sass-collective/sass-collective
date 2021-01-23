@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+## v2.1.0 (2021-01-23)
+
+### Added
+
+* global: new mixin ``styles`` for replace ``direction``
+
+### Changed
+
+* global: legacy import prefix has been renamed from ``sass-`` to ``sass-direction-``
+
+### Deprecated
+
+* global: mixin ``direction``
+
+### Removed
+
+* global: ``_mixins.scss`` file
+
 ## v2.0.0 (2021-01-12)
 
 ### Changed

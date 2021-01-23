@@ -12,14 +12,15 @@ Manage content direction for languages right-to-left.
 ## Install
 
     npm install @sass-collective/direction --save
-    
+
 ## Usage
 
 ### Mixin
 
 ```scss
-direction($direction: right, $root-selector: null);
+styles($direction: right, $root-selector: null);
 ```
+
 #### Options
 
 | Names                 | Default      | Values                        |
@@ -37,19 +38,19 @@ p {
     margin-right: 0;
 
     // RTL
-    @include direction.direction {
+    @include direction.styles {
         margin-left: 0;
         margin-right: 20px;
     }
 
     // LTR
-    @include direction.direction(left) {
+    @include direction.styles(left) {
         margin-left: 0;
         margin-right: 20px;
     }
 
     // Root Selector
-    @include direction.direction($root-selector: div) {
+    @include direction.styles($root-selector: div) {
         margin-left: 0;
         margin-right: 20px;
     }
@@ -66,19 +67,19 @@ p {
     margin-right: 0;
 
     // RTL
-    @include sass-direction {
+    @include sass-direction-styles {
         margin-left: 0;
         margin-right: 20px;
     }
 
     // LTR
-    @include sass-direction(left) {
+    @include sass-direction-styles(left) {
         margin-left: 0;
         margin-right: 20px;
     }
 
     // Root Selector
-    @include sass-direction($root-selector: div) {
+    @include sass-direction-styles($root-selector: div) {
         margin-left: 0;
         margin-right: 20px;
     }
