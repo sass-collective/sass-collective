@@ -1,0 +1,68 @@
+// ============================================================================================= //
+//                                           BREAKPOINT                                          //
+// ============================================================================================= //
+
+@use "sass:string";
+@use "~@sass-collective/strip-unit";
+@use "./variables";
+
+// ------------------------------------------------------------------------- //
+// FUNCTIONS
+// ------------------------------------------------------------------------- //
+
+@function _set-value($value) {
+    @return (strip-unit.strip-unit($value) * 1px);
+}
+
+@function _set-value-has-strict($value) {
+    @if variables.$strict {
+        @return _set-value(strip-unit.strip-unit($value)) - 1;
+    } @else {
+        @return _set-value(strip-unit.strip-unit($value));
+    }
+}
+
+// ------------------------------------------------------------------------- //
+// MIXINS
+// ------------------------------------------------------------------------- //
+
+@mixin styles($min-width: false, $max-width: false, $root-selector: false) {
+
+    @if $root-selector and (string.slice($root-selector, 1, 1) != ".") and (string.slice($root-selector, 1, 1) != "#") {
+        @error "The \"#{$root-selector}\" selector need to be ID or class.";
+    }
+
+    @if $min-width {
+        @if $max-width {
+            @media all and (min-width: _set-value($min-width)) and (max-width: _set-value-has-strict($max-width)) {
+                @if $root-selector {
+                    #{$root-selector} & {
+                        @content;
+                    }
+                } @else {
+                    @content;
+                }
+            }
+        } @else {
+            @media all and (min-width: _set-value($min-width)) {
+                @if $root-selector {
+                    #{$root-selector} & {
+                        @content;
+                    }
+                } @else {
+                    @content;
+                }
+            }
+        }
+    } @else if $max-width {
+        @media all and (max-width: _set-value-has-strict($max-width)) {
+            @if $root-selector {
+                #{$root-selector} & {
+                    @content;
+                }
+            } @else {
+                @content;
+            }
+        }
+    }
+}
