@@ -15,77 +15,21 @@ Generate CSS property with CSS Custom Properties option.
 
 ## Usage
 
-### Mixin
-
-```scss
-prop($property, $value, $important: false);
-```
-
-### Function
-
-```scss
-custom-prop($custom-prop);
-```
-
-### Module System
-
 ```scss
 @use "@sass-collective/property";
+@use "@sass-collective/property/custom-properties";
 
-$style: property.create(--foo-font-size, 16px);
-
-// Using the function
-
-body {
-    font-size: property.custom-prop($style);
-}
-
-// Using the mixin
-
-body {
-    
-    // Classic
-    @include property.prop(font-size, 16px);
-
-    // CSS Custom Properties
-    @include property.prop(font-size, $style);
+.foo {
+    @include property.create(color, custom-properties.create(--foo-font-size, 16px));
 }
 ```
 
-### Legacy @import
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-property-create()` instead of `property.create()`.
 
-```scss
-@import "@sass-collective/property";
-
-$style: sass-create(--foo-font-size, 16px);
-
-// Using the function
-
-body {
-    font-size: sass-custom-prop(font-size, 16px);
-}
-
-// Using the mixin
-
-body {
-    
-    // Classic
-    @include sass-prop(font-size, 16px);
-
-    // CSS Custom Properties
-    @include sass-prop(font-size, $style);
-}
-```
-
-### CSS
+### Result
 
 ```css
-body {
-
-    /* Classic */
-    font-size: 16px;
-
-    /* CSS Custom Properties **/
+.foo {
     font-size: var(--foo-font-size, 16px);
 }
 ```
