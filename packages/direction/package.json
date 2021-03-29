@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/direction",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "Manage content direction for languages right-to-left.",
     "main": "index.scss",
     "dependencies": {
