@@ -2,29 +2,35 @@
 
 ## Unreleased
 
+## v2.1.1 (2021-03-29)
+
+### Changed
+
+* deps: bump to sass 1.32.8
+
 ## v2.1.0 (2021-01-23)
 
 ### Added
 
-* global: new mixin ``styles`` for replace ``direction``
+* global: new mixin `styles` for replace `direction`
 
 ### Changed
 
-* global: legacy import prefix has been renamed from ``sass-`` to ``sass-direction-``
+* global: legacy import prefix has been renamed from `sass-` to `sass-direction-`
 
 ### Deprecated
 
-* global: mixin ``direction``
+* global: mixin `direction`
 
 ### Removed
 
-* global: ``_mixins.scss`` file
+* global: `_mixins.scss` file
 
 ## v2.0.0 (2021-01-12)
 
 ### Changed
 
-* Changed ``@use / @forward`` architecture
+* Changed `@use / @forward` architecture
 
 ## v1.2.0 (2020-07-22)
 

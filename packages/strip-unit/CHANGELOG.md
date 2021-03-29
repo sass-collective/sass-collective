@@ -2,11 +2,17 @@
 
 ## Unreleased
 
+## v2.0.1 (2021-03-29)
+
+### Changed
+
+* deps: bump to sass 1.32.8
+
 ## v2.0.0 (2021-01-12)
 
 ### Changed
 
-* Changed ``@use / @forward`` architecture
+* Changed `@use / @forward` architecture
 
 ## v1.2.0 (2020-07-22)
 
@@ -30,8 +36,8 @@
 
 ### Changed
 
-* Changed error message on ``strip-unit`` function
-* Changed ``package.json`` config
+* Changed error message on `strip-unit` function
+* Changed `package.json` config
 
 ## v1.0.0 (2020-04-12)
 

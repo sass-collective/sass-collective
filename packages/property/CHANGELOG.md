@@ -9,6 +9,10 @@
 * global: dedicated custom property functions has been moved on `_custom-properties.scss` file
 * global: `create` mixin
 
+### Changed
+
+* deps: bump to sass 1.32.8
+
 ### Removed
 
 * global: `prop` mixin
