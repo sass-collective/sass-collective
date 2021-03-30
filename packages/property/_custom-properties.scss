@@ -41,11 +41,11 @@
     $name: get-varname($custom-prop);
     $fallback: get-fallback($custom-prop);
 
-    @if $fallback != null {
+    @if $fallback {
         @return var($name, $fallback);
-    } @else {
-        @return var($name);
     }
+
+    @return var($name);
 }
 
 // ------------------------------------------------------------------------- //
