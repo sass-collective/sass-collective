@@ -15,26 +15,10 @@ Strip unit on CSS value.
 
 ## Usage
 
-### Function
-
-```scss
-strip-unit($values);
-```
-
-### Module System
-
 ```scss
 @use "@sass-collective/strip-unit";
 
 $value: strip-unit.strip-unit(100px);
 // 100
 ```
-
-### Legacy @import
-
-```scss
-@import "@sass-collective/strip-unit";
-
-$value: sass-strip-unit(100px);
-// 100
-```
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit()` instead of `strip-unit.strip-unit()`.

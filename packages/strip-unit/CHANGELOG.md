@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.0.2 (2021-03-30)
+
+### Changed
+
+* build: remove unneeded `@use`
+
 ## v2.0.1 (2021-03-29)
 
 ### Changed
