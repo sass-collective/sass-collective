@@ -52,4 +52,9 @@
 // MIXINS
 // ------------------------------------------------------------------------- //
 
-// ...
+@mixin create-custom-property($custom-prop) {
+    $property: get-varname($custom-prop);
+    $value: get-fallback($custom-prop);
+
+    #{$property}: $value;
+}
