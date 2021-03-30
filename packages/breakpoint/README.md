@@ -15,120 +15,82 @@ Generate CSS breakpoint.
 
 ## Usage
 
-### Mixin
-
-```scss
-styles($min-width, $max-width, $root-selector);
-```
-
-### Variables
-
-| Names              | Values    | Descriptions                                                         |
-| ------------------ | --------- | -------------------------------------------------------------------- |
-| ``$strict``        | true      | Subtract ``1px`` on ``max-width`` value, ``960px`` come ``959px``    |
-| ``$very-small``    | 320       | iPhone in portrait mode                                              |
-| ``$small``         | 480       | iPhone in landscape mode                                             |
-| ``$medium``        | 768       | iPad in portrait mode                                                |
-| ``$large``         | 960       | Desktop                                                              |
-| ``$wide``          | 1200      | Wide screen                                                          |
-
-### Update default variables in global
-
-```scss
-@use "@sass-collective/breakpoint" with (
-    $strict: false,
-    $large: 960
-);
-```
-
-### Module System
-
 ```scss
 @use "@sass-collective/breakpoint";
 
-// Mixin
-
-body {
-    // Min width
+.foo {
+    // default min-width
     @include breakpoint.styles(960) {
         font-size: 10px;
     }
 
-    // Max width
+    // max-width
     @include breakpoint.styles($max-width: 960) {
         font-size: 10px;
     }
 
-    // Between
+    // min-width & max-width
     @include breakpoint.styles(480, 960) {
         font-size: 10px;
     }
 
-    // Parent class or ID
-    @include breakpoint.styles(480, $root-selector: ".class") {
+    // root selector
+    @include breakpoint.styles(480, $root-selector: ".bar") {
         font-size: 10px;
     }
 }
 ```
 
-### Legacy @import
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-sass-breakpoint-styles()` instead of `breakpoint.styles()`.
 
-```scss
-@import "@sass-collective/breakpoint";
-
-// Mixin
-
-body {
-    // Min width
-    @include sass-breakpoint-styles(960) {
-        font-size: 10px;
-    }
-
-    // Max width
-    @include sass-breakpoint-styles($max-width: 960) {
-        font-size: 10px;
-    }
-
-    // Between
-    @include sass-breakpoint-styles(480, 960) {
-        font-size: 10px;
-    }
-
-    // Parent class or ID
-    @include sass-breakpoint-styles(480, $root-selector: ".class") {
-        font-size: 10px;
-    }
-}
-```
-
-### CSS
+### Result
 
 ```css
-/* Min width */
+/* default min-width */
 @media all and (min-width: 960px) {
-    body {
+    .foo {
         font-size: 10px;
     }
 }
 
-/* Max width */
+/* max-width */
 @media all and (max-width: 959px) {
-    body {
+    .foo {
         font-size: 10px;
     }
 }
 
-/* Between */
+/* min-width & max-width */
 @media all and (min-width: 480px) and (max-width: 959px) {
-    body {
+    .foo {
         font-size: 10px;
     }
 }
 
-/* Parent class or ID */
+/* root selector */
 @media all and (min-width: 480px) {
-    .class body {
+    .bar .foo {
         font-size: 10px;
     }
 }
+```
+
+## Options
+
+| Names              | Values    | Descriptions                                                         |
+| ------------------ | --------- | -------------------------------------------------------------------- |
+| `$strict`        | true      | Subtract `1px` on `max-width` value, `960px` come `959px`    |
+| `$very-small`    | 320       | iPhone in portrait mode                                              |
+| `$small`         | 480       | iPhone in landscape mode                                             |
+| `$medium`        | 768       | iPad in portrait mode                                                |
+| `$large`         | 960       | Desktop                                                              |
+| `$wide`          | 1200      | Wide screen                                                          |
+
+### Custom configuration
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $strict: false,
+    $large: 1024
+);
 ```
