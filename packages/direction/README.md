@@ -15,10 +15,60 @@ Manage content direction for languages right-to-left.
 
 ## Usage
 
-### Mixin
-
 ```scss
-styles($direction: right, $root-selector: null);
+@use "@sass-collective/direction";
+
+.foo {
+    margin-left: 20px;
+    margin-right: 0;
+
+    // rtl
+    @include direction.styles {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // ltr
+    @include direction.styles(left) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    // root selector
+    @include direction.styles($root-selector: .bar) {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+}
+```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-sass-direction-styles()` instead of `direction.styles()`.
+
+### Result
+
+```css
+.foo {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/** rtl **/
+[dir="rtl"] .foo {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/** ltr **/
+[dir="ltr"] .foo {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+/** root selector **/
+[dir="rtl"] .bar .foo {
+    margin-left: 0;
+    margin-right: 20px;
+}
 ```
 
 #### Options
@@ -27,88 +77,3 @@ styles($direction: right, $root-selector: null);
 | --------------------- | ------------ | ----------------------------- |
 | ``$direction``        | ``right``    | ``left`` or ``right``         |
 | ``$root-selector``    | null         | Class, ID or HTML element.    |
-
-### Module System
-
-```scss
-@use "@sass-collective/direction";
-
-p {
-    margin-left: 20px;
-    margin-right: 0;
-
-    // RTL
-    @include direction.styles {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-
-    // LTR
-    @include direction.styles(left) {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-
-    // Root Selector
-    @include direction.styles($root-selector: div) {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-}
-```
-
-### Legacy @import
-
-```scss
-@import "@sass-collective/direction";
-
-p {
-    margin-left: 20px;
-    margin-right: 0;
-
-    // RTL
-    @include sass-direction-styles {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-
-    // LTR
-    @include sass-direction-styles(left) {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-
-    // Root Selector
-    @include sass-direction-styles($root-selector: div) {
-        margin-left: 0;
-        margin-right: 20px;
-    }
-}
-```
-
-### CSS
-
-```css
-p {
-    margin-left: 20px;
-    margin-right: 0;
-}
-
-/** RTL **/
-[dir="rtl"] p {
-    margin-left: 0;
-    margin-right: 20px;
-}
-
-/** LTR **/
-[dir="ltr"] p {
-    margin-left: 0;
-    margin-right: 20px;
-}
-
-/** Root Selector **/
-[dir="rtl"] div p {
-    margin-left: 0;
-    margin-right: 20px;
-}
-```
