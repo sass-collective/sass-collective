@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/breakpoint",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Generate CSS breakpoint.",
     "main": "index.scss",
     "engines": {
@@ -8,7 +8,7 @@
         "npm": ">=6.0.0"
     },
     "dependencies": {
-        "@sass-collective/strip-unit": "^2.0.1",
+        "@sass-collective/strip-unit": "^2.0.2",
         "sass": "^1.32.8"
     },
     "files": [
