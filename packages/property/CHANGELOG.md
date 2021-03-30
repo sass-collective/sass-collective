@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## v3.1.0 (2021-03-31)
+
+### Added
+
+* property: `create-varname` function
+* custom properties: `create-custom-property` mixin
+
+### Removed
+
+* property: unneeded code
+
 ## v3.0.0 (2021-03-29)
 
 ### Added

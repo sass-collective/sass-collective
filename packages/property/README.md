@@ -19,8 +19,12 @@ Generate CSS property with CSS Custom Properties option.
 @use "@sass-collective/property";
 @use "@sass-collective/property/custom-properties";
 
+:root {
+    @include custom-properties.create-custom-properties(custom-properties.create(--font-size, 20px));
+}
+
 .foo {
-    @include property.create(color, custom-properties.create(--foo-font-size, 16px));
+    @include property.create(color, custom-properties.create(--font-size, 16px));
 }
 ```
 
@@ -29,7 +33,11 @@ Generate CSS property with CSS Custom Properties option.
 ### Result
 
 ```css
+:root {
+    --font-size: 20px;
+}
+
 .foo {
-    font-size: var(--foo-font-size, 16px);
+    font-size: var(--font-size, 16px);
 }
 ```
