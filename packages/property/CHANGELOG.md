@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## v3.2.0 (2021-03-31)
+
+### Added
+
+* custom properties: `create-var` function
+
+### Deprecated
+
+* custom properties: `custom-prop` function
+
 ## v3.1.1 (2021-03-31)
 
 ### Added

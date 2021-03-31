@@ -37,7 +37,7 @@
     @return meta.type-of($array) == "map" and map.has-key($array, "varname");
 }
 
-@function custom-prop($custom-prop) {
+@function create-var($custom-prop) {
     $name: get-varname($custom-prop);
     $fallback: get-fallback($custom-prop);
 
@@ -46,6 +46,11 @@
     }
 
     @return var($name);
+}
+
+/// @deprecated Use create-var() function instead.
+@function custom-prop($custom-prop) {
+    @return create-var($custom-prop);
 }
 
 // ------------------------------------------------------------------------- //
