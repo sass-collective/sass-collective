@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v3.1.1 (2021-03-31)
+
+### Added
+
+* property: rollback old `mixins` & `functions` for better major upgrade
+
 ## v3.1.0 (2021-03-31)
 
 ### Added
