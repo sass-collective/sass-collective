@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v3.2.1 (2021-03-31)
+
+### Fixed
+
+* property: use `create-var` instead of `custom-prop`
+
 ## v3.2.0 (2021-03-31)
 
 ### Added

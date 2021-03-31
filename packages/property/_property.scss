@@ -8,14 +8,14 @@
 // FUNCTIONS
 // ------------------------------------------------------------------------- //
 
-/// @deprecated Use create() function instead.
+/// @deprecated Use custom-properties.create() function instead.
 @function create($name, $fallback: null) {
     @return custom-properties.create($name, $fallback);
 }
 
-/// @deprecated Use custom-prop() function instead.
+/// @deprecated Use custom-properties.custom-prop() function instead.
 @function custom-prop($custom-prop) {
-    @return custom-properties.custom-prop($custom-prop);
+    @return custom-properties.create-var($custom-prop);
 }
 
 // ------------------------------------------------------------------------- //
@@ -26,7 +26,7 @@
     $is-important: if($important, "!important", "");
 
     @if custom-properties.is-custom-prop($value) {
-        #{$property}: custom-properties.custom-prop($value) #{$is-important};
+        #{$property}: custom-properties.create-var($value) #{$is-important};
     } @else {
         #{$property}: $value #{$is-important};
     }
