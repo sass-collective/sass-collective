@@ -5,6 +5,7 @@
 @use "sass:meta";
 @use "sass:map";
 @use "sass:string";
+@use "./css";
 
 // ------------------------------------------------------------------------- //
 // FUNCTIONS
@@ -61,5 +62,5 @@
     $property: get-varname($custom-prop);
     $value: get-fallback($custom-prop);
 
-    #{$property}: $value;
+    @include css.create($property, $value);
 }

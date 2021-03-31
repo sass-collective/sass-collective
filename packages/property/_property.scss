@@ -3,6 +3,7 @@
 // ============================================================================================= //
 
 @use "./custom-properties";
+@use "./css";
 
 // ------------------------------------------------------------------------- //
 // FUNCTIONS
@@ -23,12 +24,10 @@
 // ------------------------------------------------------------------------- //
 
 @mixin create($property, $value, $important: false) {
-    $is-important: if($important, "!important", "");
-
     @if custom-properties.is-custom-prop($value) {
-        #{$property}: custom-properties.create-var($value) #{$is-important};
+        @include css.create($property, custom-properties.create-var($value), $important);
     } @else {
-        #{$property}: $value #{$is-important};
+        @include css.create($property, $value, $important);
     }
 }
 
