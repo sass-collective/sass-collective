@@ -22,7 +22,7 @@ Sass function & mixin to generate rem value.
 .foo {
     font-size: rem.convert(16);
     margin: rem.convert(20 30);
-    
+
     @include rem.convert(padding, 20 30);
 }
 ```
@@ -36,5 +36,23 @@ Sass function & mixin to generate rem value.
     font-size: 1rem;
     margin: 1.25rem 1.875rem;
     padding: 1.25rem 1.875rem;
+}
+```
+
+## Options
+
+| Names          | Values    |
+| -------------- | --------- |
+| `$baseline`    | `16px`    |
+
+### Custom configuration
+
+```scss
+@use "@sass-collective/rem" with (
+    $baseline: 10px
+);
+
+.foo {
+    font-size: rem.convert(16);
 }
 ```
