@@ -12,6 +12,20 @@ Sass function & mixin to generate rem value.
 
     npm install @sass-collective/rem --save
 
+## Sass Functions & Mixins
+
+### Functions
+
+| Function| Description |
+| --- | --- |
+| `convert($value)` | Convert `px` value to `rem` value. |
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `convert($property, $value, $important)` | Create new property with conversion of `px` value to `rem` value. |
+
 ## Usage
 
 ```scss
