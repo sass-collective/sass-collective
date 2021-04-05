@@ -1,0 +1,35 @@
+{
+    "name": "@sass-collective/em",
+    "version": "0.0.0",
+    "description": "Sass function & mixin to generate em value.",
+    "main": "index.scss",
+    "engines": {
+        "node": ">=10.0.0",
+        "npm": ">=6.0.0"
+    },
+    "dependencies": {
+        "@sass-collective/sass-em": "^1.6.0",
+        "sass": "^1.32.8"
+    },
+    "files": [
+        "*.scss"
+    ],
+    "keywords": [
+        "css",
+        "sass",
+        "module system",
+        "em",
+        "front-end"
+    ],
+    "author": "The Sass Collective Authors",
+    "license": "MIT",
+    "homepage": "https://github.com/sass-collective/sass-collective/tree/master/packages/em",
+    "bugs": {
+        "url": "https://github.com/sass-collective/sass-collective/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sass-collective/sass-collective.git",
+        "directory": "packages/em"
+    }
+}
