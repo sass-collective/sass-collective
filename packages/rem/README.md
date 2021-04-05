@@ -55,9 +55,9 @@ Sass function & mixin to generate rem value.
 
 ## Options
 
-| Names          | Values    |
-| -------------- | --------- |
-| `$baseline`    | `16px`    |
+| Option | Value |
+| --- | --- |
+| `$baseline` | `16px` |
 
 ### Custom configuration
 

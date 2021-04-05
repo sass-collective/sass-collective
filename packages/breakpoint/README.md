@@ -77,14 +77,14 @@ Generate CSS breakpoint.
 
 ## Options
 
-| Names              | Values    | Descriptions                                                         |
-| ------------------ | --------- | -------------------------------------------------------------------- |
-| `$strict`        | true      | Subtract `1px` on `max-width` value, `960px` come `959px`    |
-| `$very-small`    | 320       | iPhone in portrait mode                                              |
-| `$small`         | 480       | iPhone in landscape mode                                             |
-| `$medium`        | 768       | iPad in portrait mode                                                |
-| `$large`         | 960       | Desktop                                                              |
-| `$wide`          | 1200      | Wide screen                                                          |
+| Option | Value | Description |
+| --- | --- | --- |
+| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
+| `$very-small` | `320` | iPhone in portrait mode |
+| `$small` | `480` | iPhone in landscape mode |
+| `$medium` | `768` | iPad in portrait mode |
+| `$large` | `960` | Desktop |
+| `$wide` | ``200` | Wide screen |
 
 ### Custom configuration
 

@@ -73,7 +73,7 @@ Manage content direction for languages right-to-left.
 
 #### Options
 
-| Names                 | Default      | Values                        |
-| --------------------- | ------------ | ----------------------------- |
-| ``$direction``        | ``right``    | ``left`` or ``right``         |
-| ``$root-selector``    | null         | Class, ID or HTML element.    |
+| Option | Default | Value |
+| --- | --- | --- |
+| `$direction` | `right` | `left` or `right` |
+| `$root-selector` | `null` | Class, ID or HTML element. |
