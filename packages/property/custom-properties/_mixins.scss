@@ -1,0 +1,13 @@
+// ============================================================================================= //
+//                                            MIXINS                                             //
+// ============================================================================================= //
+
+@use "../css";
+@use "./functions";
+
+@mixin create-custom-property($custom-prop) {
+    $property: functions.get-varname($custom-prop);
+    $value: functions.get-fallback($custom-prop);
+
+    @include css.declaration($property, $value);
+}

@@ -1,15 +1,10 @@
 // ============================================================================================= //
-//                                       CUSTOM PROPERTIES                                       //
+//                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
 @use "sass:meta";
 @use "sass:map";
 @use "sass:string";
-@use "./css";
-
-// ------------------------------------------------------------------------- //
-// FUNCTIONS
-// ------------------------------------------------------------------------- //
 
 @function create($name, $fallback: null) {
     @if string.slice($name, 1, 2) != "--" {
@@ -52,15 +47,4 @@
 /// @deprecated Use create-var() function instead.
 @function custom-prop($custom-prop) {
     @return create-var($custom-prop);
-}
-
-// ------------------------------------------------------------------------- //
-// MIXINS
-// ------------------------------------------------------------------------- //
-
-@mixin create-custom-property($custom-prop) {
-    $property: get-varname($custom-prop);
-    $value: get-fallback($custom-prop);
-
-    @include css.declaration($property, $value);
 }
