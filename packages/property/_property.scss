@@ -2,8 +2,8 @@
 //                                           PROPERTY                                            //
 // ============================================================================================= //
 
-@use "./custom-properties";
 @use "./css";
+@use "./custom-properties";
 
 // ------------------------------------------------------------------------- //
 // FUNCTIONS
@@ -25,9 +25,9 @@
 
 @mixin create($property, $value, $important: false) {
     @if custom-properties.is-custom-prop($value) {
-        @include css.create($property, custom-properties.create-var($value), $important);
+        @include css.declaration($property, custom-properties.create-var($value), $important);
     } @else {
-        @include css.create($property, $value, $important);
+        @include css.declaration($property, $value, $important);
     }
 }
 

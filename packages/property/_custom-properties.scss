@@ -62,5 +62,5 @@
     $property: get-varname($custom-prop);
     $value: get-fallback($custom-prop);
 
-    @include css.create($property, $value);
+    @include css.declaration($property, $value);
 }
