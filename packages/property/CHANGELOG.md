@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v3.3.1 (2021-04-07)
+
+### Fixed
+
+* build: package files
+
 ## v3.3.0 (2021-04-07)
 
 ### Added

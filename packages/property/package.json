@@ -7,7 +7,9 @@
         "sass": "^1.32.8"
     },
     "files": [
-        "*.scss"
+        "*.scss",
+        "css/**/*",
+        "custom-properties/**/*"
     ],
     "keywords": [
         "css",
