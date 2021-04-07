@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v3.3.0 (2021-04-07)
+
+### Added
+
+* css: add `declaration` mixin
+
 ## v3.2.1 (2021-03-31)
 
 ### Fixed
