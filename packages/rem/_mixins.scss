@@ -2,4 +2,9 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
-@forward "./rem" show convert;
+@use "~@sass-collective/property/css";
+@use "./functions";
+
+@mixin convert($property, $value, $important: false) {
+    @include css.declaration($property, functions.convert($value), $important);
+}
