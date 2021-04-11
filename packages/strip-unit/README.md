@@ -19,14 +19,14 @@ Strip unit on CSS value.
 
 | Function | Description |
 | --- | --- |
-| `strip-unit($value)` | Return value without the unit. |
+| `strip($value)` | Return value without the unit. |
 
 ## Usage
 
 ```scss
 @use "@sass-collective/strip-unit";
 
-$value: strip-unit.strip-unit(100px);
+$value: strip-unit.strip(100px);
 // 100
 ```
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit()` instead of `strip-unit.strip-unit()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()` instead of `strip-unit.strip()`.
