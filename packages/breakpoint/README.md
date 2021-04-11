@@ -7,11 +7,19 @@
 
 ## Introduction
 
-Generate CSS breakpoint.
+Create easily CSS breakpoint rules.
 
 ## Install
 
     npm install @sass-collective/breakpoint --save
+
+## API
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `styles($min-width, $max-width, $root-selector)` | Create new breakpoint rule. |
 
 ## Usage
 

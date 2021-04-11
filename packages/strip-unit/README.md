@@ -13,6 +13,14 @@ Strip unit on CSS value.
 
     npm install @sass-collective/strip-unit --save
 
+## API
+
+### Functions
+
+| Function | Description |
+| --- | --- |
+| `strip-unit($value)` | Return value without the unit. |
+
 ## Usage
 
 ```scss

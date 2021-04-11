@@ -6,25 +6,25 @@
 
 ## Introduction
 
-Sass function & mixin to generate em value.
+Sass function & mixin to convert pixel to em.
 
 ## Install
 
     npm install @sass-collective/em --save
 
-## Sass Functions & Mixins
+## API
 
 ### Functions
 
-| Function| Description |
+| Function | Description |
 | --- | --- |
-| `convert($value, $context)` | Convert `px` value to `em` value with context calculation. |
+| `convert($value, $context)` | Convert `px` unit to `em` with context calculation. |
 
 ### Mixins
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $context, $important)` | Create new property with conversion of `px` value to `em` value. |
+| `convert($property, $value, $context, $important)` | Create new property with conversion of `px` unit to `em`. |
 
 ## Usage
 

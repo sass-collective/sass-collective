@@ -6,25 +6,25 @@
 
 ## Introduction
 
-Sass function & mixin to generate rem value.
+Sass function & mixin to convert pixel to rem.
 
 ## Install
 
     npm install @sass-collective/rem --save
 
-## Sass Functions & Mixins
+## API
 
 ### Functions
 
-| Function| Description |
+| Function | Description |
 | --- | --- |
-| `convert($value)` | Convert `px` value to `rem` value. |
+| `convert($value)` | Convert `px` unit to `rem`. |
 
 ### Mixins
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $important)` | Create new property with conversion of `px` value to `rem` value. |
+| `convert($property, $value, $important)` | Create new property with conversion of `px` unit to `rem`. |
 
 ## Usage
 
