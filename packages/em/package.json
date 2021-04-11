@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/em",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "Sass function & mixin to convert pixel to em.",
     "main": "index.scss",
     "engines": {
@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@sass-collective/property": "^3.3.1",
-        "@sass-collective/strip-unit": "^2.0.2",
+        "@sass-collective/strip-unit": "^2.1.0",
         "sass": "^1.32.8"
     },
     "files": [
