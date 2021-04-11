@@ -10,4 +10,4 @@
 
 ## v1.0.0 (2021-04-05)
 
-* Initial release
+* Initial release _(transferred repository from [https://github.com/sass-collective/sass-em](https://github.com/sass-collective/sass-em))_
