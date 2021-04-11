@@ -7,7 +7,7 @@
 
 @function strip($value) {
     @if meta.type-of($value) == "string" {
-        @error "Invalid value, this need to be a number not a string.";
+        @error "Invalid `#{meta.type-of($value)}` type. Choose a number type instead.";
     }
 
     @if meta.type-of($value) == "number" and not math.is-unitless($value) {

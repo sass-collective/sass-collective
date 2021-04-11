@@ -3,6 +3,7 @@
 // ============================================================================================= //
 
 @use "sass:list";
+@use "sass:math";
 @use "sass:meta";
 @use "~@sass-collective/strip-unit";
 @use "./variables";
@@ -11,12 +12,16 @@
     $result: ();
 
     @each $value in $values {
-        $value: strip-unit.strip-unit($value);
+        @if not math.is-unitless($value) and math.unit($value) != "px" {
+            @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead.";
+        }
+
+        $value: strip-unit.strip($value);
 
         @if $value == 0 {
             $value: 0;
         } @else {
-            $value: $value / strip-unit.strip-unit(variables.$baseline) * 1rem;
+            $value: $value / strip-unit.strip(variables.$baseline) * 1rem;
         }
 
         @if meta.type-of($values) == "number" {
