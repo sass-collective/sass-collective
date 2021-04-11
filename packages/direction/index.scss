@@ -2,4 +2,5 @@
 //                                             INDEX                                             //
 // ============================================================================================= //
 
-@forward "./direction" show styles;
+@forward "./variables" hide $directions;
+@forward "./mixins";

@@ -1,24 +1,9 @@
 // ============================================================================================= //
-//                                           DIRECTION                                           //
+//                                            MIXINS                                             //
 // ============================================================================================= //
 
 @use "sass:map";
 @use "./variables";
-
-// ------------------------------------------------------------------------- //
-// FUNCTIONS
-// ------------------------------------------------------------------------- //
-
-// ...
-
-// ------------------------------------------------------------------------- //
-// MIXINS
-// ------------------------------------------------------------------------- //
-
-/// @deprecated Use styles() instead.
-@mixin direction($direction: right, $root-selector: null) {
-    @include styles($direction, $root-selector);
-}
 
 @mixin styles($direction: right, $root-selector: null) {
     @if not map.has-key(variables.$directions, $direction) {
@@ -38,4 +23,9 @@
             @content;
         }
     }
+}
+
+/// @deprecated Use styles() instead.
+@mixin direction($direction: right, $root-selector: null) {
+    @include styles($direction, $root-selector);
 }
