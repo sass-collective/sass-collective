@@ -1,7 +1,7 @@
 {
     "name": "@sass-collective/direction",
     "version": "2.1.1",
-    "description": "Manage content direction for languages right-to-left.",
+    "description": "Manage content direction for languages right-to-left or left-to-right rules.",
     "main": "index.scss",
     "dependencies": {
         "sass": "^1.32.8"
@@ -11,15 +11,14 @@
     ],
     "keywords": [
         "css",
-        "sass",
-        "module system",
-        "direction",
-        "ltr",
-        "rtl",
         "left-to-right",
         "right-to-left",
-        "languages",
-        "front-end"
+        "ltr",
+        "rtl",
+        "direction",
+        "sass",
+        "front-end",
+        "module system"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
