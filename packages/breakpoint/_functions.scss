@@ -1,0 +1,19 @@
+// ============================================================================================= //
+//                                           FUNCTIONS                                           //
+// ============================================================================================= //
+
+@use "sass:string";
+@use "~@sass-collective/strip-unit";
+@use "./variables";
+
+@function set-value($value) {
+    @return (strip-unit.strip-unit($value) * 1px);
+}
+
+@function set-value-has-strict($value) {
+    @if variables.$strict {
+        @return set-value(strip-unit.strip-unit($value)) - 1;
+    } @else {
+        @return set-value(strip-unit.strip-unit($value));
+    }
+}
