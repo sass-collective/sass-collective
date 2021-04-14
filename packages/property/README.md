@@ -20,7 +20,7 @@ Generate CSS property with CSS Custom Properties option.
 @use "@sass-collective/property/custom-properties";
 
 :root {
-    @include custom-properties.create-custom-properties(custom-properties.create(--font-size, 20px));
+    @include custom-properties.create-custom-property(custom-properties.create(--font-size, 20px));
 }
 
 .foo {
