@@ -17,10 +17,6 @@
     );
 }
 
-@function create-varname($name) {
-    @return --#{$name};
-}
-
 @function get-varname($custom-prop) {
     @return map.get($custom-prop, "varname");
 }
@@ -29,8 +25,12 @@
     @return map.get($custom-prop, "fallback");
 }
 
-@function is-custom-prop($array) {
-    @return meta.type-of($array) == "map" and map.has-key($array, "varname");
+@function is-custom-prop($value) {
+    @return meta.type-of($value) == "map" and map.has-key($value, "varname");
+}
+
+@function create-varname($name) {
+    @return --#{$name};
 }
 
 @function create-var($custom-prop) {
