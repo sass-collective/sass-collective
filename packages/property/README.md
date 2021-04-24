@@ -9,9 +9,11 @@
 
 Generate CSS property with CSS Custom Properties option.
 
-## Install
+## Installation
 
-    npm install @sass-collective/property --save
+```shell
+npm install @sass-collective/property
+```
 
 ## Usage
 

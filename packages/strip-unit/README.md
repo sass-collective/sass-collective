@@ -9,9 +9,18 @@
 
 Strip unit on CSS value.
 
-## Install
+## Installation
 
-    npm install @sass-collective/strip-unit --save
+```shell
+npm install @sass-collective/strip-unit
+```
+
+## Usage
+
+```scss
+@use "@sass-collective/strip-unit";
+```
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()` instead of `strip-unit.strip()`.
 
 ## API
 
@@ -21,7 +30,7 @@ Strip unit on CSS value.
 | --- | --- |
 | `strip($value)` | Return value without the unit. |
 
-## Usage
+## Example
 
 ```scss
 @use "@sass-collective/strip-unit";
@@ -29,4 +38,3 @@ Strip unit on CSS value.
 $value: strip-unit.strip(100px);
 // 100
 ```
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()` instead of `strip-unit.strip()`.

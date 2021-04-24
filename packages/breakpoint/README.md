@@ -9,9 +9,19 @@
 
 Create easily CSS breakpoint rules.
 
-## Install
+## Installation
 
-    npm install @sass-collective/breakpoint --save
+```shell
+npm install @sass-collective/breakpoint
+```
+
+## Usage
+
+```scss
+@use "@sass-collective/breakpoint";
+```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-sass-breakpoint-styles()` instead of `breakpoint.styles()`.
 
 ## API
 
@@ -19,9 +29,29 @@ Create easily CSS breakpoint rules.
 
 | Mixin | Description |
 | --- | --- |
-| `styles($min-width, $max-width, $root-selector)` | Create new breakpoint rule. |
+| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
 
-## Usage
+### Options
+
+| Option | Value | Description |
+| --- | --- | --- |
+| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
+| `$very-small` | `320` | iPhone in portrait mode |
+| `$small` | `480` | iPhone in landscape mode |
+| `$medium` | `768` | iPad in portrait mode |
+| `$large` | `960` | Desktop |
+| `$wide` | ``200` | Wide screen |
+
+### Custom configuration
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $strict: false,
+    $large: 1024
+);
+```
+
+## Example
 
 ```scss
 @use "@sass-collective/breakpoint";
@@ -48,8 +78,6 @@ Create easily CSS breakpoint rules.
     }
 }
 ```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-sass-breakpoint-styles()` instead of `breakpoint.styles()`.
 
 ### Result
 
@@ -81,24 +109,4 @@ Create easily CSS breakpoint rules.
         font-size: 10px;
     }
 }
-```
-
-## Options
-
-| Option | Value | Description |
-| --- | --- | --- |
-| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
-| `$very-small` | `320` | iPhone in portrait mode |
-| `$small` | `480` | iPhone in landscape mode |
-| `$medium` | `768` | iPad in portrait mode |
-| `$large` | `960` | Desktop |
-| `$wide` | ``200` | Wide screen |
-
-### Custom configuration
-
-```scss
-@use "@sass-collective/breakpoint" with (
-    $strict: false,
-    $large: 1024
-);
 ```

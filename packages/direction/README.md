@@ -9,9 +9,19 @@
 
 Manage content direction for languages `right-to-left` or `left-to-right` rules.
 
-## Install
+## Installation
 
-    npm install @sass-collective/direction --save
+```shell
+npm install @sass-collective/direction
+```
+
+## Usage
+
+```scss
+@use "@sass-collective/direction";
+```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()` instead of `direction.styles()`.
 
 ## API
 
@@ -19,9 +29,9 @@ Manage content direction for languages `right-to-left` or `left-to-right` rules.
 
 | Mixin | Description |
 | --- | --- |
-| `styles($direction, $root-selector)` | Create new direction rule. |
+| `styles($direction, $root-selector)` | Create direction rule. |
 
-## Usage
+## Example
 
 ```scss
 @use "@sass-collective/direction";
@@ -49,8 +59,6 @@ Manage content direction for languages `right-to-left` or `left-to-right` rules.
     }
 }
 ```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()` instead of `direction.styles()`.
 
 ### Result
 

@@ -8,9 +8,19 @@
 
 Sass function & mixin to convert pixel to em.
 
-## Install
+## Installation
 
-    npm install @sass-collective/em --save
+```shell
+npm install @sass-collective/em
+```
+
+## Usage
+
+```scss
+@use "@sass-collective/em";
+```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()` instead of `em.convert()`.
 
 ## API
 
@@ -18,15 +28,15 @@ Sass function & mixin to convert pixel to em.
 
 | Function | Description |
 | --- | --- |
-| `convert($value, $context)` | Convert `px` unit to `em` with context calculation. |
+| `convert($value, $context)` | Convert `px` unit to `em`, with optional context. |
 
 ### Mixins
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $context, $important)` | Create new property with conversion of `px` unit to `em`. |
+| `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em` and optional `!important`. |
 
-## Usage
+## Example
 
 ```scss
 @use "@sass-collective/em";
@@ -40,8 +50,6 @@ Sass function & mixin to convert pixel to em.
     @include em.convert(padding, 20 30, 16)
 }
 ```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()` instead of `em.convert()`.
 
 ### Result
 

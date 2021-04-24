@@ -8,9 +8,19 @@
 
 Sass function & mixin to convert pixel to rem.
 
-## Install
+## Installation
 
-    npm install @sass-collective/rem --save
+```shell
+npm install @sass-collective/rem
+```
+
+## Usage
+
+```scss
+@use "@sass-collective/rem";
+```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()` instead of `rem.convert()`.
 
 ## API
 
@@ -24,9 +34,23 @@ Sass function & mixin to convert pixel to rem.
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $important)` | Create new property with conversion of `px` unit to `rem`. |
+| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
 
-## Usage
+### Options
+
+| Option | Value |
+| --- | --- |
+| `$baseline` | `16px` |
+
+### Custom configuration
+
+```scss
+@use "@sass-collective/rem" with (
+    $baseline: 10px
+);
+```
+
+## Example
 
 ```scss
 @use "@sass-collective/rem";
@@ -41,8 +65,6 @@ Sass function & mixin to convert pixel to rem.
 }
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()` instead of `rem.convert()`.
-
 ### Result
 
 ```css
@@ -50,23 +72,5 @@ Sass function & mixin to convert pixel to rem.
     font-size: 1rem;
     margin: 1.25rem 1.875rem;
     padding: 1.25rem 1.875rem;
-}
-```
-
-## Options
-
-| Option | Value |
-| --- | --- |
-| `$baseline` | `16px` |
-
-### Custom configuration
-
-```scss
-@use "@sass-collective/rem" with (
-    $baseline: 10px
-);
-
-.foo {
-    font-size: rem.convert(16);
 }
 ```
