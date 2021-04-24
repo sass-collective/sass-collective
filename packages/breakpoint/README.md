@@ -21,7 +21,7 @@ npm install @sass-collective/breakpoint
 @use "@sass-collective/breakpoint";
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-sass-breakpoint-styles()` instead of `breakpoint.styles()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()` instead of `breakpoint.styles()`.
 
 ## API
 
@@ -40,7 +40,7 @@ npm install @sass-collective/breakpoint
 | `$small` | `480` | iPhone in landscape mode |
 | `$medium` | `768` | iPad in portrait mode |
 | `$large` | `960` | Desktop |
-| `$wide` | ``200` | Wide screen |
+| `$wide` | `200` | Wide screen |
 
 ### Custom configuration
 
