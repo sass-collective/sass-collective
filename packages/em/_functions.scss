@@ -20,7 +20,7 @@
         @if $value == 0 {
             $value: 0;
         } @else {
-            $value: $value / strip-unit.strip($context) * 1em;
+            $value: math.div($value, strip-unit.strip($context)) * 1em;
         }
 
         @if meta.type-of($values) == "number" {

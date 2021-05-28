@@ -21,7 +21,7 @@
         @if $value == 0 {
             $value: 0;
         } @else {
-            $value: $value / strip-unit.strip(variables.$baseline) * 1rem;
+            $value: math.div($value, strip-unit.strip(variables.$baseline)) * 1rem;
         }
 
         @if meta.type-of($values) == "number" {
