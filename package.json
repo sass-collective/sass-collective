@@ -2,16 +2,17 @@
     "private": true,
     "description": "The Sass Collective Collection.",
     "scripts": {
-        "postinstall": "lerna bootstrap --hoist"
+        "postinstall": "lerna bootstrap --hoist",
+        "prepare": "husky install"
     },
     "engines": {
         "node": ">=10.0.0",
-        "npm": ">=6.0.0"
+        "npm": ">=7.0.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^12.1.1",
-        "@commitlint/config-conventional": "^12.1.1",
-        "husky": "^4.3.8",
+        "@commitlint/cli": "^12.1.4",
+        "@commitlint/config-conventional": "^12.1.4",
+        "husky": "^6.0.0",
         "lerna": "^4.0.0"
     },
     "author": "The Sass Collective Authors",
