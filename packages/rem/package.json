@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/rem",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Sass function & mixin to convert pixel to rem.",
     "main": "index.scss",
     "engines": {
@@ -8,7 +8,7 @@
         "npm": ">=6.0.0"
     },
     "dependencies": {
-        "@sass-collective/property": "^3.4.0",
+        "@sass-collective/property": "^3.5.0",
         "@sass-collective/strip-unit": "^2.2.0",
         "sass": "^1.34.0"
     },
