@@ -20,4 +20,4 @@ npm install @sass-collective/property
 
 | Mixin | Description |
 | --- | --- |
-| `create-custom-property($custom-prop)` | Declare CSS Custom Properties. |
+| `declaration($custom-prop)` | Declare CSS Custom Properties. |

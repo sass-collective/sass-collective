@@ -5,9 +5,14 @@
 @use "../css";
 @use "./functions";
 
-@mixin create-custom-property($custom-prop) {
+@mixin declaration($custom-prop) {
     $property: functions.get-varname($custom-prop);
     $value: functions.get-fallback($custom-prop);
 
     @include css.declaration($property, $value);
+}
+
+/// @deprecated Use "declaration()" mixin instead.
+@mixin create-custom-property($custom-prop) {
+    @include declaration($custom-prop);
 }

@@ -44,7 +44,7 @@
     @return var($name);
 }
 
-/// @deprecated Use create-var() function instead.
+/// @deprecated Use "create-var()" function instead.
 @function custom-prop($custom-prop) {
     @return create-var($custom-prop);
 }

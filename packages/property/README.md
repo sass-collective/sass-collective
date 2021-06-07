@@ -22,11 +22,11 @@ npm install @sass-collective/property
 @use "@sass-collective/property/custom-properties";
 
 :root {
-    @include custom-properties.create-custom-property(custom-properties.create(--font-size, 20px));
+    @include property.declaration(custom-properties.create(--foo, green));
 }
 
 .foo {
-    @include property.create(color, custom-properties.create(--font-size, 16px));
+    @include property.declaration(color, custom-properties.create(--foo, orange));
 }
 ```
 
@@ -36,10 +36,10 @@ npm install @sass-collective/property
 
 ```css
 :root {
-    --font-size: 20px;
+    --foo: 20px;
 }
 
 .foo {
-    font-size: var(--font-size, 16px);
+    color: var(--foo, 16px);
 }
 ```
