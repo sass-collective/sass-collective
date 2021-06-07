@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+## v2.2.0 (2021-05-28)
+
+### Changed
+
+* deps: bump to sass 1.34.0
+
+## v2.1.0 (2021-04-11)
+
+### Added
+
+* mixins: `strip()`
+
+### Deprecated
+
+* mixins: `strip-unit()`
+
 ## v2.0.2 (2021-03-30)
 
 ### Changed

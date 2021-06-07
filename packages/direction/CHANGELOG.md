@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## v2.3.0 (2021-05-28)
+
+### Changed
+
+* deps: bump to sass 1.34.0
+
+## v2.2.0 (2021-04-07)
+
+### Changed
+
+* global: `package.json`
+* global: error messages
+* global: legacy import
+
 ## v2.1.1 (2021-03-29)
 
 ### Changed
