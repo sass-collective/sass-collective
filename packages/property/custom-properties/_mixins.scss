@@ -5,11 +5,32 @@
 @use "../css";
 @use "./functions";
 
-@mixin declaration($custom-prop) {
-    $property: functions.get-varname($custom-prop);
-    $value: functions.get-fallback($custom-prop);
+///
+/// @example
+///     @include declaration(custom-properties.create(foo, darkcyan));
+///     // --foo: darkcyan;
+///     @include declaration(color, custom-properties.create(foo, darkcyan));
+///     // color: var(--foo, darkcyan);
+///     @include declaration(color, custom-properties.create(foo, custom-properties.create(bar, darkcyan)));
+///     // color: var(--foo, var(--bar, darkcyan));
+///
+@mixin declaration($property, $custom-prop: null, $important: false) {
+    $value: null;
 
-    @include css.declaration($property, $value);
+    @if functions.is-custom-prop($property) {
+        $custom-prop: $property;
+
+        $property: functions.get-varname($custom-prop);
+        $value: functions.get-fallback($custom-prop);
+    } @else {
+        @if not functions.is-custom-prop($custom-prop) {
+            @error "Invalid custom property: #{$custom-prop}. Should be a Map with 'varname' and 'fallback' expressions. Use 'create()' function for that.";
+        }
+
+        $value: functions.create-var($custom-prop);
+    }
+
+    @include css.declaration($property, $value, $important);
 }
 
 /// @deprecated Use "declaration()" mixin instead.

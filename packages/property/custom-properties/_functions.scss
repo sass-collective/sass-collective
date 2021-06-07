@@ -37,6 +37,10 @@
     $name: get-varname($custom-prop);
     $fallback: get-fallback($custom-prop);
 
+    @if is-custom-prop($fallback) {
+        @return var($name, create-var($fallback));
+    }
+
     @if $fallback {
         @return var($name, $fallback);
     }

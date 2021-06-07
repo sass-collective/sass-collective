@@ -23,11 +23,20 @@
 // MIXINS
 // ------------------------------------------------------------------------- //
 
+///
+/// @example
+///     @include declaration(custom-properties.create(foo, darkcyan));
+///     // --foo: darkcyan;
+///     @include declaration(color, custom-properties.create(foo, darkcyan));
+///     // color: var(--foo, darkcyan);
+///     @include declaration(color, darkcyan);
+///     // color: darkcyan;
+///
 @mixin declaration($property, $value: null, $important: false) {
     @if custom-properties.is-custom-prop($property) {
-        @include custom-properties.declaration($property);
+        @include custom-properties.declaration($property, $important: $important);
     } @else if custom-properties.is-custom-prop($value) {
-        @include css.declaration($property, custom-properties.create-var($value), $important);
+        @include custom-properties.declaration($property, $value, $important);
     } @else {
         @include css.declaration($property, $value, $important);
     }

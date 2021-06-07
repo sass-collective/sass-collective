@@ -12,6 +12,26 @@ npm install @sass-collective/property
 
 ```scss
 @use "@sass-collective/property/custom-properties";
+
+:root {
+    @include custom-properties.declaration(custom-properties.create(foo, darkcyan));
+}
+
+.foo {
+    @include custom-properties.declaration(color, custom-properties.create(foo, darkcyan));
+}
+```
+
+### Result
+
+```css
+:root {
+    --foo: darkcyan;
+}
+
+.foo {
+    color: var(--foo, darkcyan);
+}
 ```
 
 ## API
@@ -20,4 +40,4 @@ npm install @sass-collective/property
 
 | Mixin | Description |
 | --- | --- |
-| `declaration($custom-prop)` | Declare CSS Custom Properties. |
+| `declaration($property, $custom-prop, $important)` | Declare CSS Custom Properties, with optional `!important`. |

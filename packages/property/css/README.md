@@ -12,6 +12,18 @@ npm install @sass-collective/property
 
 ```scss
 @use "@sass-collective/property/css";
+
+.foo {
+    @include css.declaration(color, darkcyan);
+}
+```
+
+### Result
+
+```css
+.foo {
+    color: darkcyan;
+}
 ```
 
 ## API
