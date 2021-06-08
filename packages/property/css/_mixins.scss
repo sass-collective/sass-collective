@@ -2,6 +2,11 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+///
+/// @example
+///     @include declaration(color, darkcyan);
+///     // color: darkcyan;
+///
 @mixin declaration($property, $value, $important: false) {
     $is-important: if($important, "!important", "");
 
