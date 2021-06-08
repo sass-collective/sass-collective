@@ -2,4 +2,35 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
-@forward "./property";
+@use "./css";
+@use "./custom-properties";
+
+///
+/// @example
+///     @include declaration(custom-properties.create(foo, darkcyan));
+///     // --foo: darkcyan;
+///     @include declaration(color, custom-properties.create(foo, darkcyan));
+///     // color: var(--foo, darkcyan);
+///     @include declaration(color, darkcyan);
+///     // color: darkcyan;
+///
+@mixin declaration($property, $value: null, $important: false) {
+    @if custom-properties.is-custom-prop($property) {
+        @include custom-properties.declaration($property, $important: $important);
+    } @else if custom-properties.is-custom-prop($value) {
+        @include custom-properties.declaration($property, $value, $important);
+    } @else {
+        @include css.declaration($property, $value, $important);
+    }
+}
+
+/// @deprecated Use "declaration()" mixin instead.
+@mixin create($property, $value, $important: false) {
+    @include declaration($property, $value, $important);
+}
+
+/// @deprecated Use "create()" mixin instead.
+@mixin prop($property, $value, $important: false) {
+    @include create($property, $value, $important);
+}
+
