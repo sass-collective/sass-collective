@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v3.7.1 (2021-06-17)
+
+### Fixed
+
+* functions: missing `_functions.scss` for deprecated fallback
+
 ## v3.7.0 (2021-06-17)
 
 ### Changed

@@ -2,6 +2,6 @@
 //                                            IMPORT                                             //
 // ============================================================================================= //
 
-@forward "./property" as sass-property-*;
+@forward "./index" as sass-property-*;
 @forward "./custom-properties" as sass-custom-properties-*;
 @forward "./css" as sass-css-*;
