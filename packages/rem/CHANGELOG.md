@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v1.6.1 (2021-06-17)
+
+### Fixed
+
+* deps: bump to `@sass-collective/property` version `3.7.1`
+
 ## v1.6.0 (2021-06-17)
 
 ### Removed
