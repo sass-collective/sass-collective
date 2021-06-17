@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v1.6.0 (2021-06-17)
+
+### Removed
+
+* global: tilde prefix on `@use` call
+
 ## v1.3.0 (2021-05-28)
 
 ### Changed

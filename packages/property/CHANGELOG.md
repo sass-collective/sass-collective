@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## v3.7.0 (2021-06-17)
+
+### Changed
+
+* mixins: move all mixins on `_mixins.scss` file
+
+### Deprecated
+
+* global: `_property.scss` file
+
+### Removed
+
+* global: tilde prefix on `@use` call
+
 ## v3.3.1 (2021-04-07)
 
 ### Fixed
