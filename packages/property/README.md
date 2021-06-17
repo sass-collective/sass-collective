@@ -30,7 +30,7 @@ npm install @sass-collective/property
 }
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-property-create()` instead of `property.create()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-property-declaration()`.
 
 ### Result
 

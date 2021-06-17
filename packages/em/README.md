@@ -20,7 +20,7 @@ npm install @sass-collective/em
 @use "@sass-collective/em";
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()` instead of `em.convert()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()`.
 
 ## API
 
@@ -40,8 +40,6 @@ npm install @sass-collective/em
 
 ```scss
 @use "@sass-collective/em";
-
-// Function
 
 .foo {
     font-size: em.convert(16, 16);

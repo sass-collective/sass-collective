@@ -20,6 +20,10 @@ npm install @sass-collective/property
 .foo {
     @include custom-properties.declaration(color, custom-properties.create(foo, darkcyan));
 }
+
+.bar {
+    @include declaration(color, custom-properties.create(foo, custom-properties.create(bar, darkcyan)));
+}
 ```
 
 ### Result
@@ -31,6 +35,10 @@ npm install @sass-collective/property
 
 .foo {
     color: var(--foo, darkcyan);
+}
+
+.bar {
+    color: var(--foo, var(--bar, darkcyan));
 }
 ```
 

@@ -20,7 +20,7 @@ npm install @sass-collective/strip-unit
 ```scss
 @use "@sass-collective/strip-unit";
 ```
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()` instead of `strip-unit.strip()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()`.
 
 ## API
 

@@ -20,7 +20,7 @@ npm install @sass-collective/rem
 @use "@sass-collective/rem";
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()` instead of `rem.convert()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()`.
 
 ## API
 
@@ -54,8 +54,6 @@ npm install @sass-collective/rem
 
 ```scss
 @use "@sass-collective/rem";
-
-// Function
 
 .foo {
     font-size: rem.convert(16);

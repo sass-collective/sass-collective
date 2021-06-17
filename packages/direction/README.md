@@ -21,7 +21,7 @@ npm install @sass-collective/direction
 @use "@sass-collective/direction";
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()` instead of `direction.styles()`.
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()`.
 
 ## API
 
