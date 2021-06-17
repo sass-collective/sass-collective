@@ -2,7 +2,7 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
-@use "~@sass-collective/property/css";
+@use "@sass-collective/property/css";
 @use "./functions";
 
 @mixin convert($property, $value, $important: false) {

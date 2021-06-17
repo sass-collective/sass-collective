@@ -5,7 +5,7 @@
 @use "sass:list";
 @use "sass:math";
 @use "sass:meta";
-@use "~@sass-collective/strip-unit";
+@use "@sass-collective/strip-unit";
 @use "./variables";
 
 @function convert($values) {

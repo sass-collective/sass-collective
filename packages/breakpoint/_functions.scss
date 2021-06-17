@@ -3,7 +3,7 @@
 // ============================================================================================= //
 
 @use "sass:string";
-@use "~@sass-collective/strip-unit";
+@use "@sass-collective/strip-unit";
 @use "./variables";
 
 @function set-value($value) {
