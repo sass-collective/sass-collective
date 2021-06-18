@@ -24,8 +24,3 @@
         }
     }
 }
-
-/// @deprecated Use styles() instead.
-@mixin direction($direction: right, $root-selector: null) {
-    @include styles($direction, $root-selector);
-}

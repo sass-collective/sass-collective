@@ -23,14 +23,3 @@
         @include css.declaration($property, $value, $important);
     }
 }
-
-/// @deprecated Use "declaration()" mixin instead.
-@mixin create($property, $value, $important: false) {
-    @include declaration($property, $value, $important);
-}
-
-/// @deprecated Use "create()" mixin instead.
-@mixin prop($property, $value, $important: false) {
-    @include create($property, $value, $important);
-}
-

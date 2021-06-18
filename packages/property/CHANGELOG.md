@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Removed
+
+* global: deprecated `property.scss` file
+* functions: deprecated `create` and `custom-prop` functions
+* mixins: deprecated `create`, `prop` and `create-custom-property` mixins
+
 ## v3.7.1 (2021-06-17)
 
 ### Fixed

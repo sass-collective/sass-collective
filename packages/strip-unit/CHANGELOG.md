@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+* functions: deprecated `strip-unit` function
+
 ## v2.2.0 (2021-05-28)
 
 ### Changed

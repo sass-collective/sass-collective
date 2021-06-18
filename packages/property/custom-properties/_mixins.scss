@@ -32,8 +32,3 @@
 
     @include css.declaration($property, $value, $important);
 }
-
-/// @deprecated Use "declaration()" mixin instead.
-@mixin create-custom-property($custom-prop) {
-    @include declaration($custom-prop);
-}
