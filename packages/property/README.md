@@ -18,31 +18,26 @@ npm install @sass-collective/property
 ## Usage
 
 ```scss
-@use "@sass-collective/property";
 @use "@sass-collective/property/custom-properties";
+@use "@sass-collective/property";
 
 :root {
     @include property.declaration(custom-properties.create(--foo, darkcyan));
+    // --foo: darkcyan;
 }
 
 .foo {
     @include property.declaration(color, custom-properties.create(--foo, darkcyan));
+    // color: var(--foo, darkcyan);
+}
+
+.bar {
+    @include property.declaration(color, darkcyan);
+    // color: darkcyan;
 }
 ```
 
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-property-declaration()`.
-
-### Result
-
-```css
-:root {
-    --foo: darkcyan;
-}
-
-.foo {
-    color: var(--foo, darkcyan);
-}
-```
 
 ## API
 

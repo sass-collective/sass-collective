@@ -15,14 +15,7 @@ npm install @sass-collective/property
 
 .foo {
     @include css.declaration(color, darkcyan);
-}
-```
-
-### Result
-
-```css
-.foo {
-    color: darkcyan;
+    // color: darkcyan;
 }
 ```
 

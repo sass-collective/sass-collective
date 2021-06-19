@@ -52,7 +52,7 @@ You can configure a global prefix for all generated custom properties.
     @include custom-properties.declaration(color, custom-properties.create(bar, darkcyan));
     // color: var(--foo-bar, darkcyan);
 
-    @include custom-properties.declaration(color, custom-properties.create(foo, darkcyan));
+    @include custom-properties.declaration(color, custom-properties.create(--foo, darkcyan));
     // color: var(--foo, darkcyan);
 }
 ```
