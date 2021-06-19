@@ -19,7 +19,11 @@ npm install @sass-collective/strip-unit
 
 ```scss
 @use "@sass-collective/strip-unit";
+
+$value: strip-unit.strip(100px);
+// 100
 ```
+
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-strip-unit-strip()`.
 
 ## API
@@ -29,12 +33,3 @@ npm install @sass-collective/strip-unit
 | Function | Description |
 | --- | --- |
 | `strip($value)` | Return value without the unit. |
-
-## Example
-
-```scss
-@use "@sass-collective/strip-unit";
-
-$value: strip-unit.strip(100px);
-// 100
-```

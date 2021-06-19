@@ -18,6 +18,20 @@ npm install @sass-collective/em
 
 ```scss
 @use "@sass-collective/em";
+
+.foo {
+    font-size: em.convert(16, 16);
+    // font-size: 1em;
+    margin: em.convert(20 30, 16);
+    // margin: 1.25rem 1.875rem;
+}
+
+.bar {
+    @include em.convert(font-size, 16, 16);
+    // font-size: 1em;
+    @include em.convert(margin, 20 30, 16);
+    // margin: 1.25rem 1.875rem;
+}
 ```
 
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()`.
@@ -36,25 +50,3 @@ npm install @sass-collective/em
 | --- | --- |
 | `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em` and optional `!important`. |
 
-## Example
-
-```scss
-@use "@sass-collective/em";
-
-.foo {
-    font-size: em.convert(16, 16);
-    margin: em.convert(20 30, 16);
-
-    @include em.convert(padding, 20 30, 16)
-}
-```
-
-### Result
-
-```css
-.foo {
-    font-size: 1em;
-    margin: 1.25em 1.875em;
-    padding: 1.25em 1.875em;
-}
-```

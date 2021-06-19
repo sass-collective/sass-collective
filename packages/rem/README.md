@@ -18,9 +18,31 @@ npm install @sass-collective/rem
 
 ```scss
 @use "@sass-collective/rem";
+
+.foo {
+    font-size: rem.convert(16);
+    // font-size: 1em;
+    margin: rem.convert(20 30);
+    // margin: 1.25rem 1.875rem;
+}
+
+.bar {
+    @include rem.convert(font-size, 16);
+    // font-size: 1em;
+    @include rem.convert(margin, 20 30);
+    // margin: 1.25rem 1.875rem;
+}
 ```
 
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()`.
+
+### ...custom baseline
+
+```scss
+@use "@sass-collective/rem" with (
+    $baseline: 10px
+);
+```
 
 ## API
 
@@ -41,34 +63,3 @@ npm install @sass-collective/rem
 | Option | Value |
 | --- | --- |
 | `$baseline` | `16px` |
-
-### Custom configuration
-
-```scss
-@use "@sass-collective/rem" with (
-    $baseline: 10px
-);
-```
-
-## Example
-
-```scss
-@use "@sass-collective/rem";
-
-.foo {
-    font-size: rem.convert(16);
-    margin: rem.convert(20 30);
-
-    @include rem.convert(padding, 20 30);
-}
-```
-
-### Result
-
-```css
-.foo {
-    font-size: 1rem;
-    margin: 1.25rem 1.875rem;
-    padding: 1.25rem 1.875rem;
-}
-```
