@@ -19,22 +19,6 @@ npm install @sass-collective/direction
 
 ```scss
 @use "@sass-collective/direction";
-```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()`.
-
-## API
-
-### Mixins
-
-| Mixin | Description |
-| --- | --- |
-| `styles($direction, $root-selector)` | Create direction rule. |
-
-## Example
-
-```scss
-@use "@sass-collective/direction";
 
 .foo {
     margin-left: 20px;
@@ -86,3 +70,13 @@ npm install @sass-collective/direction
     margin-right: 20px;
 }
 ```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-direction-styles()`.
+
+## API
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `styles($direction, $root-selector)` | Create direction rule. |

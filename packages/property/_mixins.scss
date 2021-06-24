@@ -7,9 +7,9 @@
 
 ///
 /// @example
-///     @include declaration(custom-properties.create(foo, darkcyan));
+///     @include declaration(custom-properties.create(--foo, darkcyan));
 ///     // --foo: darkcyan;
-///     @include declaration(color, custom-properties.create(foo, darkcyan));
+///     @include declaration(color, custom-properties.create(--foo, darkcyan));
 ///     // color: var(--foo, darkcyan);
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;

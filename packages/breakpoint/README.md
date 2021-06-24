@@ -19,41 +19,6 @@ npm install @sass-collective/breakpoint
 
 ```scss
 @use "@sass-collective/breakpoint";
-```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.
-
-## API
-
-### Mixins
-
-| Mixin | Description |
-| --- | --- |
-| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
-
-### Options
-
-| Option | Value | Description |
-| --- | --- | --- |
-| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
-| `$very-small` | `320` | iPhone in portrait mode |
-| `$small` | `480` | iPhone in landscape mode |
-| `$medium` | `768` | iPad in portrait mode |
-| `$large` | `960` | Desktop |
-| `$wide` | `1200` | Wide screen |
-
-### Custom configuration
-
-```scss
-@use "@sass-collective/breakpoint" with (
-    $large: 1024
-);
-```
-
-## Example
-
-```scss
-@use "@sass-collective/breakpoint";
 
 .foo {
     // default min-width
@@ -109,3 +74,32 @@ npm install @sass-collective/breakpoint
     }
 }
 ```
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.
+
+### Custom configuration
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $large: 1024
+);
+```
+
+## API
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
+
+### Options
+
+| Option | Value | Description |
+| --- | --- | --- |
+| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
+| `$very-small` | `320` | iPhone in portrait mode |
+| `$small` | `480` | iPhone in landscape mode |
+| `$medium` | `768` | iPad in portrait mode |
+| `$large` | `960` | Desktop |
+| `$wide` | `1200` | Wide screen |

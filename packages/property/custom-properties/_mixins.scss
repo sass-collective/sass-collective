@@ -7,11 +7,11 @@
 
 ///
 /// @example
-///     @include declaration(custom-properties.create(foo, darkcyan));
+///     @include declaration(custom-properties.create(--foo, darkcyan));
 ///     // --foo: darkcyan;
-///     @include declaration(color, custom-properties.create(foo, darkcyan));
+///     @include declaration(color, custom-properties.create(--foo, darkcyan));
 ///     // color: var(--foo, darkcyan);
-///     @include declaration(color, custom-properties.create(foo, custom-properties.create(bar, darkcyan)));
+///     @include declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
 ///     // color: var(--foo, var(--bar, darkcyan));
 ///
 @mixin declaration($property, $custom-prop: null, $important: false) {
