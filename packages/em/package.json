@@ -16,11 +16,11 @@
         "*.scss"
     ],
     "keywords": [
-        "css",
-        "em",
         "sass",
-        "front-end",
-        "module system"
+        "em",
+        "convert",
+        "css",
+        "front-end"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
