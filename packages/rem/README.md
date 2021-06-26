@@ -79,6 +79,12 @@ You can use the fallback name if your namespace is not enough explicit for what 
     $baseline: 10px
 );
 
+html,
+body {
+    @include rem.baseline;
+    // font-size: 62.5%;
+}
+
 .foo {
     font-size: rem.convert(16);
     // font-size: 1.6rem;
@@ -105,4 +111,5 @@ You can use the fallback name if your namespace is not enough explicit for what 
 | Mixin | Description |
 | --- | --- |
 | `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
+| `baseline($percentage)` | Automatically add the correct baseline based on the option. |
 | `rem($property, $value, $important)` | Fallback name to `convert()` mixin. |

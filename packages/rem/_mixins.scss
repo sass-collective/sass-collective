@@ -2,11 +2,25 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:math";
 @use "@sass-collective/property/css";
+@use "@sass-collective/strip-unit";
 @use "./functions";
+@use "./variables";
 
 @mixin convert($property, $value, $important: false) {
     @include css.declaration($property, functions.convert($value), $important);
+}
+
+///
+/// Automatically add the correct baseline based on the option.
+///
+/// @example
+///     @include baseline;
+///     // font-size: 100%;
+///
+@mixin baseline($percentage: 100%) {
+    @include css.declaration(font-size, math.div($percentage, 16) * strip-unit.strip(variables.$baseline));
 }
 
 ///
