@@ -23,14 +23,14 @@ npm install @sass-collective/em
     font-size: em.convert(16, 16);
     // font-size: 1em;
     margin: em.convert(20 30, 16);
-    // margin: 1.25rem 1.875rem;
+    // margin: 1.25em 1.875em;
 }
 
 .bar {
     @include em.convert(font-size, 16, 16);
     // font-size: 1em;
     @include em.convert(margin, 20 30, 16);
-    // margin: 1.25rem 1.875rem;
+    // margin: 1.25em 1.875em;
 }
 ```
 

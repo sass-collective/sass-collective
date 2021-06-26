@@ -21,14 +21,14 @@ npm install @sass-collective/rem
 
 .foo {
     font-size: rem.convert(16);
-    // font-size: 1em;
+    // font-size: 1rem;
     margin: rem.convert(20 30);
     // margin: 1.25rem 1.875rem;
 }
 
 .bar {
     @include rem.convert(font-size, 16);
-    // font-size: 1em;
+    // font-size: 1rem;
     @include rem.convert(margin, 20 30);
     // margin: 1.25rem 1.875rem;
 }
