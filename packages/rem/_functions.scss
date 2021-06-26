@@ -33,3 +33,14 @@
 
     @return $result;
 }
+
+///
+/// Fallback function in case if your namespace if not enough explicit.
+///
+/// @example
+///     @use "@sass-collective/rem" as foo;
+///     // font-size: foo.rem(16);
+///
+@function rem($values) {
+    @return convert($values);
+}

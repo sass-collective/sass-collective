@@ -36,30 +36,73 @@ npm install @sass-collective/rem
 
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()`.
 
-### ...custom baseline
+## Namespace
+
+```scss
+@use "@sass-collective/rem" as foo;
+
+.foo {
+    font-size: foo.convert(16);
+    // font-size: 1rem;
+}
+
+.bar {
+    @include foo.convert(font-size, 16);
+    // font-size: 1rem;
+}
+```
+
+### Fallback name
+
+You can use the fallback name if your namespace is not enough explicit for what ever reason!
+
+```scss
+@use "@sass-collective/rem" as foo;
+
+.foo {
+    font-size: foo.rem(16);
+    // font-size: 1rem;
+}
+
+.bar {
+    @include foo.rem(font-size, 16);
+    // font-size: 1rem;
+}
+```
+
+## Options
+
+### Baseline
 
 ```scss
 @use "@sass-collective/rem" with (
     $baseline: 10px
 );
+
+.foo {
+    font-size: rem.convert(16);
+    // font-size: 1.6rem;
+}
 ```
 
 ## API
-
-### Functions
-
-| Function | Description |
-| --- | --- |
-| `convert($value)` | Convert `px` unit to `rem`. |
-
-### Mixins
-
-| Mixin | Description |
-| --- | --- |
-| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
 
 ### Options
 
 | Option | Value |
 | --- | --- |
 | `$baseline` | `16px` |
+
+### Functions
+
+| Function | Description |
+| --- | --- |
+| `convert($value)` | Convert `px` unit to `rem`. |
+| `rem($value)` | Fallback name to `convert()` function. |
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
+| `rem($property, $value, $important)` | Fallback name to `convert()` mixin. |
