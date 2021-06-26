@@ -89,6 +89,11 @@ body {
     font-size: rem.convert(16);
     // font-size: 1.6rem;
 }
+
+.bar {
+    @include rem.convert(font-size, 16);
+    // font-size: 1.6rem;
+}
 ```
 
 ## API
@@ -111,5 +116,5 @@ body {
 | Mixin | Description |
 | --- | --- |
 | `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
-| `baseline($percentage)` | Automatically add the correct baseline based on the option. |
+| `baseline($percentage)` | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
 | `rem($property, $value, $important)` | Fallback name to `convert()` mixin. |
