@@ -8,3 +8,14 @@
 @mixin convert($property, $value, $context, $important: false) {
     @include css.declaration($property, functions.convert($value, $context), $important);
 }
+
+///
+/// Fallback mixin in case if your namespace if not enough explicit.
+///
+/// @example
+///     @use "@sass-collective/em" as foo;
+///     // @include foo.em(font-size, 16, 16);
+///
+@mixin em($property, $value, $context, $important: false) {
+    @include convert($property, $value, $context, $important);
+}

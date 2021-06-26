@@ -32,3 +32,15 @@
 
     @return $result;
 }
+
+///
+/// Fallback function in case if your namespace if not enough explicit.
+///
+/// @example
+///     @use "@sass-collective/em" as foo;
+///     // font-size: foo.em(16, 16);
+///
+@function em($values, $context) {
+    @return convert($values, $context);
+}
+
