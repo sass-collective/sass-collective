@@ -9,22 +9,17 @@
 
 @function convert($values, $context) {
     $result: ();
+    $context: strip-unit.strip($context);
 
     @each $value in $values {
-        @if not math.is-unitless($value) and math.unit($value) != "px" {
-            @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead.";
+        @if meta.type-of($value) == "number" and not math.is-unitless($value) and math.unit($value) != "px" {
+            @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead or without unit.";
+        } @else if meta.type-of($value) == "number" and not math.is-unitless($value) {
+            $value: strip-unit.strip($value);
         }
 
-        $value: strip-unit.strip($value);
-
-        @if $value == 0 {
-            $value: 0;
-        } @else {
-            $value: math.div($value, strip-unit.strip($context)) * 1em;
-        }
-
-        @if meta.type-of($values) == "number" {
-            $result: $value;
+        @if meta.type-of($value) == "number" and $value != 0 {
+            $result: list.append($result, math.div($value, $context) * 1em);
         } @else {
             $result: list.append($result, $value);
         }

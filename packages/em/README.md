@@ -24,6 +24,8 @@ npm install @sass-collective/em
     // font-size: 1em;
     margin: em.convert(20 30, 16);
     // margin: 1.25em 1.875em;
+    border: em.convert(1px solid darkcyan, 16);
+    // border: 0.0625em solid darkcyan;
 }
 
 .bar {
@@ -31,6 +33,8 @@ npm install @sass-collective/em
     // font-size: 1em;
     @include em.convert(margin, 20 30, 16);
     // margin: 1.25em 1.875em;
+    @include em.convert(border, 1px solid darkcyan, 16);
+    // border: 0.0625em solid darkcyan;
 }
 ```
 

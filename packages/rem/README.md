@@ -24,6 +24,8 @@ npm install @sass-collective/rem
     // font-size: 1rem;
     margin: rem.convert(20 30);
     // margin: 1.25rem 1.875rem;
+    border: rem.convert(1px solid darkcyan);
+    // border: 0.0625rem solid darkcyan;
 }
 
 .bar {
@@ -31,6 +33,8 @@ npm install @sass-collective/rem
     // font-size: 1rem;
     @include rem.convert(margin, 20 30);
     // margin: 1.25rem 1.875rem;
+    @include rem.convert(border, 1px solid darkcyan);
+    // border: 0.0625rem solid darkcyan;
 }
 ```
 

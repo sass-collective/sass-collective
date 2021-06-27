@@ -10,22 +10,17 @@
 
 @function convert($values) {
     $result: ();
+    $baseline: strip-unit.strip(variables.$baseline);
 
     @each $value in $values {
-        @if not math.is-unitless($value) and math.unit($value) != "px" {
-            @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead.";
+        @if meta.type-of($value) == "number" and not math.is-unitless($value) and math.unit($value) != "px" {
+            @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead or without unit.";
+        } @else if meta.type-of($value) == "number" and not math.is-unitless($value) {
+            $value: strip-unit.strip($value);
         }
 
-        $value: strip-unit.strip($value);
-
-        @if $value == 0 {
-            $value: 0;
-        } @else {
-            $value: math.div($value, strip-unit.strip(variables.$baseline)) * 1rem;
-        }
-
-        @if meta.type-of($values) == "number" {
-            $result: $value;
+        @if meta.type-of($value) == "number" and $value != 0 {
+            $result: list.append($result, math.div($value, $baseline) * 1rem);
         } @else {
             $result: list.append($result, $value);
         }
