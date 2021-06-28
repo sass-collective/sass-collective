@@ -16,6 +16,8 @@ npm install @sass-collective/em
 
 ## Usage
 
+> **TIP:** you can declare each value without `px` unit, but be careful, if you use unit, only `px` will be allowed!
+
 ```scss
 @use "@sass-collective/em";
 
