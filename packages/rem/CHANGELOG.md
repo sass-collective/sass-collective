@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v1.7.0 (2021-06-28)
+
 ### Added
 
 * global: `rem` mixin and function fallback name, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/rem/README.md#fallback-name)_
