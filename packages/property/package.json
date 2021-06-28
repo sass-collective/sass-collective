@@ -16,12 +16,11 @@
         "custom-properties/**/*"
     ],
     "keywords": [
-        "css",
+        "sass",
         "property",
         "custom properties",
-        "sass",
-        "front-end",
-        "module system"
+        "css",
+        "front-end"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
