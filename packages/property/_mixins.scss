@@ -11,6 +11,8 @@
 ///     // --foo: darkcyan;
 ///     @include declaration(color, custom-properties.create(--foo, darkcyan));
 ///     // color: var(--foo, darkcyan);
+///     @include declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
+///     // color: var(--foo, var(--bar, darkcyan));
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;
 ///
