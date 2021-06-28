@@ -14,12 +14,11 @@
         "*.scss"
     ],
     "keywords": [
-        "css",
+        "sass",
         "strip",
         "unit",
-        "sass",
-        "front-end",
-        "module system"
+        "css",
+        "front-end"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",

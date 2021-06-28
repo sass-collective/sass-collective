@@ -15,11 +15,10 @@
         "*.scss"
     ],
     "keywords": [
-        "css",
-        "breakpoint",
         "sass",
-        "front-end",
-        "module system"
+        "breakpoint",
+        "css",
+        "front-end"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",

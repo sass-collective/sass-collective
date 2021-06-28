@@ -14,15 +14,14 @@
         "*.scss"
     ],
     "keywords": [
-        "css",
+        "sass",
+        "direction",
         "left-to-right",
         "right-to-left",
         "ltr",
         "rtl",
-        "direction",
-        "sass",
-        "front-end",
-        "module system"
+        "css",
+        "front-end"
     ],
     "author": "The Sass Collective Authors",
     "license": "MIT",
