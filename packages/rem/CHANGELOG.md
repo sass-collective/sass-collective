@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Added
+
+* global: `rem` mixin and function fallback name, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/rem/README.md#fallback-name)_
+* global: `baseline` mixin and function fallback name, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/rem/README.md#baseline)_
+* global: multiple mixed values support, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/rem/README.md#usage)_
+
 ## v1.6.1 (2021-06-17)
 
 ### Fixed

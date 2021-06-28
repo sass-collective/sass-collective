@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+* global: `em` mixin and function fallback name, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/em/README.md#fallback-name)_
+* global: multiple mixed values support, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/em/README.md#usage)_
+
 ## v1.6.1 (2021-06-17)
 
 ### Fixed
