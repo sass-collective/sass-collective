@@ -28,6 +28,8 @@ npm install @sass-collective/rem
     // margin: 1.25rem 1.875rem;
     border: rem.convert(1px solid darkcyan);
     // border: 0.0625rem solid darkcyan;
+    box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
+    // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
 }
 
 .bar {

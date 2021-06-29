@@ -8,7 +8,18 @@
 @use "@sass-collective/strip-unit";
 @use "./variables";
 
-@function convert($values) {
+///
+/// @example
+///     font-size: rem.convert(16px);
+///     // font-size: 1rem;
+///     margin: rem.convert(20px 30px);
+///     // margin: 1.25rem 1.875rem;
+///     border: rem.convert(1px solid darkcyan);
+///     // border: 0.0625rem solid darkcyan;
+///     box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
+///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+///
+@function convert($values...) {
     $result: ();
     $baseline: strip-unit.strip(variables.$baseline);
     $separator: list.separator($values);
@@ -23,7 +34,7 @@
         @if meta.type-of($value) == "number" and $value != 0 {
             $result: list.append($result, math.div($value, $baseline) * 1rem);
         } @else if meta.type-of($value) == "list" {
-            $result: list.append($result, convert($value), $separator);
+            $result: list.append($result, convert($value...), $separator);
         } @else {
             $result: list.append($result, $value);
         }
@@ -39,6 +50,6 @@
 ///     @use "@sass-collective/rem" as foo;
 ///     // font-size: foo.rem(16px);
 ///
-@function rem($values) {
-    @return convert($values);
+@function rem($values...) {
+    @return convert($values...);
 }
