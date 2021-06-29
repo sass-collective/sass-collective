@@ -1,6 +1,12 @@
-# Release Notes
+# Release notes
 
 ## Unreleased
+
+## v1.3.1 (2021-06-30)
+
+### Removed
+
+* global: unneeded `@use`
 
 ## v1.3.0 (2021-06-17)
 

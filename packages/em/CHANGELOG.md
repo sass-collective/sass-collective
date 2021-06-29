@@ -1,6 +1,8 @@
-# Release Notes
+# Release notes
 
 ## Unreleased
+
+## v1.8.0 (2021-06-30)
 
 ### Added
 
