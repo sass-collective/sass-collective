@@ -118,13 +118,13 @@ body {
 
 | Function | Description |
 | --- | --- |
-| `convert($value)` | Convert `px` unit to `rem`. |
-| `rem($value)` | Fallback name to `convert()` function. |
+| `convert($values...)` | Convert `px` unit to `rem`. |
+| `rem($values...)` | Fallback name of `convert()` function. |
 
 ### Mixins
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem` and optional `!important`. |
+| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem`, with optional `!important`. |
 | `baseline($percentage)` | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
 | `rem($property, $value, $important)` | Fallback name to `convert()` mixin. |

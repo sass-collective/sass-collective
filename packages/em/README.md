@@ -84,12 +84,12 @@ You can use the fallback name if your namespace is not enough explicit for what 
 
 | Function | Description |
 | --- | --- |
-| `convert($value, $context)` | Convert `px` unit to `em`, with optional context. |
-| `em($value)` | Fallback name to `convert()` function. |
+| `convert($values, $context)` | Convert `px` unit to `em`, with optional context. |
+| `em($values)` | Fallback name of `convert()` function. |
 
 ### Mixins
 
 | Mixin | Description |
 | --- | --- |
-| `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em` and optional `!important`. |
+| `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em`, with optional `!important`. |
 | `em($property, $value, $context, $important)` | Fallback name to `convert()` mixin. |
