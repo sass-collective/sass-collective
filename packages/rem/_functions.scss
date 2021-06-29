@@ -37,7 +37,7 @@
 ///
 /// @example
 ///     @use "@sass-collective/rem" as foo;
-///     // font-size: foo.rem(16);
+///     // font-size: foo.rem(16px);
 ///
 @function rem($values) {
     @return convert($values);

@@ -10,9 +10,9 @@
 
 ///
 /// @example
-///     @include rem.convert(font-size, 16);
+///     @include rem.convert(font-size, 16px);
 ///     // font-size: 1rem;
-///     @include rem.convert(margin, 20 30);
+///     @include rem.convert(margin, 20px 30px);
 ///     // margin: 1.25rem 1.875rem;
 ///     @include rem.convert(border, 1px solid darkcyan);
 ///     // border: 0.0625rem solid darkcyan;
@@ -39,7 +39,7 @@
 ///
 /// @example
 ///     @use "@sass-collective/rem" as foo;
-///     // @include foo.rem(font-size, 16);
+///     // @include foo.rem(font-size, 16px);
 ///
 @mixin rem($property, $value, $important: false) {
     @include convert($property, $value, $important);

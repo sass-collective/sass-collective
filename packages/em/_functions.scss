@@ -36,7 +36,7 @@
 ///
 /// @example
 ///     @use "@sass-collective/em" as foo;
-///     // font-size: foo.em(16, 16);
+///     // font-size: foo.em(16px, 16px);
 ///
 @function em($values, $context) {
     @return convert($values, $context);

@@ -22,18 +22,18 @@ npm install @sass-collective/rem
 @use "@sass-collective/rem";
 
 .foo {
-    font-size: rem.convert(16);
+    font-size: rem.convert(16px);
     // font-size: 1rem;
-    margin: rem.convert(20 30);
+    margin: rem.convert(20px 30px);
     // margin: 1.25rem 1.875rem;
     border: rem.convert(1px solid darkcyan);
     // border: 0.0625rem solid darkcyan;
 }
 
 .bar {
-    @include rem.convert(font-size, 16);
+    @include rem.convert(font-size, 16px);
     // font-size: 1rem;
-    @include rem.convert(margin, 20 30);
+    @include rem.convert(margin, 20px 30px);
     // margin: 1.25rem 1.875rem;
     @include rem.convert(border, 1px solid darkcyan);
     // border: 0.0625rem solid darkcyan;
@@ -50,12 +50,12 @@ npm install @sass-collective/rem
 @use "@sass-collective/rem" as foo;
 
 .foo {
-    font-size: foo.convert(16);
+    font-size: foo.convert(16px);
     // font-size: 1rem;
 }
 
 .bar {
-    @include foo.convert(font-size, 16);
+    @include foo.convert(font-size, 16px);
     // font-size: 1rem;
 }
 ```
@@ -68,12 +68,12 @@ You can use the fallback name if your namespace is not enough explicit for what 
 @use "@sass-collective/rem" as foo;
 
 .foo {
-    font-size: foo.rem(16);
+    font-size: foo.rem(16px);
     // font-size: 1rem;
 }
 
 .bar {
-    @include foo.rem(font-size, 16);
+    @include foo.rem(font-size, 16px);
     // font-size: 1rem;
 }
 ```
@@ -94,12 +94,12 @@ body {
 }
 
 .foo {
-    font-size: rem.convert(16);
+    font-size: rem.convert(16px);
     // font-size: 1.6rem;
 }
 
 .bar {
-    @include rem.convert(font-size, 16);
+    @include rem.convert(font-size, 16px);
     // font-size: 1.6rem;
 }
 ```

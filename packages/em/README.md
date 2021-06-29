@@ -22,23 +22,23 @@ npm install @sass-collective/em
 @use "@sass-collective/em";
 
 .foo {
-    font-size: em.convert(16, 16);
+    font-size: em.convert(16px, 16px);
     // font-size: 1em;
-    margin: em.convert(20 30, 16);
+    margin: em.convert(20px 30px, 16px);
     // margin: 1.25em 1.875em;
-    border: em.convert(1px solid darkcyan, 16);
+    border: em.convert(1px solid darkcyan, 16px);
     // border: 0.0625em solid darkcyan;
 }
 
 .bar {
-    @include em.convert(font-size, 16, 16);
+    @include em.convert(font-size, 16px, 16px);
     // font-size: 1em;
-    @include em.convert(margin, 20 30, 16);
+    @include em.convert(margin, 20px 30px, 16px);
     // margin: 1.25em 1.875em;
-    @include em.convert(border, 1px solid darkcyan, 16);
+    @include em.convert(border, 1px solid darkcyan, 16px);
     // border: 0.0625em solid darkcyan;
-    @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
-    // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
+    @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
+    // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75); - Use parentheses for declare comma separated values list.
 }
 ```
 
@@ -50,12 +50,12 @@ npm install @sass-collective/em
 @use "@sass-collective/em" as foo;
 
 .foo {
-    font-size: foo.convert(16, 16);
+    font-size: foo.convert(16px, 16px);
     // font-size: 1em;
 }
 
 .bar {
-    @include foo.convert(font-size, 16, 16);
+    @include foo.convert(font-size, 16px, 16px);
     // font-size: 1em;
 }
 ```
@@ -68,12 +68,12 @@ You can use the fallback name if your namespace is not enough explicit for what 
 @use "@sass-collective/em" as foo;
 
 .foo {
-    font-size: foo.em(16, 16);
+    font-size: foo.em(16px, 16px);
     // font-size: 1em;
 }
 
 .bar {
-    @include foo.em(font-size, 16, 16);
+    @include foo.em(font-size, 16px, 16px);
     // font-size: 1em;
 }
 ```
