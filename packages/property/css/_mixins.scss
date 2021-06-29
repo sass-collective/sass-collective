@@ -6,6 +6,10 @@
 /// @example
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;
+///     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+///     // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
+///     @include css.declaration(color, darkcyan, true);
+///     // color: darkcyan !important;
 ///
 @mixin declaration($property, $value, $important: false) {
     $is-important: if($important, "!important", "");
