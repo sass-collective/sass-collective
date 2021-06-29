@@ -11,6 +11,7 @@
 @function convert($values) {
     $result: ();
     $baseline: strip-unit.strip(variables.$baseline);
+    $separator: list.separator($values);
 
     @each $value in $values {
         @if meta.type-of($value) == "number" and not math.is-unitless($value) and math.unit($value) != "px" {
@@ -21,6 +22,8 @@
 
         @if meta.type-of($value) == "number" and $value != 0 {
             $result: list.append($result, math.div($value, $baseline) * 1rem);
+        } @else if meta.type-of($value) == "list" {
+            $result: list.append($result, convert($value), $separator);
         } @else {
             $result: list.append($result, $value);
         }

@@ -5,6 +5,17 @@
 @use "@sass-collective/property/css";
 @use "./functions";
 
+///
+/// @example
+///     @include em.convert(font-size, 16, 16);
+///     // font-size: 1em;
+///     @include em.convert(margin, 20 30, 16);
+///     // margin: 1.25em 1.875em;
+///     @include em.convert(border, 1px solid darkcyan, 16);
+///     // border: 0.0625em solid darkcyan;
+///     @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+///     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
+///
 @mixin convert($property, $value, $context, $important: false) {
     @include css.declaration($property, functions.convert($value, $context), $important);
 }

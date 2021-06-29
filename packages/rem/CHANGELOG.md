@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+* global: comma separated values support, see _[documentation](https://github.com/sass-collective/sass-collective/blob/master/packages/rem/README.md#usage)_
+
 ## v1.7.0 (2021-06-28)
 
 ### Added
