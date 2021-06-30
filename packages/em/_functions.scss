@@ -8,22 +8,33 @@
 @use "@sass-collective/strip-unit";
 
 ///
-/// @example
+/// @example scss
 ///     font-size: em.convert(16px, 16px);
 ///     // font-size: 1em;
 ///     margin: em.convert(20px 30px, 16px);
 ///     // margin: 1.25em 1.875em;
 ///     border: em.convert(1px solid darkcyan, 16px);
 ///     // border: 0.0625em solid darkcyan;
-///     box-shadow: em.convert((0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
+///     box-shadow: em.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75), 16px);
 ///     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
 ///
-@function convert($values, $context) {
+/// @param {arglist} $values - List of values.
+///     Be careful, the last element must be the `em` context, a {number} in pixel.
+///
+@function convert($values...) {
     $result: ();
-    $context: strip-unit.strip($context);
+    $context: list.nth($values, -1);
     $separator: list.separator($values);
 
-    @each $value in $values {
+    @if meta.type-of($context) == "number" and not math.is-unitless($context) and math.unit($context) != "px" {
+        @error "Invalid unit on value `#{$context}`. Choose value with `px` unit instead or without unit.";
+    } @else {
+        $context: strip-unit.strip($context);
+    }
+
+    @for $item from 1 through list.length($values) - 1 {
+        $value: list.nth($values, $item);
+
         @if meta.type-of($value) == "number" and not math.is-unitless($value) and math.unit($value) != "px" {
             @error "Invalid unit on value `#{$value}`. Choose value with `px` unit instead or without unit.";
         } @else if meta.type-of($value) == "number" and not math.is-unitless($value) {
@@ -33,7 +44,8 @@
         @if meta.type-of($value) == "number" and $value != 0 {
             $result: list.append($result, math.div($value, $context) * 1em);
         } @else if meta.type-of($value) == "list" {
-            $result: list.append($result, convert($value, $context), $separator);
+            $value: list.append($value, $context);
+            $result: list.append($result, convert($value...), $separator);
         } @else {
             $result: list.append($result, $value);
         }
@@ -49,7 +61,7 @@
 ///     @use "@sass-collective/em" as foo;
 ///     // font-size: foo.em(16px, 16px);
 ///
-@function em($values, $context) {
-    @return convert($values, $context);
+@function em($values...) {
+    @return convert($values...);
 }
 
