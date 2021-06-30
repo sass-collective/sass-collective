@@ -7,6 +7,17 @@
 @use "sass:meta";
 @use "@sass-collective/strip-unit";
 
+///
+/// @example
+///     font-size: em.convert(16px, 16px);
+///     // font-size: 1em;
+///     margin: em.convert(20px 30px, 16px);
+///     // margin: 1.25em 1.875em;
+///     border: em.convert(1px solid darkcyan, 16px);
+///     // border: 0.0625em solid darkcyan;
+///     box-shadow: em.convert((0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
+///     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
+///
 @function convert($values, $context) {
     $result: ();
     $context: strip-unit.strip($context);

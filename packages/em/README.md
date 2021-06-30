@@ -28,6 +28,8 @@ npm install @sass-collective/em
     // margin: 1.25em 1.875em;
     border: em.convert(1px solid darkcyan, 16px);
     // border: 0.0625em solid darkcyan;
+    box-shadow: em.convert((0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
+    // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75); - Use parentheses for declare comma separated values list.
 }
 
 .bar {
