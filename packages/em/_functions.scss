@@ -26,8 +26,12 @@
     $context: list.nth($values, -1);
     $separator: list.separator($values);
 
-    @if meta.type-of($context) == "number" and not math.is-unitless($context) and math.unit($context) != "px" {
-        @error "Invalid unit on value `#{$context}`. Choose value with `px` unit instead or without unit.";
+    @if list.length($values) == 1 {
+        @error "Context value missing for `em` conversion. Choose a number as the last value in the list.";
+    } @else if meta.type-of($context) != "number" {
+        @error "Invalid `#{meta.type-of($context)}` type for context value. Choose a number type instead.";
+    } @else if meta.type-of($context) == "number" and not math.is-unitless($context) and math.unit($context) != "px" {
+        @error "Invalid unit `#{math.unit($context)}` on value `#{$context}`. Choose value with `px` unit instead or without unit.";
     } @else {
         $context: strip-unit.strip($context);
     }
