@@ -6,11 +6,9 @@
 @use "sass:meta";
 
 @function strip($value) {
-    @if meta.type-of($value) == "string" {
+    @if meta.type-of($value) != "number" {
         @error "Invalid `#{meta.type-of($value)}` type. Choose a number type instead.";
-    }
-
-    @if meta.type-of($value) == "number" and not math.is-unitless($value) {
+    } @else if meta.type-of($value) == "number" and not math.is-unitless($value) {
         @return math.div($value, ($value * 0 + 1));
     }
 
