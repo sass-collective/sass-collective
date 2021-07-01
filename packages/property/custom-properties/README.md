@@ -29,11 +29,13 @@ npm install @sass-collective/property
 }
 ```
 
-## ...with prefix
+## Options
+
+### Prefix
 
 You can configure a global prefix for all generated custom properties.
 
-> **Tips:** you still can use custom name when the prefix is enabled, you just need to keep the `--` for the varname.
+> **Tips:** you still can use custom name, even the prefix option is enabled, you just need to keep the `--` for the varname.
 
 ```scss
 @use "@sass-collective/property/custom-properties" with (
@@ -43,7 +45,6 @@ You can configure a global prefix for all generated custom properties.
 :root {
     @include custom-properties.declaration(custom-properties.create(bar, darkcyan));
     // --foo-bar: darkcyan;
-
     @include custom-properties.declaration(custom-properties.create(--foo, darkcyan));
     // --foo: darkcyan;
 }
@@ -51,7 +52,6 @@ You can configure a global prefix for all generated custom properties.
 .foo {
     @include custom-properties.declaration(color, custom-properties.create(bar, darkcyan));
     // color: var(--foo-bar, darkcyan);
-
     @include custom-properties.declaration(color, custom-properties.create(--foo, darkcyan));
     // color: var(--foo, darkcyan);
 }
