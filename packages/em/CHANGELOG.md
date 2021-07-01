@@ -8,6 +8,11 @@
 
 * global: `arglist` support on `convert()` function
 
+### Changed
+
+* deps: bump to `@sass-collective/property` version `4.0.0`
+* deps: bump to `@sass-collective/strip-unit` version `3.0.0`
+
 ## v1.8.0 (2021-06-30)
 
 ### Added

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v3.0.0 (2021-07-01)
+
 ### Removed
 
 * functions: deprecated `direction` mixin

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v1.4.0 (2021-07-01)
+
+### Changed
+
+* deps: bump to `@sass-collective/strip-unit` version `3.0.0`
+
 ## v1.3.1 (2021-06-30)
 
 ### Removed

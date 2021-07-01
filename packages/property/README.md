@@ -48,3 +48,11 @@ npm install @sass-collective/property
 | Mixin | Description |
 | --- | --- |
 | `declaration($property, $value, $important)` | Declare CSS property, with optional `!important`. |
+
+## Packages
+
+| Package |  Description |
+| --- | --- |
+| [`@sass-collective/property/css`](https://github.com/sass-collective/sass-collective/blob/master/packages/property/css) | Declare CSS properties. | 
+| [`@sass-collective/property/custom-properties`](https://github.com/sass-collective/sass-collective/blob/master/packages/property/custom-properties) | Declare CSS Custom Properties. |
+
