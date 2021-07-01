@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/strip-unit",
-    "version": "2.2.0",
+    "version": "3.0.0",
     "description": "Strip unit on CSS value.",
     "main": "index.scss",
     "engines": {
