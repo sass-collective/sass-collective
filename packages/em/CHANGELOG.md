@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.0.0 (2021-07-01)
+
+### Added
+
+* global: `arglist` support on `convert()` function
+
 ## v1.8.0 (2021-06-30)
 
 ### Added

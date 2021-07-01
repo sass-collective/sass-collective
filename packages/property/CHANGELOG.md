@@ -1,6 +1,12 @@
-# Release Notes
+# Release notes
 
 ## Unreleased
+
+## v4.0.0 (2021-07-01)
+
+### Added
+
+* custom properties: add `$prefix`
 
 ### Removed
 

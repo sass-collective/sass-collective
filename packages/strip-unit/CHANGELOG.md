@@ -1,6 +1,12 @@
-# Release Notes
+# Release notes
 
 ## Unreleased
+
+## v3.0.0 (2021-07-01)
+
+### Added
+
+* functions: update conditional errors
 
 ### Removed
 
