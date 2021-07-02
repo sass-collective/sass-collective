@@ -4,6 +4,7 @@
 
 @use "../css";
 @use "./functions";
+@use "./variables";
 
 ///
 /// @example
@@ -31,4 +32,10 @@
     }
 
     @include css.declaration($property, $value, $important);
+}
+
+@mixin config($prefix: null) {
+    @if $prefix {
+        variables.$prefix: $prefix;
+    }
 }
