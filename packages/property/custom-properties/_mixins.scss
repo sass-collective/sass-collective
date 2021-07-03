@@ -34,6 +34,11 @@
     @include css.declaration($property, $value, $important);
 }
 
+///
+/// @example
+///     @include config("foo");
+///     // variables.$prefix: "foo";
+///
 @mixin config($prefix: null) {
     @if $prefix {
         variables.$prefix: $prefix;

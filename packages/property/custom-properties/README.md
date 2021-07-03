@@ -57,6 +57,19 @@ You can configure a global prefix for all generated custom properties.
 }
 ```
 
+#### Top-level config override
+
+If the `$prefix` variable are already used on top-level, by another dependency for example, you can't 
+use `@use ... with` anymore, because the module can only be setup once, this is Sass restriction with "Module System", 
+but a solution exist for override the main configuration, with a mixin!
+
+```scss
+@include config("foo");
+// variables.$prefix: "foo";
+```
+
+Call this `@include` between the top-level configuration and before the first `@use "@sass-collective/property/custom-properties";` in your project.
+
 ## API
 
 ### Variables
@@ -70,3 +83,4 @@ You can configure a global prefix for all generated custom properties.
 | Mixin | Description |
 | --- | --- |
 | `declaration($property, $custom-prop, $important)` | Declare CSS Custom Properties, with optional `!important`. |
+| `config($prefix)` | Override top-level `with` configuration. |
