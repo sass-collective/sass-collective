@@ -2,11 +2,17 @@
 
 ## Unreleased
 
+## v4.1.0 (2021-07-03)
+
+### Added
+
+* custom properties: `config` mixin for override top-level setup
+
 ## v4.0.0 (2021-07-01)
 
 ### Added
 
-* custom properties: add `$prefix`
+* custom properties: `$prefix` option
 
 ### Removed
 
