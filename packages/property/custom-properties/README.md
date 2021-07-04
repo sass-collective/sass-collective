@@ -39,7 +39,7 @@ You can configure a global prefix for all generated custom properties.
 
 ```scss
 @use "@sass-collective/property/custom-properties" with (
-    $prefix: 'foo'
+    $prefix: "foo"
 );
 
 :root {
