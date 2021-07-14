@@ -6,13 +6,13 @@
         "prepare": "husky install"
     },
     "engines": {
-        "node": ">=10.0.0",
+        "node": ">=12.0.0",
         "npm": ">=7.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^12.1.4",
         "@commitlint/config-conventional": "^12.1.4",
-        "husky": "^7.0.0",
+        "husky": "^7.0.1",
         "lerna": "^4.0.0"
     },
     "author": "The Sass Collective Authors",
