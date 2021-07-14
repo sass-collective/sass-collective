@@ -1,6 +1,6 @@
 # Sass Collective
 
-The Sass Collective Collection.
+The Sass Collective collection.
 
 ## Packages
 
