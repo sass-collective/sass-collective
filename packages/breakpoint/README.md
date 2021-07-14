@@ -87,15 +87,9 @@ npm install @sass-collective/breakpoint
 
 ## API
 
-### Mixins
+### Variables
 
-| Mixin | Description |
-| --- | --- |
-| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
-
-### Options
-
-| Option | Value | Description |
+| Variable | Default | Description |
 | --- | --- | --- |
 | `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
 | `$very-small` | `320` | iPhone in portrait mode |
@@ -103,3 +97,9 @@ npm install @sass-collective/breakpoint
 | `$medium` | `768` | iPad in portrait mode |
 | `$large` | `960` | Desktop |
 | `$wide` | `1200` | Wide screen |
+
+### Mixins
+
+| Mixin | Description |
+| --- | --- |
+| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
