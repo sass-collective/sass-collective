@@ -17,7 +17,8 @@ npm install @sass-collective/property
     @include css.declaration(color, darkcyan);
     // color: darkcyan;
     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
-    // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75); - Use parentheses for declare comma separated values list.
+    // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
+    // Use parentheses for declare comma separated values list.
     @include css.declaration(color, darkcyan, true);
     // color: darkcyan !important;
 }
