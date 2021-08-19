@@ -53,6 +53,5 @@ npm install @sass-collective/property
 
 | Package |  Description |
 | --- | --- |
-| [`@sass-collective/property/css`](https://github.com/sass-collective/sass-collective/blob/master/packages/property/css) | Declare CSS properties. | 
 | [`@sass-collective/property/custom-properties`](https://github.com/sass-collective/sass-collective/blob/master/packages/property/custom-properties) | Declare CSS Custom Properties. |
 
