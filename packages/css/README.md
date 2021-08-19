@@ -36,4 +36,4 @@ npm install @sass-collective/css
 
 | Mixin | Description |
 | --- | --- |
-| `declaration($property, $value, $important)` | Declare CSS property, with optional `!important`. |
+| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`. |
