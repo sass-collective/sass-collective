@@ -8,6 +8,17 @@
 
 ///
 /// @example
+///     @include config("foo");
+///     // variables.$prefix: "foo";
+///
+@mixin config($prefix: null) {
+    @if $prefix {
+        variables.$prefix: $prefix;
+    }
+}
+
+///
+/// @example
 ///     @include declaration(custom-properties.create(--foo, darkcyan));
 ///     // --foo: darkcyan;
 ///     @include declaration(color, custom-properties.create(--foo, darkcyan));
@@ -32,15 +43,4 @@
     }
 
     @include css.declaration($property, $value, $important);
-}
-
-///
-/// @example
-///     @include config("foo");
-///     // variables.$prefix: "foo";
-///
-@mixin config($prefix: null) {
-    @if $prefix {
-        variables.$prefix: $prefix;
-    }
 }
