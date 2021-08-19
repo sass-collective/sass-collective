@@ -10,6 +10,17 @@
 
 ///
 /// @example
+///     @include config(10px);
+///     // variables.$baseline: 10px;
+///
+@mixin config($baseline: null) {
+    @if $baseline {
+        variables.$baseline: $baseline;
+    }
+}
+
+///
+/// @example
 ///     @include rem.convert(font-size, 16px);
 ///     // font-size: 1rem;
 ///     @include rem.convert(margin, 20px 30px);

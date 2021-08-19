@@ -107,6 +107,21 @@ body {
 }
 ```
 
+### Top-level config override
+
+If the `$baseline` variable are already used on top-level, by another dependency for example, you can't
+use `@use ... with` anymore, because the module can only be setup once like that, this is Sass restriction with **Module
+System**, but a solution exist for override the main configuration, with a mixin!
+
+```scss
+@include config(10px);
+// variables.$baseline: 10px;
+```
+
+Insert `@include rem.config(...);` before the first `@include rem.foo;` call in your project.
+
+See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins).
+
 ## API
 
 ### Options
@@ -126,6 +141,7 @@ body {
 
 | Mixin | Description |
 | --- | --- |
+| `config($baseline)` | Override top-level `with` configuration. |
 | `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem`, with optional `!important`. |
 | `baseline($percentage)` | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
 | `rem($property, $value, $important)` | Fallback name to `convert()` mixin. |
