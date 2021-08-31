@@ -18,8 +18,8 @@ npm install @sass-collective/property
 ## Usage
 
 ```scss
-@use "@sass-collective/property/custom-properties";
 @use "@sass-collective/property";
+@use "@sass-collective/property/custom-properties";
 
 :root {
     @include property.declaration(custom-properties.create(--foo, darkcyan));
