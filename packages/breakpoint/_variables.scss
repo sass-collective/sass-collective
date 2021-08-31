@@ -8,8 +8,22 @@ $strict: true !default;
 // Screen sizes
 // ------------------------------------------------------------------------- //
 
-$very-small: 320 !default;
-$small: 480 !default;
-$medium: 768 !default;
-$large: 960 !default;
-$wide: 1200 !default;
+$very-small: 320px !default;
+$small: 480px !default;
+$medium: 768px !default;
+$large: 960px !default;
+$wide: 1200px !default;
+$extra-wide: 1920px !default;
+
+// ------------------------------------------------------------------------- //
+// Property values
+// ------------------------------------------------------------------------- //
+
+$property-values: (
+    "xs": $very-small,
+    "sm": $small,
+    "md": $medium,
+    "lg": $large,
+    "xl": $wide,
+    "2xl": $extra-wide
+) !default;
