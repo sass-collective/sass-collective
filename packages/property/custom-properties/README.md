@@ -1,4 +1,6 @@
-# Custom Properties
+![Sass Custom Properties](.github/banner.png)
+
+## Introduction
 
 Declare CSS Custom Properties.
 
