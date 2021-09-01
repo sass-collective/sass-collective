@@ -2,12 +2,21 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:meta";
 @use "@sass-collective/breakpoint";
 @use "./variables";
 
 @mixin core-styles {
     .grid {
         @include styles;
+    }
+
+    .col {
+        @include columns-styles;
+    }
+
+    .row {
+        @include rows-styles;
     }
 }
 
@@ -19,8 +28,20 @@
     grid-template-columns: repeat($size, minmax(0, 1fr));
 }
 
-@mixin _columns($size) {
-    grid-template-columns: repeat($size, minmax(0, 1fr));
+@mixin _column-span($value) {
+    @if meta.type-of($value) != "number" {
+        grid-column: $value;
+    } @else {
+        grid-column: span $value / span $value;
+    }
+}
+
+@mixin _column-start($value) {
+    grid-column-start: $value;
+}
+
+@mixin _column-end($value) {
+    grid-column-end: $value;
 }
 
 @mixin _rows($size) {
@@ -43,6 +64,18 @@
 
 @mixin column-gap($size: variables.$column-gap) {
     column-gap: $size;
+}
+
+@mixin column-span($value: null) {
+    @include _column-span($value);
+}
+
+@mixin column-start($value: null) {
+    @include _column-start($value);
+}
+
+@mixin column-end($value: null) {
+    @include _column-end($value);
 }
 
 @mixin row-gap($size: variables.$row-gap) {
@@ -74,4 +107,78 @@
 
     @include column-gap($column-gap);
     @include row-gap($column-gap);
+}
+
+@mixin columns-styles {
+
+    // Span
+
+    &-auto {
+        @include _column-span(auto);
+
+        @include _breakpoint {
+            @include _column-span(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$columns {
+        &-span-#{$i} {
+            @include _column-span($i);
+
+            @include _breakpoint {
+                @include _column-span($i);
+            }
+        }
+    }
+
+    &-span-full {
+        grid-column: 1 / -1;
+
+        @include _breakpoint {
+            grid-column: 1 / -1;
+        }
+    }
+
+    // Start
+
+    &-start-auto {
+        @include _column-start(auto);
+
+        @include _breakpoint {
+            @include _column-start(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$columns {
+        &-start-#{$i} {
+            @include _column-start($i);
+
+            @include _breakpoint {
+                @include _column-start($i);
+            }
+        }
+    }
+
+    // End
+
+    &-end-auto {
+        @include _column-end(auto);
+
+        @include _breakpoint {
+            @include _column-end(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$rows {
+        &-end-#{$i} {
+            @include _column-end($i);
+
+            @include _breakpoint {
+                @include _column-end($i);
+            }
+        }
+    }
+}
+
+@mixin rows-styles {
 }
