@@ -1,0 +1,65 @@
+// ============================================================================================= //
+//                                            MIXINS                                             //
+// ============================================================================================= //
+
+@use "@sass-collective/breakpoint";
+@use "./variables";
+
+@mixin core-styles {
+    .grid {
+        @include styles;
+    }
+}
+
+// ------------------------------------------------------------------------- //
+// Private mixins
+// ------------------------------------------------------------------------- //
+
+@mixin _columns($size) {
+    grid-template-columns: repeat($size, minmax(0, 1fr));
+}
+
+@mixin _rows($size) {
+    grid-template-rows: repeat($size, minmax(0, 1fr));
+}
+
+@mixin _breakpoint {
+    @each $key, $value in breakpoint.$property-values {
+        @include breakpoint.styles($value) {
+            &\@#{$key} {
+                @content;
+            }
+        }
+    }
+}
+
+// ------------------------------------------------------------------------- //
+// Public mixins
+// ------------------------------------------------------------------------- //
+
+@mixin styles($columns: variables.$columns, $rows: variables.$rows, $column-gap: variables.$column-gap, $row-gap: variables.$row-gap) {
+    display: grid;
+
+    @for $i from 1 through $columns {
+        &-cols-#{$i} {
+            @include _columns($i);
+
+            @include _breakpoint {
+                @include _columns($i);
+            }
+        }
+    }
+
+    @for $i from 1 through $rows {
+        &-rows-#{$i} {
+            @include _rows($i);
+
+            @include _breakpoint {
+                @include _rows($i);
+            }
+        }
+    }
+
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+}
