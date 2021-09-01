@@ -30,7 +30,11 @@
 
 @mixin _column-span($value) {
     @if meta.type-of($value) != "number" {
-        grid-column: $value;
+        @if $value == "full" {
+            grid-column: 1 / -1;
+        } @else {
+            grid-column: $value;
+        }
     } @else {
         grid-column: span $value / span $value;
     }
@@ -114,47 +118,47 @@
     // Span
 
     &-auto {
-        @include _column-span(auto);
+        @include column-span(auto);
 
         @include _breakpoint {
-            @include _column-span(auto);
+            @include column-span(auto);
         }
     }
 
     @for $i from 1 through variables.$columns {
         &-span-#{$i} {
-            @include _column-span($i);
+            @include column-span($i);
 
             @include _breakpoint {
-                @include _column-span($i);
+                @include column-span($i);
             }
         }
     }
 
     &-span-full {
-        grid-column: 1 / -1;
+        @include column-span(full);
 
         @include _breakpoint {
-            grid-column: 1 / -1;
+            @include _column-span(full);
         }
     }
 
     // Start
 
     &-start-auto {
-        @include _column-start(auto);
+        @include column-start(auto);
 
         @include _breakpoint {
-            @include _column-start(auto);
+            @include column-start(auto);
         }
     }
 
     @for $i from 1 through variables.$columns {
         &-start-#{$i} {
-            @include _column-start($i);
+            @include column-start($i);
 
             @include _breakpoint {
-                @include _column-start($i);
+                @include column-start($i);
             }
         }
     }
@@ -162,19 +166,19 @@
     // End
 
     &-end-auto {
-        @include _column-end(auto);
+        @include column-end(auto);
 
         @include _breakpoint {
-            @include _column-end(auto);
+            @include column-end(auto);
         }
     }
 
     @for $i from 1 through variables.$rows {
         &-end-#{$i} {
-            @include _column-end($i);
+            @include column-end($i);
 
             @include _breakpoint {
-                @include _column-end($i);
+                @include column-end($i);
             }
         }
     }
