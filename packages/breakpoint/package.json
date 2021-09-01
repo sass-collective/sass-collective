@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/breakpoint",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "description": "Create easily CSS breakpoint rules.",
     "main": "index.scss",
     "engines": {
