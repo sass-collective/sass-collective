@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/property",
-    "version": "4.2.0",
+    "version": "4.3.0-beta.0",
     "description": "Generate CSS property with CSS custom properties option.",
     "main": "index.scss",
     "engines": {
@@ -8,7 +8,7 @@
         "npm": ">=7.0.0"
     },
     "dependencies": {
-        "@sass-collective/css": "^1.0.0",
+        "@sass-collective/css": "^1.1.0-beta.0",
         "sass": "^1.38.0"
     },
     "files": [
