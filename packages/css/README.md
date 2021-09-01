@@ -37,3 +37,9 @@ npm install @sass-collective/css
 | Mixin | Description |
 | --- | --- |
 | `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`. |
+
+## Packages
+
+| Package |  Description |
+| --- | --- |
+| [`@sass-collective/css/selector`](https://github.com/sass-collective/sass-collective/blob/master/packages/css/selector) | Manipulate CSS selectors. |
