@@ -19,6 +19,10 @@
     grid-template-columns: repeat($size, minmax(0, 1fr));
 }
 
+@mixin _columns($size) {
+    grid-template-columns: repeat($size, minmax(0, 1fr));
+}
+
 @mixin _rows($size) {
     grid-template-rows: repeat($size, minmax(0, 1fr));
 }
@@ -36,6 +40,14 @@
 // ------------------------------------------------------------------------- //
 // Public mixins
 // ------------------------------------------------------------------------- //
+
+@mixin column-gap($size: variables.$column-gap) {
+    column-gap: $size;
+}
+
+@mixin row-gap($size: variables.$row-gap) {
+    row-gap: $size;
+}
 
 @mixin styles($columns: variables.$columns, $rows: variables.$rows, $column-gap: variables.$column-gap, $row-gap: variables.$row-gap) {
     display: grid;
@@ -60,6 +72,6 @@
         }
     }
 
-    column-gap: $column-gap;
-    row-gap: $row-gap;
+    @include column-gap($column-gap);
+    @include row-gap($column-gap);
 }
