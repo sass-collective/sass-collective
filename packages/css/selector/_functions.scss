@@ -1,0 +1,40 @@
+// ============================================================================================= //
+//                                           FUNCTIONS                                           //
+// ============================================================================================= //
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+
+@function number($value) {
+    @if meta.type-of($value) == "number" {
+        @return $value;
+    } @else if meta.type-of($value) != "string" {
+        @error "Invalid string type for `#{$value}` value. Use string type instead.";
+    }
+
+    $numbers: (
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9
+    );
+
+    @return map.get($numbers, $value);
+}
+
+@function replace($string, $search, $replace: "") {
+    $index: string.index($string, $search);
+
+    @if $index {
+        @return string.slice($string, 1, $index - 1) + $replace + replace(str-slice($string, $index + string.length($search)), $search, $replace);
+    }
+
+    @return $string;
+}

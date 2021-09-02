@@ -2,7 +2,9 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:meta";
 @use "sass:string";
+@use "./functions";
 
 ///
 /// @example
@@ -23,6 +25,13 @@
         $selector: string.slice($selector, 2);
     }
 
+    $first-character: functions.number(string.slice($key, 1, $end-at: 1));
+
+    @if meta.type-of($first-character) == "number" {
+        $value: string.unquote($key);
+        $key: functions.replace(\3 #{$value}, " ");
+    }
+
     @at-root .#{$key}#{string.unquote("\\") + string.unquote($divider)}#{$selector} {
         @content;
     }
@@ -34,6 +43,13 @@
 
     @if $prefix != "." {
         @error "Invalid `#{$selector}` selector. Choose a class selector instead.";
+    }
+
+    $first-character: functions.number(string.slice($key, 1, $end-at: 1));
+
+    @if meta.type-of($first-character) == "number" {
+        $value: string.unquote($key);
+        $key: functions.replace(\3 #{$value}, " ");
     }
 
     &#{string.unquote("\\") + string.unquote($divider)}#{$key} {
