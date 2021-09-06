@@ -4,6 +4,7 @@
 
 @use "sass:meta";
 @use "@sass-collective/breakpoint";
+@use "@sass-collective/css";
 @use "./variables";
 
 @mixin core-styles {
@@ -55,7 +56,7 @@
 @mixin _breakpoint {
     @each $key, $value in breakpoint.$property-values {
         @include breakpoint.styles($value) {
-            &\@#{$key} {
+            @include css.selector($key) {
                 @content;
             }
         }
