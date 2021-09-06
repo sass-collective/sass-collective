@@ -54,5 +54,5 @@ npm install @sass-collective/css
 
 | Mixin | Description |
 | --- | --- |
-| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`. |
 | `selector($key, $divider, $suffix)` | Add prefix key, with default `:` divider, on selector. Boolean `$suffix` option. |
+| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`. |
