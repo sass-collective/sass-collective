@@ -24,10 +24,13 @@ npm install @sass-collective/rem
 .foo {
     font-size: rem.convert(16px);
     // font-size: 1rem;
+    
     margin: rem.convert(20px 30px);
     // margin: 1.25rem 1.875rem;
+    
     border: rem.convert(1px solid darkcyan);
     // border: 0.0625rem solid darkcyan;
+    
     box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
 }
@@ -35,10 +38,13 @@ npm install @sass-collective/rem
 .bar {
     @include rem.convert(font-size, 16px);
     // font-size: 1rem;
+    
     @include rem.convert(margin, 20px 30px);
     // margin: 1.25rem 1.875rem;
+    
     @include rem.convert(border, 1px solid darkcyan);
     // border: 0.0625rem solid darkcyan;
+    
     @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
     // Use parentheses for declare comma separated values list.
