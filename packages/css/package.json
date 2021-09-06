@@ -17,6 +17,7 @@
         "sass",
         "css",
         "declaration",
+        "selector",
         "front-end"
     ],
     "author": "The Sass Collective Authors",

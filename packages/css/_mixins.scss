@@ -2,14 +2,57 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:meta";
+@use "sass:string";
+@use "./functions";
+
+///
+/// @example
+///     @include selector(md) { background: darkcyan; }
+///     // .md:foo { background: darkcyan; }
+///     @include selector(md, $suffix: true) { background: darkcyan; }
+///     // .foo:md { background: darkcyan; }
+///
+/// @see {mixin} css.selector
+///
+/// @link https://sparkbox.com/foundry/responsive_class_suffixes_automating_classes_with_sass_mixins_and_sass_maps
+///
+@mixin selector($key, $divider: ":", $suffix: false) {
+    $selector: #{&};
+    $is-class: string.slice($selector, 1, $end-at: 1);
+    $divider: string.unquote($divider);
+
+    @if $is-class != "." {
+        @error "Invalid `#{$selector}` selector. Choose a class selector instead.";
+    } @else {
+        $selector: string.slice($selector, 2);
+    }
+
+    @if meta.type-of(functions.number(string.slice($key, 1, $end-at: 1))) == "number" {
+        $key: functions.replace(\3 #{string.unquote($key)}, " ");
+    }
+
+    @if $suffix {
+        &#{string.unquote("\\") + $divider}#{$key} {
+            @content;
+        }
+    } @else {
+        @at-root .#{$key}#{string.unquote("\\") + $divider}#{$selector} {
+            @content;
+        }
+    }
+}
+
 ///
 /// @example
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;
-///     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+///     @include declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
 ///     // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
-///     @include css.declaration(color, darkcyan, true);
+///     @include declaration(color, darkcyan, true);
 ///     // color: darkcyan !important;
+///
+/// @see {mixin} css.declaration
 ///
 @mixin declaration($property, $value, $important: false) {
     $is-important: if($important, "!important", "");
