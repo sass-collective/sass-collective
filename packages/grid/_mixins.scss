@@ -53,6 +53,26 @@
     grid-template-rows: repeat($size, minmax(0, 1fr));
 }
 
+@mixin _row-span($value) {
+    @if meta.type-of($value) != "number" {
+        @if $value == "full" {
+            grid-row: 1 / -1;
+        } @else {
+            grid-row: $value;
+        }
+    } @else {
+        grid-row: span $value / span $value;
+    }
+}
+
+@mixin _row-start($value) {
+    grid-row-start: $value;
+}
+
+@mixin _row-end($value) {
+    grid-row-end: $value;
+}
+
 @mixin _breakpoint {
     @each $key, $value in breakpoint.$property-values {
         @include breakpoint.styles($value) {
@@ -87,6 +107,18 @@
     row-gap: $size;
 }
 
+@mixin row-span($value: null) {
+    @include _row-span($value);
+}
+
+@mixin row-start($value: null) {
+    @include _row-start($value);
+}
+
+@mixin row-end($value: null) {
+    @include _row-end($value);
+}
+
 @mixin styles($columns: variables.$columns, $rows: variables.$rows, $column-gap: variables.$column-gap, $row-gap: variables.$row-gap) {
     display: grid;
 
@@ -116,7 +148,9 @@
 
 @mixin columns-styles {
 
+    // --------------------------------- //
     // Span
+    // --------------------------------- //
 
     &-auto {
         @include column-span(auto);
@@ -140,11 +174,13 @@
         @include column-span(full);
 
         @include _breakpoint {
-            @include _column-span(full);
+            @include column-span(full);
         }
     }
 
+    // --------------------------------- //
     // Start
+    // --------------------------------- //
 
     &-start-auto {
         @include column-start(auto);
@@ -164,7 +200,9 @@
         }
     }
 
+    // --------------------------------- //
     // End
+    // --------------------------------- //
 
     &-end-auto {
         @include column-end(auto);
@@ -174,7 +212,7 @@
         }
     }
 
-    @for $i from 1 through variables.$rows {
+    @for $i from 1 through variables.$columns {
         &-end-#{$i} {
             @include column-end($i);
 
@@ -186,4 +224,78 @@
 }
 
 @mixin rows-styles {
+
+    // --------------------------------- //
+    // Span
+    // --------------------------------- //
+
+    &-auto {
+        @include row-span(auto);
+
+        @include _breakpoint {
+            @include column-span(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$rows {
+        &-span-#{$i} {
+            @include row-span($i);
+
+            @include _breakpoint {
+                @include row-span($i);
+            }
+        }
+    }
+
+    &-span-full {
+        @include row-span(full);
+
+        @include _breakpoint {
+            @include row-span(full);
+        }
+    }
+
+    // --------------------------------- //
+    // Start
+    // --------------------------------- //
+
+    &-start-auto {
+        @include row-start(auto);
+
+        @include _breakpoint {
+            @include row-start(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$rows {
+        &-start-#{$i} {
+            @include row-start($i);
+
+            @include _breakpoint {
+                @include row-start($i);
+            }
+        }
+    }
+
+    // --------------------------------- //
+    // End
+    // --------------------------------- //
+
+    &-end-auto {
+        @include row-end(auto);
+
+        @include _breakpoint {
+            @include row-end(auto);
+        }
+    }
+
+    @for $i from 1 through variables.$rows {
+        &-end-#{$i} {
+            @include row-end($i);
+
+            @include _breakpoint {
+                @include row-end($i);
+            }
+        }
+    }
 }
