@@ -83,6 +83,12 @@
     }
 }
 
+@mixin _auto-flow($value, $dense: false) {
+    $is-dense: if($dense, "dense", "");
+
+    grid-auto-flow: $value #{$is-dense};
+}
+
 // ------------------------------------------------------------------------- //
 // Public mixins
 // ------------------------------------------------------------------------- //
@@ -122,6 +128,46 @@
 @mixin styles($columns: variables.$columns, $rows: variables.$rows, $column-gap: variables.$column-gap, $row-gap: variables.$row-gap) {
     display: grid;
 
+    // --------------------------------- //
+    // Auto flow
+    // --------------------------------- //
+
+    &-flow-col {
+        @include _auto-flow(column);
+
+        @include _breakpoint {
+            @include _auto-flow(column);
+        }
+    }
+
+    &-flow-col-dense {
+        @include _auto-flow(column, true);
+
+        @include _breakpoint {
+            @include _auto-flow(column, true);
+        }
+    }
+
+    &-flow-row {
+        @include _auto-flow(row);
+
+        @include _breakpoint {
+            @include _auto-flow(row);
+        }
+    }
+
+    &-flow-row-dense {
+        @include _auto-flow(row, true);
+
+        @include _breakpoint {
+            @include _auto-flow(row, true);
+        }
+    }
+
+    // --------------------------------- //
+    // Columns
+    // --------------------------------- //
+
     @for $i from 1 through $columns {
         &-cols-#{$i} {
             @include _columns($i);
@@ -132,6 +178,10 @@
         }
     }
 
+    // --------------------------------- //
+    // Rows
+    // --------------------------------- //
+
     @for $i from 1 through $rows {
         &-rows-#{$i} {
             @include _rows($i);
@@ -141,6 +191,10 @@
             }
         }
     }
+
+    // --------------------------------- //
+    // Gaps
+    // --------------------------------- //
 
     @include column-gap($column-gap);
     @include row-gap($column-gap);
