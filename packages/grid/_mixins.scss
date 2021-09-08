@@ -25,6 +25,76 @@
 // Private mixins
 // ------------------------------------------------------------------------- //
 
+@mixin _auto-suffix {
+    &-auto {
+        @content;
+    }
+}
+
+@mixin _start-auto-suffix {
+    &-start {
+        @include _auto-suffix {
+            @content;
+        }
+    }
+}
+
+@mixin _start-for($mixin, $limit) {
+    @for $i from 1 through $limit {
+        &-start-#{$i} {
+            @if ($mixin == "column") {
+                @include _column-start($i);
+            }
+
+            @if ($mixin == "row") {
+                @include _row-start($i);
+            }
+        }
+    }
+}
+
+@mixin _end-auto-suffix {
+    &-end {
+        @include _auto-suffix {
+            @content;
+        }
+    }
+}
+
+@mixin _end-for($mixin, $limit) {
+    @for $i from 1 through $limit {
+        &-end-#{$i} {
+            @if ($mixin == "column") {
+                @include _column-end($i);
+            }
+
+            @if ($mixin == "row") {
+                @include _row-end($i);
+            }
+        }
+    }
+}
+
+@mixin _span-full-suffix {
+    &-span-full {
+        @content;
+    }
+}
+
+@mixin _span-for($mixin, $limit) {
+    @for $i from 1 through $limit {
+        &-span-#{$i} {
+            @if ($mixin == "column") {
+                @include _column-span($i);
+            }
+
+            @if ($mixin == "row") {
+                @include _row-span($i);
+            }
+        }
+    }
+}
+
 @mixin _columns($size) {
     grid-template-columns: repeat($size, minmax(0, 1fr));
 }
@@ -216,17 +286,12 @@
     // Span
     // --------------------------------- //
 
-    &-auto {
+    @include _auto-suffix {
         @include column-span(auto);
     }
 
-    @for $i from 1 through variables.$columns {
-        &-span-#{$i} {
-            @include column-span($i);
-        }
-    }
-
-    &-span-full {
+    @include _span-for(column, variables.$columns);
+    @include _span-full-suffix {
         @include column-span(full);
     }
 
@@ -234,13 +299,8 @@
     // Start
     // --------------------------------- //
 
-    @for $i from 1 through variables.$columns {
-        &-start-#{$i} {
-            @include column-start($i);
-        }
-    }
-
-    &-start-auto {
+    @include _start-for(column, variables.$columns);
+    @include _start-auto-suffix {
         @include column-start(auto);
     }
 
@@ -248,13 +308,8 @@
     // End
     // --------------------------------- //
 
-    @for $i from 1 through variables.$columns {
-        &-end-#{$i} {
-            @include column-end($i);
-        }
-    }
-
-    &-end-auto {
+    @include _end-for(column, variables.$columns);
+    @include _end-auto-suffix {
         @include column-end(auto);
     }
 
@@ -263,37 +318,22 @@
     // --------------------------------- //
 
     @include _breakpoint {
-        &-auto {
+        @include _auto-suffix {
             @include column-span(auto);
         }
 
-        @for $i from 1 through variables.$columns {
-            &-span-#{$i} {
-                @include column-span($i);
-            }
-        }
-
-        &-span-full {
+        @include _span-for(column, variables.$columns);
+        @include _span-full-suffix {
             @include column-span(full);
         }
 
-        @for $i from 1 through variables.$columns {
-            &-start-#{$i} {
-                @include column-start($i);
-            }
-        }
-
-        &-start-auto {
+        @include _start-for(column, variables.$columns);
+        @include _start-auto-suffix {
             @include column-start(auto);
         }
 
-        @for $i from 1 through variables.$columns {
-            &-end-#{$i} {
-                @include column-end($i);
-            }
-        }
-
-        &-end-auto {
+        @include _end-for(column, variables.$columns);
+        @include _end-auto-suffix {
             @include column-end(auto);
         }
     }
@@ -305,17 +345,12 @@
     // Span
     // --------------------------------- //
 
-    &-auto {
+    @include _auto-suffix {
         @include row-span(auto);
     }
 
-    @for $i from 1 through variables.$rows {
-        &-span-#{$i} {
-            @include row-span($i);
-        }
-    }
-
-    &-span-full {
+    @include _span-for(row, variables.$rows);
+    @include _span-full-suffix {
         @include row-span(full);
     }
 
@@ -323,13 +358,8 @@
     // Start
     // --------------------------------- //
 
-    @for $i from 1 through variables.$rows {
-        &-start-#{$i} {
-            @include row-start($i);
-        }
-    }
-
-    &-start-auto {
+    @include _start-for(row, variables.$rows);
+    @include _start-auto-suffix {
         @include row-start(auto);
     }
 
@@ -337,13 +367,8 @@
     // End
     // --------------------------------- //
 
-    @for $i from 1 through variables.$rows {
-        &-end-#{$i} {
-            @include row-end($i);
-        }
-    }
-
-    &-end-auto {
+    @include _end-for(row, variables.$rows);
+    @include _end-auto-suffix {
         @include row-end(auto);
     }
 
@@ -352,37 +377,22 @@
     // --------------------------------- //
 
     @include _breakpoint {
-        &-auto {
+        @include _auto-suffix {
             @include row-span(auto);
         }
 
-        @for $i from 1 through variables.$rows {
-            &-span-#{$i} {
-                @include row-span($i);
-            }
-        }
-
-        &-span-full {
+        @include _span-for(row, variables.$rows);
+        @include _span-full-suffix {
             @include row-span(full);
         }
 
-        @for $i from 1 through variables.$rows {
-            &-start-#{$i} {
-                @include row-start($i);
-            }
-        }
-
-        &-start-auto {
+        @include _start-for(row, variables.$rows);
+        @include _start-auto-suffix {
             @include row-start(auto);
         }
 
-        @for $i from 1 through variables.$rows {
-            &-end-#{$i} {
-                @include row-end($i);
-            }
-        }
-
-        &-end-auto {
+        @include _end-for(row, variables.$rows);
+        @include _end-auto-suffix {
             @include row-end(auto);
         }
     }
