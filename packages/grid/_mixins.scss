@@ -214,6 +214,14 @@
         }
     }
 
+    &-span-full {
+        @include column-span(full);
+
+        @include _breakpoint {
+            @include column-span(full);
+        }
+    }
+
     @for $i from 1 through variables.$columns {
         &-span-#{$i} {
             @include column-span($i);
@@ -221,14 +229,6 @@
             @include _breakpoint {
                 @include column-span($i);
             }
-        }
-    }
-
-    &-span-full {
-        @include column-span(full);
-
-        @include _breakpoint {
-            @include column-span(full);
         }
     }
 
@@ -291,6 +291,14 @@
         }
     }
 
+    &-span-full {
+        @include row-span(full);
+
+        @include _breakpoint {
+            @include row-span(full);
+        }
+    }
+
     @for $i from 1 through variables.$rows {
         &-span-#{$i} {
             @include row-span($i);
@@ -298,14 +306,6 @@
             @include _breakpoint {
                 @include row-span($i);
             }
-        }
-    }
-
-    &-span-full {
-        @include row-span(full);
-
-        @include _breakpoint {
-            @include row-span(full);
         }
     }
 
