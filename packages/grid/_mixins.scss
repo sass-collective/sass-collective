@@ -220,23 +220,19 @@
         @include column-span(auto);
     }
 
-    &-span-full {
-        @include column-span(full);
-    }
-
     @for $i from 1 through variables.$columns {
         &-span-#{$i} {
             @include column-span($i);
         }
     }
 
+    &-span-full {
+        @include column-span(full);
+    }
+
     // --------------------------------- //
     // Start
     // --------------------------------- //
-
-    &-start-auto {
-        @include column-start(auto);
-    }
 
     @for $i from 1 through variables.$columns {
         &-start-#{$i} {
@@ -244,18 +240,22 @@
         }
     }
 
+    &-start-auto {
+        @include column-start(auto);
+    }
+
     // --------------------------------- //
     // End
     // --------------------------------- //
-
-    &-end-auto {
-        @include column-end(auto);
-    }
 
     @for $i from 1 through variables.$columns {
         &-end-#{$i} {
             @include column-end($i);
         }
+    }
+
+    &-end-auto {
+        @include column-end(auto);
     }
 
     // --------------------------------- //
@@ -267,18 +267,14 @@
             @include column-span(auto);
         }
 
-        &-span-full {
-            @include column-span(full);
-        }
-
         @for $i from 1 through variables.$columns {
             &-span-#{$i} {
                 @include column-span($i);
             }
         }
 
-        &-start-auto {
-            @include column-start(auto);
+        &-span-full {
+            @include column-span(full);
         }
 
         @for $i from 1 through variables.$columns {
@@ -287,14 +283,18 @@
             }
         }
 
-        &-end-auto {
-            @include column-end(auto);
+        &-start-auto {
+            @include column-start(auto);
         }
 
         @for $i from 1 through variables.$columns {
             &-end-#{$i} {
                 @include column-end($i);
             }
+        }
+
+        &-end-auto {
+            @include column-end(auto);
         }
     }
 }
@@ -309,23 +309,19 @@
         @include row-span(auto);
     }
 
-    &-span-full {
-        @include row-span(full);
-    }
-
     @for $i from 1 through variables.$rows {
         &-span-#{$i} {
             @include row-span($i);
         }
     }
 
+    &-span-full {
+        @include row-span(full);
+    }
+
     // --------------------------------- //
     // Start
     // --------------------------------- //
-
-    &-start-auto {
-        @include row-start(auto);
-    }
 
     @for $i from 1 through variables.$rows {
         &-start-#{$i} {
@@ -333,18 +329,22 @@
         }
     }
 
+    &-start-auto {
+        @include row-start(auto);
+    }
+
     // --------------------------------- //
     // End
     // --------------------------------- //
-
-    &-end-auto {
-        @include row-end(auto);
-    }
 
     @for $i from 1 through variables.$rows {
         &-end-#{$i} {
             @include row-end($i);
         }
+    }
+
+    &-end-auto {
+        @include row-end(auto);
     }
 
     // --------------------------------- //
@@ -356,18 +356,14 @@
             @include row-span(auto);
         }
 
-        &-span-full {
-            @include row-span(full);
-        }
-
         @for $i from 1 through variables.$rows {
             &-span-#{$i} {
                 @include row-span($i);
             }
         }
 
-        &-start-auto {
-            @include row-start(auto);
+        &-span-full {
+            @include row-span(full);
         }
 
         @for $i from 1 through variables.$rows {
@@ -376,14 +372,18 @@
             }
         }
 
-        &-end-auto {
-            @include row-end(auto);
+        &-start-auto {
+            @include row-start(auto);
         }
 
         @for $i from 1 through variables.$rows {
             &-end-#{$i} {
                 @include row-end($i);
             }
+        }
+
+        &-end-auto {
+            @include row-end(auto);
         }
     }
 }
