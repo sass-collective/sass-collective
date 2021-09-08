@@ -134,34 +134,18 @@
 
     &-flow-col {
         @include _auto-flow(column);
-
-        @include _breakpoint {
-            @include _auto-flow(column);
-        }
     }
 
     &-flow-col-dense {
         @include _auto-flow(column, true);
-
-        @include _breakpoint {
-            @include _auto-flow(column, true);
-        }
     }
 
     &-flow-row {
         @include _auto-flow(row);
-
-        @include _breakpoint {
-            @include _auto-flow(row);
-        }
     }
 
     &-flow-row-dense {
         @include _auto-flow(row, true);
-
-        @include _breakpoint {
-            @include _auto-flow(row, true);
-        }
     }
 
     // --------------------------------- //
@@ -171,10 +155,6 @@
     @for $i from 1 through $columns {
         &-cols-#{$i} {
             @include _columns($i);
-
-            @include _breakpoint {
-                @include _columns($i);
-            }
         }
     }
 
@@ -185,10 +165,6 @@
     @for $i from 1 through $rows {
         &-rows-#{$i} {
             @include _rows($i);
-
-            @include _breakpoint {
-                @include _rows($i);
-            }
         }
     }
 
@@ -198,6 +174,40 @@
 
     @include column-gap($column-gap);
     @include row-gap($column-gap);
+
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @include _breakpoint {
+        &-flow-col {
+            @include _auto-flow(column);
+        }
+
+        &-flow-col-dense {
+            @include _auto-flow(column, true);
+        }
+
+        &-flow-row {
+            @include _auto-flow(row);
+        }
+
+        &-flow-row-dense {
+            @include _auto-flow(row, true);
+        }
+
+        @for $i from 1 through $columns {
+            &-cols-#{$i} {
+                @include _columns($i);
+            }
+        }
+
+        @for $i from 1 through $rows {
+            &-rows-#{$i} {
+                @include _rows($i);
+            }
+        }
+    }
 }
 
 @mixin columns-styles {
@@ -208,27 +218,15 @@
 
     &-auto {
         @include column-span(auto);
-
-        @include _breakpoint {
-            @include column-span(auto);
-        }
     }
 
     &-span-full {
         @include column-span(full);
-
-        @include _breakpoint {
-            @include column-span(full);
-        }
     }
 
     @for $i from 1 through variables.$columns {
         &-span-#{$i} {
             @include column-span($i);
-
-            @include _breakpoint {
-                @include column-span($i);
-            }
         }
     }
 
@@ -238,19 +236,11 @@
 
     &-start-auto {
         @include column-start(auto);
-
-        @include _breakpoint {
-            @include column-start(auto);
-        }
     }
 
     @for $i from 1 through variables.$columns {
         &-start-#{$i} {
             @include column-start($i);
-
-            @include _breakpoint {
-                @include column-start($i);
-            }
         }
     }
 
@@ -260,17 +250,49 @@
 
     &-end-auto {
         @include column-end(auto);
-
-        @include _breakpoint {
-            @include column-end(auto);
-        }
     }
 
     @for $i from 1 through variables.$columns {
         &-end-#{$i} {
             @include column-end($i);
+        }
+    }
 
-            @include _breakpoint {
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @include _breakpoint {
+        &-auto {
+            @include column-span(auto);
+        }
+
+        &-span-full {
+            @include column-span(full);
+        }
+
+        @for $i from 1 through variables.$columns {
+            &-span-#{$i} {
+                @include column-span($i);
+            }
+        }
+
+        &-start-auto {
+            @include column-start(auto);
+        }
+
+        @for $i from 1 through variables.$columns {
+            &-start-#{$i} {
+                @include column-start($i);
+            }
+        }
+
+        &-end-auto {
+            @include column-end(auto);
+        }
+
+        @for $i from 1 through variables.$columns {
+            &-end-#{$i} {
                 @include column-end($i);
             }
         }
@@ -285,27 +307,15 @@
 
     &-auto {
         @include row-span(auto);
-
-        @include _breakpoint {
-            @include column-span(auto);
-        }
     }
 
     &-span-full {
         @include row-span(full);
-
-        @include _breakpoint {
-            @include row-span(full);
-        }
     }
 
     @for $i from 1 through variables.$rows {
         &-span-#{$i} {
             @include row-span($i);
-
-            @include _breakpoint {
-                @include row-span($i);
-            }
         }
     }
 
@@ -315,19 +325,11 @@
 
     &-start-auto {
         @include row-start(auto);
-
-        @include _breakpoint {
-            @include row-start(auto);
-        }
     }
 
     @for $i from 1 through variables.$rows {
         &-start-#{$i} {
             @include row-start($i);
-
-            @include _breakpoint {
-                @include row-start($i);
-            }
         }
     }
 
@@ -337,17 +339,49 @@
 
     &-end-auto {
         @include row-end(auto);
-
-        @include _breakpoint {
-            @include row-end(auto);
-        }
     }
 
     @for $i from 1 through variables.$rows {
         &-end-#{$i} {
             @include row-end($i);
+        }
+    }
 
-            @include _breakpoint {
+    // --------------------------------- //
+    // Breakpoint
+    // --------------------------------- //
+
+    @include _breakpoint {
+        &-auto {
+            @include row-span(auto);
+        }
+
+        &-span-full {
+            @include row-span(full);
+        }
+
+        @for $i from 1 through variables.$rows {
+            &-span-#{$i} {
+                @include row-span($i);
+            }
+        }
+
+        &-start-auto {
+            @include row-start(auto);
+        }
+
+        @for $i from 1 through variables.$rows {
+            &-start-#{$i} {
+                @include row-start($i);
+            }
+        }
+
+        &-end-auto {
+            @include row-end(auto);
+        }
+
+        @for $i from 1 through variables.$rows {
+            &-end-#{$i} {
                 @include row-end($i);
             }
         }
