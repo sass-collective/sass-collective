@@ -2,17 +2,23 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:map";
 @use "sass:string";
 @use "./functions";
+@use "./variables";
 
-@mixin styles($min-width: false, $max-width: false, $root-selector: false) {
-    @if $root-selector and (string.slice($root-selector, 1, 1) != ".") and (string.slice($root-selector, 1, 1) != "#") {
-        @error "The \"#{$root-selector}\" selector need to be ID or class.";
+@mixin styles($min-width: null, $max-width: null, $root-selector: null) {
+    @if $min-width and not map.has-key(variables.$styles, $min-width) {
+        @error "Invalid style, `#{$min-width}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    } @else if $max-width and not map.has-key(variables.$styles, $max-width) {
+        @error "Invalid style, `#{$max-width}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    } @else if $root-selector and (string.slice($root-selector, 1, 1) != ".") and (string.slice($root-selector, 1, 1) != "#") {
+        @error "The `#{$root-selector}` selector need to be ID or class.";
     }
 
     @if $min-width {
         @if $max-width {
-            @media all and (min-width: functions.set-value($min-width)) and (max-width: functions.set-value-has-strict($max-width)) {
+            @media all and (min-width: functions.set-value(map.get(variables.$styles, $min-width))) and (max-width: functions.set-value-has-strict(map.get(variables.$styles, $max-width))) {
                 @if $root-selector {
                     #{$root-selector} & {
                         @content;
@@ -22,7 +28,7 @@
                 }
             }
         } @else {
-            @media all and (min-width: functions.set-value($min-width)) {
+            @media all and (min-width: functions.set-value(map.get(variables.$styles, $min-width))) {
                 @if $root-selector {
                     #{$root-selector} & {
                         @content;
@@ -33,7 +39,7 @@
             }
         }
     } @else if $max-width {
-        @media all and (max-width: functions.set-value-has-strict($max-width)) {
+        @media all and (max-width: functions.set-value-has-strict(map.get(variables.$styles, $max-width))) {
             @if $root-selector {
                 #{$root-selector} & {
                     @content;

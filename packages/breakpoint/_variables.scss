@@ -2,28 +2,27 @@
 //                                           VARIABLES                                           //
 // ============================================================================================= //
 
+@use "sass:map";
+
 $strict: true !default;
 
 // ------------------------------------------------------------------------- //
 // Screen sizes
 // ------------------------------------------------------------------------- //
 
-$very-small: 320px !default;
-$small: 480px !default;
-$medium: 768px !default;
-$large: 960px !default;
-$wide: 1200px !default;
-$extra-wide: 1500px !default;
+$values: () !default;
+
+$styles: map.merge((
+    xs: 320px,
+    sm: 480px,
+    md: 768px,
+    lg: 960px,
+    xl: 1200px,
+    "2xl": 1500px
+), $values) !default;
 
 // ------------------------------------------------------------------------- //
 // Property values
 // ------------------------------------------------------------------------- //
 
-$property-values: (
-    "xs": $very-small,
-    "sm": $small,
-    "md": $medium,
-    "lg": $large,
-    "xl": $wide,
-    "2xl": $extra-wide
-) !default;
+$property-values: $styles;
