@@ -1,6 +1,12 @@
-# Sass Collective
+<div align="center">
 
-The Sass Collective collection.
+![Sass Collective](.github/logo.svg)
+
+</div>
+
+## Introduction
+
+The Sass Collective packages monorepo.
 
 ## Packages
 
