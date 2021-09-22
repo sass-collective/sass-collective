@@ -5,7 +5,7 @@
     ],
     "command": {
         "publish": {
-            "message": "chore(release): publish version",
+            "message": "chore(release): publish",
             "ignoreChanges": [
                 "**/*.md",
                 "**/.github/*"
