@@ -133,7 +133,7 @@ with mixins.
 
 ### Options
 
-| Option | Value |
+| Variable | Default |
 | --- | --- |
 | `$baseline` | `16px` |
 

@@ -87,7 +87,7 @@ npm install @sass-collective/breakpoint
 
 ## API
 
-### Variables
+### Options
 
 | Variable | Default | Description |
 | --- | --- | --- |

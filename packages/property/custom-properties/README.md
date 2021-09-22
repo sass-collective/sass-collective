@@ -78,7 +78,7 @@ with mixins.
 
 ## API
 
-### Variables
+### Options
 
 | Variable | Default | Description |
 | --- | --- | --- |
