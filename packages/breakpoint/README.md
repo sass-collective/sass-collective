@@ -7,13 +7,24 @@
 
 ## Introduction
 
-Create easily CSS breakpoint rules.
+Easily manage your CSS breakpoint rules.
 
 ## Installation
 
 ```shell
 npm install @sass-collective/breakpoint
 ```
+
+## Scales
+
+| Name | Value |
+| --- | --- |
+| `xs` | `360px` |
+| `sm` | `480px` |
+| `md` | `768px` |
+| `lg` | `960px` |
+| `xl` | `1200px` |
+| `2xl` | `1500px` |
 
 ## Usage
 
@@ -22,22 +33,22 @@ npm install @sass-collective/breakpoint
 
 .foo {
     // default min-width
-    @include breakpoint.styles(960) {
+    @include breakpoint.styles(lg) {
         font-size: 10px;
     }
 
     // max-width
-    @include breakpoint.styles($max-width: 960) {
+    @include breakpoint.styles($max-width: lg) {
         font-size: 10px;
     }
 
     // min-width & max-width
-    @include breakpoint.styles(480, 960) {
+    @include breakpoint.styles(sm, lg) {
         font-size: 10px;
     }
 
     // root selector
-    @include breakpoint.styles(480, $root-selector: ".bar") {
+    @include breakpoint.styles(sm, $root-selector: ".bar") {
         font-size: 10px;
     }
 }
@@ -79,10 +90,16 @@ npm install @sass-collective/breakpoint
 
 ### Custom configuration
 
+You can easily override each default scales or simply add new ones!
+
 ```scss
 @use "@sass-collective/breakpoint" with (
-    $large: 1024
+    $scales: (
+        lg: 1024px,
+        "3xl": 1600px
+    )
 );
+// (xs: 320px, sm: 480px, md: 768px, lg: 1024px, xl: 1200px, "2xl": 1500px, "3xl": 1600px)
 ```
 
 ## API
@@ -92,11 +109,6 @@ npm install @sass-collective/breakpoint
 | Variable | Default | Description |
 | --- | --- | --- |
 | `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
-| `$very-small` | `320` | iPhone in portrait mode |
-| `$small` | `480` | iPhone in landscape mode |
-| `$medium` | `768` | iPad in portrait mode |
-| `$large` | `960` | Desktop |
-| `$wide` | `1200` | Wide screen |
 
 ### Mixins
 
