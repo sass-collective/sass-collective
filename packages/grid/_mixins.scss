@@ -145,7 +145,7 @@
 
 @mixin _breakpoint {
     @each $key, $value in breakpoint.$property-values {
-        @include breakpoint.styles($value) {
+        @include breakpoint.styles($key) {
             @include css.selector($key) {
                 @content;
             }
