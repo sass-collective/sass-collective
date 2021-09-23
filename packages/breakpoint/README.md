@@ -128,6 +128,12 @@ You can easily add a additional breakpoint rule:
 | --- | --- | --- |
 | `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
 
+### Functions
+
+| Function | Description |
+| --- | --- |
+| `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
+
 ### Mixins
 
 | Mixin | Description |
