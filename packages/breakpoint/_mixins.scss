@@ -7,6 +7,11 @@
 @use "./functions";
 @use "./variables";
 
+///
+/// @example
+///     @include breakpoint.styles(lg) { font-size: 10px; }
+///     // @media all and (min-width: 960px) { .foo { font-size: 10px; }}
+///
 @mixin styles($min-width: null, $max-width: null, $root-selector: null) {
     @if $min-width and not map.has-key(variables.$styles, $min-width) {
         @error "Invalid style, `#{$min-width}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
