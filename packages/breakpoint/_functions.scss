@@ -2,11 +2,16 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
+@use "sass:map";
 @use "@sass-collective/strip-unit";
 @use "./variables";
 
+@function get-value($value) {
+    @return map.get(variables.$styles, $value);
+}
+
 @function set-value($value) {
-    @return (strip-unit.strip($value) * 1px);
+    @return strip-unit.strip($value) * 1px;
 }
 
 @function set-value-has-strict($value) {
