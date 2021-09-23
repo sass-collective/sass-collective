@@ -1,4 +1,8 @@
-![Sass Grid](.github/banner.png)
+<div align="center">
+
+![Sass Grid](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/grid)](https://www.npmjs.com/package/@sass-collective/grid)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/grid)](https://www.npmjs.com/package/@sass-collective/grid)
