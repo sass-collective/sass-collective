@@ -10,6 +10,12 @@
                 "**/*.md",
                 "**/.github/*"
             ]
+        },
+        "version": {
+            "conventionalCommits": true,
+            "changelogPreset": {
+                "name": "conventionalcommits"
+            }
         }
     }
 }
