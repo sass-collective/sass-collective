@@ -1,4 +1,8 @@
-![Sass Breakpoint](.github/banner.png)
+<div align="center">
+
+![Sass Breakpoint](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/breakpoint)](https://www.npmjs.com/package/@sass-collective/breakpoint)
 [![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/breakpoint)](https://www.npmjs.com/package/@sass-collective/breakpoint)
@@ -34,7 +38,7 @@ The default breakpoints are configured by common device resolutions.
 @use "@sass-collective/breakpoint";
 
 .foo {
-    // default min-width
+    // min-width
     @include breakpoint.styles(lg) {
         font-size: 10px;
     }
@@ -59,7 +63,7 @@ The default breakpoints are configured by common device resolutions.
 ### Result
 
 ```css
-/* default min-width */
+/* min-width */
 @media all and (min-width: 960px) {
     .foo {
         font-size: 10px;
