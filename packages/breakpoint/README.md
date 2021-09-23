@@ -15,7 +15,7 @@ Easily manage your CSS breakpoint rules.
 npm install @sass-collective/breakpoint
 ```
 
-## Scales
+## Screens
 
 | Name | Value |
 | --- | --- |
@@ -88,18 +88,30 @@ npm install @sass-collective/breakpoint
 
 > **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.
 
-### Custom configuration
+## Customization
 
-You can easily override each default scales or simply add new ones!
+You can easily override default screens:
 
 ```scss
 @use "@sass-collective/breakpoint" with (
-    $scales: (
-        lg: 1024px,
-        "3xl": 1600px
+    $screens: (
+        lg: 1024px
+        // (xs: 320px, sm: 480px, md: 768px, lg: 1024px, xl: 1200px, "2xl": 1500px)
     )
 );
-// (xs: 320px, sm: 480px, md: 768px, lg: 1024px, xl: 1200px, "2xl": 1500px, "3xl": 1600px)
+```
+
+### Extending default configuration
+
+You can easily add a additional breakpoint rule:
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $screens: (
+        "3xl": 1600px
+        // (xs: 320px, sm: 480px, md: 768px, lg: 960px, xl: 1200px, "2xl": 1500px, "3xl": 1600px)
+    )
+);
 ```
 
 ## API
