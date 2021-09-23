@@ -17,6 +17,8 @@ npm install @sass-collective/breakpoint
 
 ## Screens
 
+The default breakpoints are configured by common device resolutions.
+
 | Name | Value |
 | --- | --- |
 | `xs` | `360px` |
