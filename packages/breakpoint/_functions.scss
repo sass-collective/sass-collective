@@ -6,13 +6,9 @@
 @use "@sass-collective/strip-unit";
 @use "./variables";
 
-@function get-value($value) {
-    @return map.get(variables.$styles, $value);
-}
-
 @function set-value($value, $strict: false) {
-    $_value: null;
-    $unit: strip-unit.strip($value) * 1px;
+    $_value: map.get(variables.$styles, $value);
+    $unit: strip-unit.strip($_value) * 1px;
 
     @if $strict {
         $_value: $unit - 1;

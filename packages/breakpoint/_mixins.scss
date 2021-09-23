@@ -18,7 +18,7 @@
 
     @if $min-width {
         @if $max-width {
-            @media all and (min-width: functions.set-value(functions.get-value($min-width))) and (max-width: functions.set-value(functions.get-value($max-width), variables.$strict)) {
+            @media all and (min-width: functions.set-value($min-width)) and (max-width: functions.set-value($max-width, variables.$strict)) {
                 @if $root-selector {
                     #{$root-selector} & {
                         @content;
@@ -28,7 +28,7 @@
                 }
             }
         } @else {
-            @media all and (min-width: functions.set-value(functions.get-value($min-width))) {
+            @media all and (min-width: functions.set-value($min-width)) {
                 @if $root-selector {
                     #{$root-selector} & {
                         @content;
@@ -39,7 +39,7 @@
             }
         }
     } @else if $max-width {
-        @media all and (max-width: functions.set-value(functions.get-value($max-width), variables.$strict)) {
+        @media all and (max-width: functions.set-value($max-width, variables.$strict)) {
             @if $root-selector {
                 #{$root-selector} & {
                     @content;
