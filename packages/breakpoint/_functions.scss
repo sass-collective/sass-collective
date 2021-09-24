@@ -10,6 +10,22 @@
     @return map.get(variables.$styles, $value);
 }
 
+@function set-min($value) {
+    $min: get-value($value);
+
+    @return if($min != 0, $min, null);
+}
+
+@function set-max($value) {
+    $max: get-value($value);
+
+    @if variables.$strict {
+        @return if($max != 0, $max - 1, null);
+    } @else {
+        @return if($max != 0, $max, null);
+    }
+}
+
 @function set-value($value, $strict: false) {
     $_value: get-value($value);
     $unit: strip-unit.strip($_value) * 1px;
