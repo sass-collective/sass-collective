@@ -97,3 +97,28 @@
         @content;
     }
 }
+
+///
+/// @example
+///     @include breakpoint.only(lg) { font-size: 10px; }
+///     // @media (min-width: 960px) and (max-width: 1200px) { { font-size: 10px; }
+///
+@mixin only($screen) {
+    @if $screen and not map.has-key(variables.$styles, $screen) {
+        @error "Invalid style, `#{$screen}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $min: functions.set-min($screen);
+    $next: functions.get-next($screen);
+    $max: functions.set-max($next);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include up($screen) {
+            @content;
+        }
+    }
+}

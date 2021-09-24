@@ -2,12 +2,20 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
+@use "sass:list";
 @use "sass:map";
 @use "@sass-collective/strip-unit";
 @use "./variables";
 
 @function get-value($value) {
     @return map.get(variables.$styles, $value);
+}
+
+@function get-next($value) {
+    $keys: map.keys(variables.$styles);
+    $n: list.index($keys, $value);
+
+    @return if($n < length($keys), list.nth($keys, $n + 1), null);
 }
 
 @function set-min($value) {
@@ -19,11 +27,7 @@
 @function set-max($value) {
     $max: get-value($value);
 
-    @if variables.$strict {
-        @return if($max != 0, $max - 1, null);
-    } @else {
-        @return if($max != 0, $max, null);
-    }
+    @return if($max and $max > 0, $max - 1, null);
 }
 
 @function set-value($value, $strict: false) {
