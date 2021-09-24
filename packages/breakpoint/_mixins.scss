@@ -101,7 +101,7 @@
 ///
 /// @example
 ///     @include breakpoint.only(lg) { font-size: 10px; }
-///     // @media (min-width: 960px) and (max-width: 1200px) { { font-size: 10px; }
+///     // @media (min-width: 960px) and (max-width: 1199px) { { font-size: 10px; }
 ///
 @mixin only($screen) {
     @if $screen and not map.has-key(variables.$styles, $screen) {
@@ -124,7 +124,9 @@
 }
 
 ///
-///
+/// @example
+///     @include breakpoint.only(md, xl) { font-size: 10px; }
+///     // @media (min-width: 768px) and (max-width: 1199px) { { font-size: 10px; }
 ///
 @mixin between($min, $max) {
     @if $min and not map.has-key(variables.$styles, $min) {
