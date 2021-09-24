@@ -9,6 +9,95 @@
 
 ///
 /// @example
+///     @include breakpoint.up(lg) { font-size: 10px; }
+///     // @media (min-width: 960px) { font-size: 10px; }
+///
+@mixin up($value) {
+    @if $value and not map.has-key(variables.$styles, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $min: functions.set-min($value);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+///
+/// @example
+///     @include breakpoint.up(lg) { font-size: 10px; }
+///     // @media (max-width: 960px) { font-size: 10px; }
+///
+@mixin down($value) {
+    @if $value and not map.has-key(variables.$styles, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $max: functions.set-max($value);
+
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+///
+/// @example
+///     @include breakpoint.only(lg) { font-size: 10px; }
+///     // @media (min-width: 960px) and (max-width: 1199px) { { font-size: 10px; }
+///
+@mixin only($value) {
+    @if $value and not map.has-key(variables.$styles, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $min: functions.set-min($value);
+    $next: functions.get-next($value);
+    $max: functions.set-max($next);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $max == null {
+        @include up($value) {
+            @content;
+        }
+    }
+}
+
+///
+/// @example
+///     @include breakpoint.only(md, xl) { font-size: 10px; }
+///     // @media (min-width: 768px) and (max-width: 1199px) { { font-size: 10px; }
+///
+@mixin between($min, $max) {
+    @if $min and not map.has-key(variables.$styles, $min) {
+        @error "Invalid style, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    } @else if $max and not map.has-key(variables.$styles, $max) {
+        @error "Invalid style, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $min: functions.set-min($min);
+    $max: functions.set-max($max);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+///
+/// @example
 ///     @include breakpoint.styles(lg) { font-size: 10px; }
 ///     // @media all and (min-width: 960px) { font-size: 10px; }
 ///
@@ -54,95 +143,6 @@
             } @else {
                 @content;
             }
-        }
-    }
-}
-
-///
-/// @example
-///     @include breakpoint.up(lg) { font-size: 10px; }
-///     // @media (min-width: 960px) { font-size: 10px; }
-///
-@mixin up($screen) {
-    @if $screen and not map.has-key(variables.$styles, $screen) {
-        @error "Invalid style, `#{$screen}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    }
-
-    $min: functions.set-min($screen);
-
-    @if $min {
-        @media (min-width: $min) {
-            @content;
-        }
-    } @else {
-        @content;
-    }
-}
-
-///
-/// @example
-///     @include breakpoint.up(lg) { font-size: 10px; }
-///     // @media (max-width: 960px) { font-size: 10px; }
-///
-@mixin down($screen) {
-    @if $screen and not map.has-key(variables.$styles, $screen) {
-        @error "Invalid style, `#{$screen}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    }
-
-    $max: functions.set-max($screen);
-
-    @if $max {
-        @media (max-width: $max) {
-            @content;
-        }
-    } @else {
-        @content;
-    }
-}
-
-///
-/// @example
-///     @include breakpoint.only(lg) { font-size: 10px; }
-///     // @media (min-width: 960px) and (max-width: 1199px) { { font-size: 10px; }
-///
-@mixin only($screen) {
-    @if $screen and not map.has-key(variables.$styles, $screen) {
-        @error "Invalid style, `#{$screen}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    }
-
-    $min: functions.set-min($screen);
-    $next: functions.get-next($screen);
-    $max: functions.set-max($next);
-
-    @if $min != null and $max != null {
-        @media (min-width: $min) and (max-width: $max) {
-            @content;
-        }
-    } @else if $max == null {
-        @include up($screen) {
-            @content;
-        }
-    }
-}
-
-///
-/// @example
-///     @include breakpoint.only(md, xl) { font-size: 10px; }
-///     // @media (min-width: 768px) and (max-width: 1199px) { { font-size: 10px; }
-///
-@mixin between($min, $max) {
-    @if $min and not map.has-key(variables.$styles, $min) {
-        @error "Invalid style, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    } @else if $max and not map.has-key(variables.$styles, $max) {
-        @error "Invalid style, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    }
-
-    $min: functions.set-min($min);
-    $max: functions.set-max($max);
-
-    @if $min != null and $max != null {
-        @media (min-width: $min) and (max-width: $max) {
-            @content;
         }
     }
 }

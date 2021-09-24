@@ -39,22 +39,22 @@ The default breakpoints are configured by common device resolutions.
 
 .foo {
     // min-width
-    @include breakpoint.styles(lg) {
+    @include breakpoint.up(lg) {
         font-size: 10px;
     }
 
     // max-width
-    @include breakpoint.styles($max-width: lg) {
+    @include breakpoint.down(lg) {
         font-size: 10px;
     }
 
-    // min-width & max-width
-    @include breakpoint.styles(sm, lg) {
+    // min-width & max-width (with auto max-width)
+    @include breakpoint.only(md) {
         font-size: 10px;
     }
 
-    // root selector
-    @include breakpoint.styles(sm, $root-selector: ".bar") {
+    // min-width & max-width free
+    @include breakpoint.between(md, xl) {
         font-size: 10px;
     }
 }
@@ -64,29 +64,29 @@ The default breakpoints are configured by common device resolutions.
 
 ```css
 /* min-width */
-@media all and (min-width: 960px) {
+@media (min-width: 960px) {
     .foo {
         font-size: 10px;
     }
 }
 
 /* max-width */
-@media all and (max-width: 959px) {
+@media (max-width: 959px) {
     .foo {
         font-size: 10px;
     }
 }
 
-/* min-width & max-width */
-@media all and (min-width: 480px) and (max-width: 959px) {
+/* min-width & max-width (with auto max-width) */
+@media (min-width: 768px) and (max-width: 959px) {
     .foo {
         font-size: 10px;
     }
 }
 
-/* root selector */
-@media all and (min-width: 480px) {
-    .bar .foo {
+/* min-width & max-width free */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .foo {
         font-size: 10px;
     }
 }
@@ -126,7 +126,7 @@ You can easily add a additional breakpoint rule:
 
 | Variable | Default | Description |
 | --- | --- | --- |
-| `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px` |
+| **DEPRECATED** `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
 
 ### Functions
 
@@ -138,4 +138,8 @@ You can easily add a additional breakpoint rule:
 
 | Mixin | Description |
 | --- | --- |
-| `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
+| `up($value)` | Create media rule for minimum with only. |
+| `down($value)` | Create media rule for maximum with only. |
+| `only($value)` | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
+| `between($min, $max)` | Create media rule for between minimum and maximum widths. |
+| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
