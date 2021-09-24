@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.1.0...@sass-collective/breakpoint@2.2.0) (2021-09-24)
+
+
+### Features
+
+* **breakpoint:** add `between` mixin ([5446d10](https://github.com/sass-collective/sass-collective/commit/5446d10a0226e23a7fc473db550b2ac1f391c0f8))
+* **breakpoint:** add `only` mixin ([616e996](https://github.com/sass-collective/sass-collective/commit/616e996886affb47106237164b603e799ce2a464))
+* **breakpoint:** add `set-min` and `set-max` functions ([920ccb5](https://github.com/sass-collective/sass-collective/commit/920ccb546d2f4ae3d4c8e4a553e5552f7e49399d))
+* **breakpoint:** add `up` and `down` mixins ([68455b8](https://github.com/sass-collective/sass-collective/commit/68455b80afb041cbda771f91cf5236302b15d39a))
+
+
+
+
 ## [2.1.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.0.0...@sass-collective/breakpoint@2.1.0) (2021-09-23)
 
 
