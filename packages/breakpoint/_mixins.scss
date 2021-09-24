@@ -122,3 +122,23 @@
         }
     }
 }
+
+///
+///
+///
+@mixin between($min, $max) {
+    @if $min and not map.has-key(variables.$styles, $min) {
+        @error "Invalid style, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    } @else if $max and not map.has-key(variables.$styles, $max) {
+        @error "Invalid style, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    }
+
+    $min: functions.set-min($min);
+    $max: functions.set-max($max);
+
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+}
