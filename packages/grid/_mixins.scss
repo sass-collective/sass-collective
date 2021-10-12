@@ -40,7 +40,7 @@
 }
 
 @mixin _start-for($mixin, $limit) {
-    @for $i from 1 through $limit {
+    @for $i from 1 through $limit + 1 {
         &-start-#{$i} {
             @if ($mixin == "column") {
                 @include _column-start($i);
@@ -62,7 +62,7 @@
 }
 
 @mixin _end-for($mixin, $limit) {
-    @for $i from 1 through $limit {
+    @for $i from 1 through $limit + 1 {
         &-end-#{$i} {
             @if ($mixin == "column") {
                 @include _column-end($i);
