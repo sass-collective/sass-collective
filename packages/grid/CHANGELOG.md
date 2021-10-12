@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.2.2...@sass-collective/grid@1.3.0) (2021-10-12)
+
+
+### Features
+
+* **grid:** add `start` and `end` plus one ([c0989e3](https://github.com/sass-collective/sass-collective/commit/c0989e33c86a4a552882967c4937e13db5411297))
+
+
+
+
 ### [1.2.2](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.2.1...@sass-collective/grid@1.2.2) (2021-09-24)
 
 **Note:** Version bump only for package @sass-collective/grid
