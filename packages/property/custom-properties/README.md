@@ -26,7 +26,7 @@ npm install @sass-collective/property
 }
 
 .bar {
-    @include custom-properties.declaration(color, custom-properties.create(foo, custom-properties.create(bar, darkcyan)));
+    @include custom-properties.declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
     // color: var(--foo, var(--bar, darkcyan));
 }
 ```
