@@ -12,9 +12,9 @@
         "npm": ">=7.0.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^13.2.1",
-        "@commitlint/config-conventional": "^13.2.0",
-        "husky": "^7.0.2",
+        "@commitlint/cli": "^14.1.0",
+        "@commitlint/config-conventional": "^14.1.0",
+        "husky": "^7.0.4",
         "lerna": "^4.0.0"
     },
     "author": "The Sass Collective Authors",
