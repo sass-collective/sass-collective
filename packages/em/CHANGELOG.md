@@ -10,11 +10,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-# Release notes
-
-## Unreleased
-
 ## v2.1.0 (2021-07-03)
 
 ### Changed
