@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+### [2.5.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/em@2.5.0...@sass-collective/em@2.5.1) (2021-11-02)
+
+**Note:** Version bump only for package @sass-collective/em
+
+
+
+
+
 # Release notes
 
 ## Unreleased
