@@ -22,27 +22,27 @@ npm install @sass-collective/css
 .foo {
     @include css.declaration(color, darkcyan);
     // color: darkcyan;
+
+    @include css.declaration(color, darkseagreen, true);
+    // color: darkseagreen !important;
     
     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
     // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
     // Use parentheses for declare comma separated values list.
-    
-    @include css.declaration(color, darkcyan, true);
-    // color: darkcyan !important;
 }
 
 .bar {
     @include css.selector(md) {
         background: darkcyan;
     }
-    // .md:foo {
+    // .md:bar {
     //      background: darkcyan;
     // }
     
     @include css.selector(md, $suffix: true) {
         background: darkcyan;
     }
-    // .foo:md { 
+    // .bar:md { 
     //      background: darkcyan;
     // }
 }

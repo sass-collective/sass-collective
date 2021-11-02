@@ -7,11 +7,29 @@
 @use "./functions";
 
 ///
-/// @example
-///     @include selector(md) { background: darkcyan; }
-///     // .md:foo { background: darkcyan; }
-///     @include selector(md, $suffix: true) { background: darkcyan; }
-///     // .foo:md { background: darkcyan; }
+/// @example - scss
+///   .foo {
+///     @include selector(md) {
+///       background: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   .md:foo {
+///     background: darkcyan;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     @include selector(md, $suffix: true) {
+///       background: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   .foo:md {
+///     background: darkcyan;
+///   }
 ///
 /// @see {mixin} css.selector
 ///
@@ -44,13 +62,19 @@
 }
 
 ///
-/// @example
+/// @example - scss
+///   .foo {
 ///     @include declaration(color, darkcyan);
-///     // color: darkcyan;
+///     @include declaration(color, darkseagreen, true);
 ///     @include declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
-///     // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
-///     @include declaration(color, darkcyan, true);
-///     // color: darkcyan !important;
+///   }
+///
+/// @example - css
+///   .foo {
+///     color: darkcyan;
+///     color: darkseagreen !important;
+///     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
+///   }
 ///
 /// @see {mixin} css.declaration
 ///
