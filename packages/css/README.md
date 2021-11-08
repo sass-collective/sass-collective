@@ -25,7 +25,7 @@ npm install @sass-collective/css
 
     @include css.declaration(color, darkseagreen, true);
     // color: darkseagreen !important;
-    
+
     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
     // box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
     // Use parentheses for declare comma separated values list.
@@ -38,7 +38,7 @@ npm install @sass-collective/css
     // .md:bar {
     //      background: darkcyan;
     // }
-    
+
     @include css.selector(md, $suffix: true) {
         background: darkcyan;
     }
@@ -52,7 +52,7 @@ npm install @sass-collective/css
 
 ### Mixins
 
-| Mixin | Description |
-| --- | --- |
-| `selector($key, $divider, $suffix)` | Add prefix or suffix key on selector, with optional default `:` divider. |
-| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`. |
+| Mixin                                        | Description                                                              |
+|----------------------------------------------|--------------------------------------------------------------------------|
+| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`.                    |
+| `selector($key, $divider, $suffix)`          | Add prefix or suffix key on selector, with optional default `:` divider. |
