@@ -31,7 +31,7 @@
 }
 
 @function create-varname($name) {
-    @if variables.$prefix {
+    @if variables.$prefix and variables.$prefix != "" {
         $name: --#{variables.$prefix}-#{$name};
     } @else {
         $name: --#{$name};
