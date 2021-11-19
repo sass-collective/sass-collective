@@ -12,9 +12,9 @@
         "npm": ">=7.0.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^14.1.0",
-        "@commitlint/config-conventional": "^14.1.0",
-        "@types/node": "^16.11.6",
+        "@commitlint/cli": "^15.0.0",
+        "@commitlint/config-conventional": "^15.0.0",
+        "@types/node": "^16.11.9",
         "husky": "^7.0.4",
         "lerna": "^4.0.0"
     },
