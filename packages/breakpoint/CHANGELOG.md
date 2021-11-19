@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.2.1...@sass-collective/breakpoint@2.3.0) (2021-11-19)
+
+
+### Features
+
+* **breakpoint:** change `2xl` to `1400px` ([193babc](https://github.com/sass-collective/sass-collective/commit/193babc98d2acdeec81682a8bb8a0c608e7ca13f))
+
+
+
+
 ### [2.2.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.2.0...@sass-collective/breakpoint@2.2.1) (2021-10-12)
 
 **Note:** Version bump only for package @sass-collective/breakpoint

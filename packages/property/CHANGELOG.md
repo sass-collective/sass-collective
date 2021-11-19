@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.5.1...@sass-collective/property@4.6.0) (2021-11-19)
+
+
+### Features
+
+* **custom properties:** add condition if `$prefix` is empty ([15a1847](https://github.com/sass-collective/sass-collective/commit/15a184754165a765041c3120f1fb2439ba5ef8a3))
+
+
+
 ### [4.5.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.5.0...@sass-collective/property@4.5.1) (2021-11-02)
 
 **Note:** Version bump only for package @sass-collective/property
