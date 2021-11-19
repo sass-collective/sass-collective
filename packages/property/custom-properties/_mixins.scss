@@ -7,9 +7,9 @@
 @use "./variables";
 
 ///
-/// @example
-///     @include config("foo");
-///     // variables.$prefix: "foo";
+/// @example - scss
+///   @include config("foo");
+///   // variables.$prefix: "foo";
 ///
 @mixin config($prefix: null) {
     @if $prefix {
@@ -18,7 +18,7 @@
 }
 
 ///
-/// @example
+/// @example - scss
 ///     @include declaration(custom-properties.create(--foo, darkcyan));
 ///     // --foo: darkcyan;
 ///     @include declaration(color, custom-properties.create(--foo, darkcyan));
