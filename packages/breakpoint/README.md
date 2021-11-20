@@ -23,14 +23,14 @@ npm install @sass-collective/breakpoint
 
 The default breakpoints are configured by common device resolutions.
 
-| Name | Value |
-| --- | --- |
-| `xs` | `360px` |
-| `sm` | `480px` |
-| `md` | `768px` |
-| `lg` | `960px` |
-| `xl` | `1200px` |
-| `2xl` | `1400` |
+| Name  | Value    |
+|-------|----------|
+| `xs`  | `360px`  |
+| `sm`  | `480px`  |
+| `md`  | `768px`  |
+| `lg`  | `960px`  |
+| `xl`  | `1200px` |
+| `2xl` | `1400px` |
 
 ## Usage
 
@@ -124,22 +124,24 @@ You can easily add a additional breakpoint rule:
 
 ### Options
 
-| Variable | Default | Description |
-| --- | --- | --- |
-| **DEPRECATED** `$strict` | `true` | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
+| Variable                 | Default | Description                                                                                                   |
+|--------------------------|---------|---------------------------------------------------------------------------------------------------------------|
+| **
+DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
 
 ### Functions
 
-| Function | Description |
-| --- | --- |
+| Function            | Description                                                                           |
+|---------------------|---------------------------------------------------------------------------------------|
 | `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
 
 ### Mixins
 
-| Mixin | Description |
-| --- | --- |
-| `up($value)` | Create media rule for minimum with only. |
-| `down($value)` | Create media rule for maximum with only. |
-| `only($value)` | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
-| `between($min, $max)` | Create media rule for between minimum and maximum widths. |
-| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule. |
+| Mixin                                                           | Description                                                                                                                      |
+|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `up($value)`                                                    | Create media rule for minimum with only.                                                                                         |
+| `down($value)`                                                  | Create media rule for maximum with only.                                                                                         |
+| `only($value)`                                                  | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
+| `between($min, $max)`                                           | Create media rule for between minimum and maximum widths.                                                                        |
+| **
+DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |

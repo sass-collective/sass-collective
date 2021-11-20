@@ -30,6 +30,6 @@ $value: strip-unit.strip(100px);
 
 ### Functions
 
-| Function | Description |
-| --- | --- |
+| Function        | Description                    |
+|-----------------|--------------------------------|
 | `strip($value)` | Return value without the unit. |
