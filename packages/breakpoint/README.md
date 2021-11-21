@@ -13,15 +13,33 @@
 
 Easily manage your CSS breakpoint rules.
 
-## Installation
+## Installing
 
 ```shell
 npm install @sass-collective/breakpoint
 ```
 
-## Screens
+## Usage
 
-The default breakpoints are configured by common device resolutions.
+### Screen sizes
+
+You can define the screen sizes variables:
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $screens: (
+        "lg": 1024px
+    )
+);
+```
+
+### Options
+
+| Variable                 | Default | Description                                                                                                        |
+|--------------------------|---------|--------------------------------------------------------------------------------------------------------------------|
+| **DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. <br/>Available only with the deprecated `styles` mixin. |
+
+### Screens
 
 | Name  | Value    |
 |-------|----------|
@@ -32,109 +50,21 @@ The default breakpoints are configured by common device resolutions.
 | `xl`  | `1200px` |
 | `2xl` | `1400px` |
 
-## Usage
+You can also define new size:
 
 ```scss
-@use "@sass-collective/breakpoint";
-
-.foo {
-    // min-width
-    @include breakpoint.up(lg) {
-        font-size: 10px;
-    }
-
-    // max-width
-    @include breakpoint.down(lg) {
-        font-size: 10px;
-    }
-
-    // min-width & max-width (with auto max-width)
-    @include breakpoint.only(md) {
-        font-size: 10px;
-    }
-
-    // min-width & max-width free
-    @include breakpoint.between(md, xl) {
-        font-size: 10px;
-    }
-}
+@use "@sass-collective/breakpoint" with (
+    $screens: (
+        "3xl": 1920px
+    )
+);
 ```
 
-### Result
-
-```css
-/* min-width */
-@media (min-width: 960px) {
-    .foo {
-        font-size: 10px;
-    }
-}
-
-/* max-width */
-@media (max-width: 959px) {
-    .foo {
-        font-size: 10px;
-    }
-}
-
-/* min-width & max-width (with auto max-width) */
-@media (min-width: 768px) and (max-width: 959px) {
-    .foo {
-        font-size: 10px;
-    }
-}
-
-/* min-width & max-width free */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .foo {
-        font-size: 10px;
-    }
-}
-```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.
+The new key name `3xl` is now available like any other default theme keys.
 
 ## Customization
 
-You can easily override default screens:
-
-```scss
-@use "@sass-collective/breakpoint" with (
-    $screens: (
-        "lg": 1024px
-        // (xs: 320px, sm: 480px, md: 768px, lg: 1024px, xl: 1200px, "2xl": 1500px)
-    )
-);
-```
-
-### Extending default configuration
-
-You can easily add a additional breakpoint rule:
-
-```scss
-@use "@sass-collective/breakpoint" with (
-    $screens: (
-        "3xl": 1600px
-        // (xs: 320px, sm: 480px, md: 768px, lg: 960px, xl: 1200px, "2xl": 1500px, "3xl": 1600px)
-    )
-);
-```
-
-## API
-
-### Options
-
-| Variable                 | Default | Description                                                                                                   |
-|--------------------------|---------|---------------------------------------------------------------------------------------------------------------|
-| **DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
-
-### Functions
-
-| Function            | Description                                                                           |
-|---------------------|---------------------------------------------------------------------------------------|
-| `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
-
-### Mixins
+### Sass mixins
 
 | Mixin                                                           | Description                                                                                                                      |
 |-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -143,3 +73,107 @@ You can easily add a additional breakpoint rule:
 | `only($value)`                                                  | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
 | `between($min, $max)`                                           | Create media rule for between minimum and maximum widths.                                                                        |
 | **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |
+
+#### Declare rule with `breakpoint.up()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/breakpoint";
+
+.foo {
+    @include breakpoint.up(lg) {
+        color: darkcyan;
+    }
+}
+```
+
+...will produce the following CSS.
+
+```css
+@media (min-width: 960px) { 
+    .foo {
+        color: darkcyan;
+    }
+}
+```
+
+#### Declare rule with `breakpoint.down()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/breakpoint";
+
+.foo {
+    @include breakpoint.down(lg) {
+        color: darkcyan;
+    }
+}
+```
+
+...will produce the following CSS.
+
+```css
+@media (max-width: 960px) {
+    .foo {
+        color: darkcyan;
+    }
+}
+```
+
+#### Declare rule with `breakpoint.only()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/breakpoint";
+
+.foo {
+    @include breakpoint.only(lg) {
+        color: darkcyan;
+    }
+}
+```
+
+...will produce the following CSS.
+
+```css
+@media (min-width: 960px) and (max-width: 1199px) {
+    .foo {
+        color: darkcyan;
+    }
+}
+```
+
+#### Declare rule with `breakpoint.between()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/breakpoint";
+
+.foo {
+    @include breakpoint.between(md, xl) {
+        color: darkcyan;
+    }
+}
+```
+
+...will produce the following CSS.
+
+```css
+@media (min-width: 768px) and (max-width: 1199px) {
+    .foo {
+        color: darkcyan;
+    }
+}
+```
+
+### Sass functions
+
+| Function            | Description                                                                           |
+|---------------------|---------------------------------------------------------------------------------------|
+| `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
+
+> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.
