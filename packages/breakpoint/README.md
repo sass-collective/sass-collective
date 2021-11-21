@@ -35,9 +35,10 @@ You can define the screen sizes variables:
 
 ### Options
 
-| Variable                 | Default | Description                                                                                                        |
-|--------------------------|---------|--------------------------------------------------------------------------------------------------------------------|
-| **DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. <br/>Available only with the deprecated `styles` mixin. |
+| Variable                 | Default                | Description                                                                                                        |
+|--------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------|
+| `$screens`               | See `Screens` section. | Sass map.                                                                                                          |
+| **DEPRECATED** `$strict` | `true`                 | Subtract `1px` on `max-width` value, `960px` come `959px`. <br/>Available only with the deprecated `styles` mixin. |
 
 ### Screens
 
