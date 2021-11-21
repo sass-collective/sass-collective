@@ -1,4 +1,8 @@
-![Sass Strip Unit](.github/banner.png)
+<div align="center">
+
+![Sass Strip Unit](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)
 [![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/strip-unit)](https://www.npmjs.com/package/@sass-collective/strip-unit)

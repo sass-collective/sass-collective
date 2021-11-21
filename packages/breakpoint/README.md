@@ -126,8 +126,7 @@ You can easily add a additional breakpoint rule:
 
 | Variable                 | Default | Description                                                                                                   |
 |--------------------------|---------|---------------------------------------------------------------------------------------------------------------|
-| **
-DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
+| **DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
 
 ### Functions
 
@@ -143,5 +142,4 @@ DEPRECATED** `$strict` | `true`  | Subtract `1px` on `max-width` value, `960px` 
 | `down($value)`                                                  | Create media rule for maximum with only.                                                                                         |
 | `only($value)`                                                  | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
 | `between($min, $max)`                                           | Create media rule for between minimum and maximum widths.                                                                        |
-| **
-DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |
+| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |

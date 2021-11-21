@@ -1,7 +1,12 @@
-![Sass CSS](.github/banner.png)
+<div align="center">
+
+![Sass CSS](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/css)](https://www.npmjs.com/package/@sass-collective/css)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/css)](https://www.npmjs.com/package/@sass-collective/css)
+[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/css)](https://david-dm.org/sass-collective/sass-collective?path=packages/css)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/css)](https://www.npmjs.com/package/@sass-collective/css)
 
 ## Introduction

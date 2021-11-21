@@ -1,4 +1,8 @@
-![Sass Property](.github/banner.png)
+<div align="center">
+
+![Sass Property](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
 [![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/property)](https://www.npmjs.com/package/@sass-collective/property)
@@ -46,12 +50,12 @@ npm install @sass-collective/property
 
 ### Mixins
 
-| Mixin | Description |
-| --- | --- |
+| Mixin                                        | Description                                       |
+|----------------------------------------------|---------------------------------------------------|
 | `declaration($property, $value, $important)` | Declare CSS property, with optional `!important`. |
 
 ## Packages
 
-| Package |  Description |
-| --- | --- |
+| Package                                                                                                                                             | Description                    |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
 | [`@sass-collective/property/custom-properties`](https://github.com/sass-collective/sass-collective/blob/master/packages/property/custom-properties) | Declare CSS Custom Properties. |

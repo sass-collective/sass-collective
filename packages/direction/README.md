@@ -1,4 +1,8 @@
-![Sass Direction](.github/banner.png)
+<div align="center">
+
+![Sass Direction](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
 [![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/direction)](https://www.npmjs.com/package/@sass-collective/direction)
@@ -77,6 +81,6 @@ npm install @sass-collective/direction
 
 ### Mixins
 
-| Mixin | Description |
-| --- | --- |
+| Mixin                                | Description            |
+|--------------------------------------|------------------------|
 | `styles($direction, $root-selector)` | Create direction rule. |

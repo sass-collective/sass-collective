@@ -1,7 +1,12 @@
-![Sass Em](.github/banner.png)
+<div align="center">
+
+![Sass Em](.github/logo.svg)
+
+</div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
 [![Download](https://flat.badgen.net/npm/dt/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
+[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/em)](https://david-dm.org/sass-collective/sass-collective?path=packages/em)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
 
 ## Introduction
@@ -92,14 +97,14 @@ You can use the fallback name if your namespace is not enough explicit for what 
 
 ### Functions
 
-| Function | Description |
-| --- | --- |
-| `convert($values...)` | Convert `px` unit to `em`. |
-| `em($values...)` | Fallback name of `convert()` function. |
+| Function              | Description                            |
+|-----------------------|----------------------------------------|
+| `convert($values...)` | Convert `px` unit to `em`.             |
+| `em($values...)`      | Fallback name of `convert()` function. |
 
 ### Mixins
 
-| Mixin | Description |
-| --- | --- |
+| Mixin                                              | Description                                                                       |
+|----------------------------------------------------|-----------------------------------------------------------------------------------|
 | `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em`, with optional `!important`. |
-| `em($property, $value, $context, $important)` | Fallback name to `convert()` mixin. |
+| `em($property, $value, $context, $important)`      | Fallback name to `convert()` mixin.                                               |

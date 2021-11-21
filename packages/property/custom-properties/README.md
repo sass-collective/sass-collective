@@ -1,4 +1,8 @@
-![Sass Custom Properties](.github/banner.png)
+<div align="center">
+
+![Sass Property](../.github/logo.svg)
+
+</div>
 
 ## Introduction
 
