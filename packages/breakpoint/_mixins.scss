@@ -8,9 +8,21 @@
 @use "./variables";
 
 ///
-/// @example
-///     @include breakpoint.up(lg) { font-size: 10px; }
-///     // @media (min-width: 960px) { font-size: 10px; }
+/// @example - scss
+///   .foo {
+///     @include up(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 960px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {mixin} breakpoint.up
 ///
 @mixin up($value) {
     @if $value and not map.has-key(variables.$styles, $value) {
@@ -29,9 +41,21 @@
 }
 
 ///
-/// @example
-///     @include breakpoint.up(lg) { font-size: 10px; }
-///     // @media (max-width: 960px) { font-size: 10px; }
+/// @example - scss
+///   .foo {
+///     @include down(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (max-width: 960px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {mixin} breakpoint.down
 ///
 @mixin down($value) {
     @if $value and not map.has-key(variables.$styles, $value) {
@@ -50,9 +74,21 @@
 }
 
 ///
-/// @example
-///     @include breakpoint.only(lg) { font-size: 10px; }
-///     // @media (min-width: 960px) and (max-width: 1199px) { { font-size: 10px; }
+/// @example - scss
+///   .foo {
+///     @include only(lg) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 960px) and (max-width: 1199px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {mixin} breakpoint.only
 ///
 @mixin only($value) {
     @if $value and not map.has-key(variables.$styles, $value) {
@@ -75,9 +111,21 @@
 }
 
 ///
-/// @example
-///     @include breakpoint.only(md, xl) { font-size: 10px; }
-///     // @media (min-width: 768px) and (max-width: 1199px) { { font-size: 10px; }
+/// @example - scss
+///   .foo {
+///     @include between(md, xl) {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @example - css
+///   @media (min-width: 768px) and (max-width: 1199px) {
+///     .foo {
+///       color: darkcyan;
+///     }
+///   }
+///
+/// @see {mixin} breakpoint.between
 ///
 @mixin between($min, $max) {
     @if $min and not map.has-key(variables.$styles, $min) {
