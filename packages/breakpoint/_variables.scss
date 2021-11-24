@@ -4,13 +4,6 @@
 
 @use "sass:map";
 
-/// @deprecated Will be removed on version 3.
-$strict: true !default;
-
-// ------------------------------------------------------------------------- //
-// Screen sizes
-// ------------------------------------------------------------------------- //
-
 $screens: () !default;
 
 $styles: map.merge((

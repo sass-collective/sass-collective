@@ -38,7 +38,6 @@ You can define the screen sizes variables:
 | Variable                 | Default                | Description                                                                                                        |
 |--------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------|
 | `$screens`               | See `Screens` section. | Sass map.                                                                                                          |
-| **DEPRECATED** `$strict` | `true`                 | Subtract `1px` on `max-width` value, `960px` come `959px`. <br/>Available only with the deprecated `styles` mixin. |
 
 ### Screens
 
@@ -73,7 +72,6 @@ The new key name `3xl` is now available like any other default theme keys.
 | `down($value)`                                                  | Create media rule for maximum with only.                                                                                         |
 | `only($value)`                                                  | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
 | `between($min, $max)`                                           | Create media rule for between minimum and maximum widths.                                                                        |
-| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |
 
 #### Declare rule with `breakpoint.up()`
 

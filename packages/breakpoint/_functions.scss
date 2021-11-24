@@ -29,17 +29,3 @@
 
     @return if($max and $max > 0, $max - 1, null);
 }
-
-/// @deprecated Use `set-min()` or `set-max()` functions instead.
-@function set-value($value, $strict: false) {
-    $_value: get-value($value);
-    $unit: strip-unit.strip($_value) * 1px;
-
-    @if $strict {
-        $_value: $unit - 1;
-    } @else {
-        $_value: $unit;
-    }
-
-    @return $_value;
-}
