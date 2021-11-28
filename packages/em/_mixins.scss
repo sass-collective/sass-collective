@@ -6,7 +6,7 @@
 @use "./functions";
 
 ///
-/// @example
+/// @example - scss
 ///     @include em.convert(font-size, 16px, 16px);
 ///     // font-size: 1em;
 ///     @include em.convert(margin, 20px 30px, 16px);
@@ -16,6 +16,8 @@
 ///     @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
 ///     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
 ///
+/// @see {mixin} em.convert
+///
 @mixin convert($property, $value, $context, $important: false) {
     @include css.declaration($property, functions.convert($value, $context), $important);
 }
@@ -23,7 +25,7 @@
 ///
 /// Fallback mixin in case if your namespace if not enough explicit.
 ///
-/// @example
+/// @example - scss
 ///     @use "@sass-collective/em" as foo;
 ///     // @include foo.em(font-size, 16px, 16px);
 ///

@@ -5,6 +5,9 @@
 @use "sass:map";
 @use "./variables";
 
+///
+/// @see {mixin} direction.styles
+///
 @mixin styles($direction: right, $root-selector: null) {
     @if not map.has-key(variables.$directions, $direction) {
         @error "Invalid direction, `#{$direction}` doesn't exist. Choose one of #{map.keys(variables.$directions)} options.";

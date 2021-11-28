@@ -26,6 +26,8 @@
 ///     @include declaration(color, custom-properties.create(foo, custom-properties.create(--bar, darkcyan)));
 ///     // color: var(--foo, var(--bar, darkcyan));
 ///
+/// @see {mixin} custom-properties.declaration
+///
 @mixin declaration($property, $custom-prop: null, $important: false) {
     $value: null;
 

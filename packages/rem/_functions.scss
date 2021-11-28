@@ -9,7 +9,7 @@
 @use "./variables";
 
 ///
-/// @example
+/// @example - scss
 ///     font-size: rem.convert(16px);
 ///     // font-size: 1rem;
 ///     margin: rem.convert(20px 30px);
@@ -46,7 +46,7 @@
 ///
 /// Fallback function in case if your namespace if not enough explicit.
 ///
-/// @example
+/// @example - scss
 ///     @use "@sass-collective/rem" as foo;
 ///     // font-size: foo.rem(16px);
 ///

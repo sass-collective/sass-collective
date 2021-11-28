@@ -6,7 +6,7 @@
 @use "./custom-properties";
 
 ///
-/// @example
+/// @example - scss
 ///     @include declaration(custom-properties.create(--foo, darkcyan));
 ///     // --foo: darkcyan;
 ///     @include declaration(color, custom-properties.create(--foo, darkcyan));
@@ -15,6 +15,8 @@
 ///     // color: var(--foo, var(--bar, darkcyan));
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;
+///
+/// @see {mixin} property.declaration
 ///
 @mixin declaration($property, $value: null, $important: false) {
     @if custom-properties.is-custom-prop($property) {

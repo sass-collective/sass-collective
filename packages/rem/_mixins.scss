@@ -9,7 +9,7 @@
 @use "./variables";
 
 ///
-/// @example
+/// @example - scss
 ///     @include config(10px);
 ///     // variables.$baseline: 10px;
 ///
@@ -20,7 +20,7 @@
 }
 
 ///
-/// @example
+/// @example - scss
 ///     @include rem.convert(font-size, 16px);
 ///     // font-size: 1rem;
 ///     @include rem.convert(margin, 20px 30px);
@@ -30,6 +30,8 @@
 ///     @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
 ///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
 ///
+/// @see {mixin} rem.convert
+///
 @mixin convert($property, $value, $important: false) {
     @include css.declaration($property, functions.convert($value), $important);
 }
@@ -37,9 +39,11 @@
 ///
 /// Automatically add the correct baseline based on the option.
 ///
-/// @example
+/// @example - scss
 ///     @include baseline;
 ///     // font-size: 100%;
+///
+/// @see {mixin} rem.baseline
 ///
 @mixin baseline($percentage: 100%) {
     @include css.declaration(font-size, math.div($percentage, 16) * strip-unit.strip(variables.$baseline));
@@ -48,7 +52,7 @@
 ///
 /// Fallback mixin in case if your namespace if not enough explicit.
 ///
-/// @example
+/// @example - scss
 ///     @use "@sass-collective/rem" as foo;
 ///     // @include foo.rem(font-size, 16px);
 ///
