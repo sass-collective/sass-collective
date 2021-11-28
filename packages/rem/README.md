@@ -5,15 +5,14 @@
 </div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/rem)](https://www.npmjs.com/package/@sass-collective/rem)
-[![Download](https://flat.badgen.net/npm/dt/@sass-collective/rem)](https://www.npmjs.com/package/@sass-collective/rem)
-[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/rem)](https://david-dm.org/sass-collective/sass-collective?path=packages/rem)
+[![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/rem)](https://www.npmjs.com/package/@sass-collective/rem)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/rem)](https://www.npmjs.com/package/@sass-collective/rem)
 
 ## Introduction
 
 Sass function & mixin to convert pixel to rem.
 
-## Installation
+## Installing
 
 ```shell
 npm install @sass-collective/rem
@@ -55,8 +54,6 @@ npm install @sass-collective/rem
     // Use parentheses for declare comma separated values list.
 }
 ```
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-rem-convert()`.
 
 ## Namespace
 
@@ -142,18 +139,18 @@ with mixins.
 |-------------|---------|
 | `$baseline` | `16px`  |
 
-### Functions
+### Sass functions
 
 | Function              | Description                            |
 |-----------------------|----------------------------------------|
 | `convert($values...)` | Convert `px` unit to `rem`.            |
 | `rem($values...)`     | Fallback name of `convert()` function. |
 
-### Mixins
+### Sass mixins
 
 | Mixin                                    | Description                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------|
 | `config($baseline)`                      | Override top-level `with` configuration.                                                     |
-| `convert($property, $value, $important)` | Create property with conversion of `px` unit to `rem`, with optional `!important`.           |
+| `convert($property, $value, $important)` | Set property with conversion of `px` unit to `rem`, with optional `!important`.              |
 | `baseline($percentage)`                  | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
 | `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.                                                          |

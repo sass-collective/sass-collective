@@ -6,7 +6,6 @@
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/breakpoint)](https://www.npmjs.com/package/@sass-collective/breakpoint)
 [![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/breakpoint)](https://www.npmjs.com/package/@sass-collective/breakpoint)
-[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/breakpoint)](https://david-dm.org/sass-collective/sass-collective?path=packages/breakpoint)
 [![License](https://flat.badgen.net/github/license/sass-collective/sass-collective)](https://flat.badgen.net/github/license/sass-collective/sass-collective)
 
 ## Introduction
@@ -20,6 +19,10 @@ npm install @sass-collective/breakpoint
 ```
 
 ## Usage
+
+```scss
+@use "@sass-collective/breakpoint";
+```
 
 ### Screen sizes
 
@@ -67,13 +70,13 @@ The new key name `3xl` is now available like any other default theme keys.
 
 ### Sass mixins
 
-| Mixin                                                           | Description                                                                                                                      |
-|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `up($value)`                                                    | Create media rule for minimum with only.                                                                                         |
-| `down($value)`                                                  | Create media rule for maximum with only.                                                                                         |
-| `only($value)`                                                  | Create media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
-| `between($min, $max)`                                           | Create media rule for between minimum and maximum widths.                                                                        |
-| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Create breakpoint rule.                                                                                                          |
+| Mixin                                                           | Description                                                                                                                   |
+|-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `up($value)`                                                    | Set media rule for minimum with only.                                                                                         |
+| `down($value)`                                                  | Set media rule for maximum with only.                                                                                         |
+| `only($value)`                                                  | Set media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
+| `between($min, $max)`                                           | Set media rule for between minimum and maximum widths.                                                                        |
+| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Set breakpoint rule.                                                                                                          |
 
 #### Declare rule with `breakpoint.up()`
 
@@ -176,5 +179,3 @@ The following Sass...
 | Function            | Description                                                                           |
 |---------------------|---------------------------------------------------------------------------------------|
 | `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
-
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-breakpoint-styles()`.

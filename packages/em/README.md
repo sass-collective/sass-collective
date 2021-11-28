@@ -5,15 +5,14 @@
 </div>
 
 [![Version](https://flat.badgen.net/npm/v/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
-[![Download](https://flat.badgen.net/npm/dt/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
-[![Dependencies Status](https://david-dm.org/sass-collective/sass-collective/status.svg?style=flat-square&path=packages/em)](https://david-dm.org/sass-collective/sass-collective?path=packages/em)
+[![Downloads](https://flat.badgen.net/npm/dt/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
 [![License](https://flat.badgen.net/npm/license/@sass-collective/em)](https://www.npmjs.com/package/@sass-collective/em)
 
 ## Introduction
 
 Sass function & mixin to convert pixel to em.
 
-## Installation
+## Installing
 
 ```shell
 npm install @sass-collective/em
@@ -57,8 +56,6 @@ npm install @sass-collective/em
 }
 ```
 
-> **NOTE:** you can use the legacy `@import` with dedicated prefix, ex. `sass-em-convert()`.
-
 ## Namespace
 
 ```scss
@@ -95,16 +92,16 @@ You can use the fallback name if your namespace is not enough explicit for what 
 
 ## API
 
-### Functions
+### Sass functions
 
 | Function              | Description                            |
 |-----------------------|----------------------------------------|
 | `convert($values...)` | Convert `px` unit to `em`.             |
 | `em($values...)`      | Fallback name of `convert()` function. |
 
-### Mixins
+### Sass mixins
 
-| Mixin                                              | Description                                                                       |
-|----------------------------------------------------|-----------------------------------------------------------------------------------|
-| `convert($property, $value, $context, $important)` | Create property with conversion of `px` unit to `em`, with optional `!important`. |
-| `em($property, $value, $context, $important)`      | Fallback name to `convert()` mixin.                                               |
+| Mixin                                              | Description                                                                    |
+|----------------------------------------------------|--------------------------------------------------------------------------------|
+| `convert($property, $value, $context, $important)` | Set property with conversion of `px` unit to `em`, with optional `!important`. |
+| `em($property, $value, $context, $important)`      | Fallback name to `convert()` mixin.                                            |

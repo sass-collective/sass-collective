@@ -8,7 +8,7 @@
 
 Declare CSS Custom Properties.
 
-## Installation
+## Installing
 
 ```shell
 npm install @sass-collective/property
@@ -86,13 +86,13 @@ with mixins.
 
 ### Options
 
-| Variable | Default | Description |
-| --- | --- | --- |
-| `$prefix` | `null` | Declare CSS Custom Properties prefix `!important`. |
+| Variable  | Default | Description                                        |
+|-----------|---------|----------------------------------------------------|
+| `$prefix` | `null`  | Declare CSS Custom Properties prefix `!important`. |
 
-### Mixins
+### Sass mixins
 
-| Mixin | Description |
-| --- | --- |
+| Mixin                                              | Description                                                |
+|----------------------------------------------------|------------------------------------------------------------|
 | `declaration($property, $custom-prop, $important)` | Declare CSS Custom Properties, with optional `!important`. |
-| `config($prefix)` | Override top-level `with` configuration. |
+| `config($prefix)`                                  | Override top-level `with` configuration.                   |
