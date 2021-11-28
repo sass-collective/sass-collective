@@ -70,13 +70,13 @@ The new key name `3xl` is now available like any other default theme keys.
 
 ### Sass mixins
 
-| Mixin                                                           | Description                                                                                                                   |
-|-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `up($value)`                                                    | Set media rule for minimum with only.                                                                                         |
-| `down($value)`                                                  | Set media rule for maximum with only.                                                                                         |
-| `only($value)`                                                  | Set media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
-| `between($min, $max)`                                           | Set media rule for between minimum and maximum widths.                                                                        |
-| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Set breakpoint rule.                                                                                                          |
+| Mixin                                                           | Description                                                                                                                    |
+|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `up($value)`                                                    | Sets media rule for minimum with only.                                                                                         |
+| `down($value)`                                                  | Sets media rule for maximum with only.                                                                                         |
+| `only($value)`                                                  | Sets media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
+| `between($min, $max)`                                           | Sets media rule for between minimum and maximum widths.                                                                        |
+| **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Sets breakpoint rule.                                                                                                          |
 
 #### Declare rule with `breakpoint.up()`
 

@@ -151,6 +151,6 @@ with mixins.
 | Mixin                                    | Description                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------|
 | `config($baseline)`                      | Override top-level `with` configuration.                                                     |
-| `convert($property, $value, $important)` | Set property with conversion of `px` unit to `rem`, with optional `!important`.              |
+| `convert($property, $value, $important)` | Sets property with conversion of `px` unit to `rem`, with optional `!important`.             |
 | `baseline($percentage)`                  | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
 | `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.                                                          |

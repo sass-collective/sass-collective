@@ -101,7 +101,7 @@ You can use the fallback name if your namespace is not enough explicit for what 
 
 ### Sass mixins
 
-| Mixin                                              | Description                                                                    |
-|----------------------------------------------------|--------------------------------------------------------------------------------|
-| `convert($property, $value, $context, $important)` | Set property with conversion of `px` unit to `em`, with optional `!important`. |
-| `em($property, $value, $context, $important)`      | Fallback name to `convert()` mixin.                                            |
+| Mixin                                              | Description                                                                     |
+|----------------------------------------------------|---------------------------------------------------------------------------------|
+| `convert($property, $value, $context, $important)` | Sets property with conversion of `px` unit to `em`, with optional `!important`. |
+| `em($property, $value, $context, $important)`      | Fallback name to `convert()` mixin.                                             |

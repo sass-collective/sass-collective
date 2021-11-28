@@ -28,9 +28,9 @@ npm install @sass-collective/direction
 
 ### Sass mixins
 
-| Mixin                                | Description         |
-|--------------------------------------|---------------------|
-| `styles($direction, $root-selector)` | Set direction rule. |
+| Mixin                                | Description          |
+|--------------------------------------|----------------------|
+| `styles($direction, $root-selector)` | Sets direction rule. |
 
 #### Add direction rule with `direction.styles()`
 
