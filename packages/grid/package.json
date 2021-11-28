@@ -10,7 +10,7 @@
     "dependencies": {
         "@sass-collective/breakpoint": "^2.3.0",
         "@sass-collective/css": "^2.0.0",
-        "sass": "^1.38.0"
+        "sass": "^1.43.5"
     },
     "files": [
         "*.scss"
