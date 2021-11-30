@@ -57,7 +57,7 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS.
+...will produce the following CSS...
 
 ```css
 [dir="rtl"] .foo {

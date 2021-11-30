@@ -92,7 +92,7 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS.
+...will produce the following CSS...
 
 ```css
 @media (min-width: 960px) { 
@@ -116,7 +116,7 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS.
+...will produce the following CSS...
 
 ```css
 @media (max-width: 960px) {
@@ -140,7 +140,7 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS.
+...will produce the following CSS...
 
 ```css
 @media (min-width: 960px) and (max-width: 1199px) {
@@ -164,7 +164,7 @@ The following Sass...
 }
 ```
 
-...will produce the following CSS.
+...will produce the following CSS...
 
 ```css
 @media (min-width: 768px) and (max-width: 1199px) {
