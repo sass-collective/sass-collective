@@ -6,6 +6,9 @@
 @use "sass:meta";
 @use "sass:string";
 
+///
+/// Number.
+///
 @function number($value) {
     @if meta.type-of($value) == "number" {
         @return $value;
@@ -29,6 +32,9 @@
     @return map.get($numbers, $value);
 }
 
+///
+/// Replace.
+///
 @function replace($string, $search, $replace: "") {
     $index: string.index($string, $search);
 

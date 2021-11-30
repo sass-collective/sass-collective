@@ -16,7 +16,9 @@
 ///     @include declaration(color, darkcyan);
 ///     // color: darkcyan;
 ///
-/// @see {mixin} property.declaration
+/// @see {mixin} css.declaration
+/// @see {mixin} custom-properties.declaration
+/// @see {function} custom-properties.is-custom-prop
 ///
 @mixin declaration($property, $value: null, $important: false) {
     @if custom-properties.is-custom-prop($property) {

@@ -19,6 +19,8 @@
 ///     box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
 ///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
 ///
+/// @see {function} strip-unit.strip
+///
 @function convert($values...) {
     $result: ();
     $baseline: strip-unit.strip(variables.$baseline);
@@ -49,6 +51,8 @@
 /// @example - scss
 ///     @use "@sass-collective/rem" as foo;
 ///     // font-size: foo.rem(16px);
+///
+/// @see {mixin} convert
 ///
 @function rem($values...) {
     @return convert($values...);

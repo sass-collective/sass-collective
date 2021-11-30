@@ -31,7 +31,8 @@
 ///     background: darkcyan;
 ///   }
 ///
-/// @see {mixin} css.selector
+/// @see {function} functions.number
+/// @see {function} functions.replace
 ///
 /// @link https://sparkbox.com/foundry/responsive_class_suffixes_automating_classes_with_sass_mixins_and_sass_maps
 ///
@@ -75,8 +76,6 @@
 ///     color: darkseagreen !important;
 ///     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 ///   }
-///
-/// @see {mixin} css.declaration
 ///
 @mixin declaration($property, $value, $important: false) {
     $is-important: if($important, "!important", "");

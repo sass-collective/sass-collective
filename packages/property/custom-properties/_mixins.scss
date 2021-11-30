@@ -26,10 +26,16 @@
 ///     @include declaration(color, custom-properties.create(foo, custom-properties.create(--bar, darkcyan)));
 ///     // color: var(--foo, var(--bar, darkcyan));
 ///
-/// @see {mixin} custom-properties.declaration
+/// @see {mixin} css.declaration
+/// @see {function} functions.is-custom-prop
+/// @see {function} functions.get-varname
+/// @see {function} functions.get-fallback
+/// @see {function} functions.create-var
 ///
 @mixin declaration($property, $custom-prop: null, $important: false) {
     $value: null;
+
+    @debug variables.$prefix;
 
     @if functions.is-custom-prop($property) {
         $custom-prop: $property;

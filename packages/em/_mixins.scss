@@ -16,7 +16,8 @@
 ///     @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
 ///     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
 ///
-/// @see {mixin} em.convert
+/// @see {mixin} css.declaration
+/// @see {function} functions.convert
 ///
 @mixin convert($property, $value, $context, $important: false) {
     @include css.declaration($property, functions.convert($value, $context), $important);
@@ -28,6 +29,8 @@
 /// @example - scss
 ///     @use "@sass-collective/em" as foo;
 ///     // @include foo.em(font-size, 16px, 16px);
+///
+/// @see {mixin} convert
 ///
 @mixin em($property, $value, $context, $important: false) {
     @include convert($property, $value, $context, $important);

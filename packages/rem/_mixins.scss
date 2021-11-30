@@ -30,7 +30,8 @@
 ///     @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
 ///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
 ///
-/// @see {mixin} rem.convert
+/// @see {mixin} css.declaration
+/// @see {function} functions.convert
 ///
 @mixin convert($property, $value, $important: false) {
     @include css.declaration($property, functions.convert($value), $important);
@@ -43,7 +44,8 @@
 ///     @include baseline;
 ///     // font-size: 100%;
 ///
-/// @see {mixin} rem.baseline
+/// @see {mixin} css.declaration
+/// @see {function} strip-unit.strip
 ///
 @mixin baseline($percentage: 100%) {
     @include css.declaration(font-size, math.div($percentage, 16) * strip-unit.strip(variables.$baseline));
@@ -55,6 +57,8 @@
 /// @example - scss
 ///     @use "@sass-collective/rem" as foo;
 ///     // @include foo.rem(font-size, 16px);
+///
+/// @see {mixin} convert
 ///
 @mixin rem($property, $value, $important: false) {
     @include convert($property, $value, $important);
