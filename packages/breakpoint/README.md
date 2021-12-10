@@ -225,4 +225,4 @@ Call `breakpoint.config()` before the first `breakpoint.xxx()` mixin call in you
 
 | Function            | Description                                                                                  |
 |---------------------|----------------------------------------------------------------------------------------------|
-| `get-value($value)` | Get value from the configured tokens list. Ex. `@include breakpoint.get-value(lg); // 960px` |
+| `get-value($token)` | Get value from the configured tokens list. Ex. `@include breakpoint.get-value(lg); // 960px` |
