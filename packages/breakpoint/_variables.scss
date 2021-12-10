@@ -11,13 +11,23 @@ $strict: true !default;
 // Screen sizes
 // ------------------------------------------------------------------------- //
 
-$screens: () !default;
-
-$styles: map.merge((
+$defaults: (
     "xs": 320px,
     "sm": 480px,
     "md": 768px,
     "lg": 960px,
     "xl": 1200px,
     "2xl": 1400px
-), $screens);
+);
+
+$tokens: ();
+$clean-sweep: false !default;
+$screens: () !default;
+
+@if not $clean-sweep {
+    $tokens: map.merge($defaults, $screens);
+} @else {
+    $tokens: $screens;
+}
+
+$screens: $tokens;

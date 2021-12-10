@@ -38,14 +38,15 @@ You can define the screen sizes variables:
 
 ### Options
 
-| Variable                 | Default                | Description                                                                                                        |
-|--------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------|
-| `$screens`               | See `Screens` section. | Sass map.                                                                                                          |
-| **DEPRECATED** `$strict` | `true`                 | Subtract `1px` on `max-width` value, `960px` come `959px`. <br/>Available only with the deprecated `styles` mixin. |
+| Variable                 | Default               | Description                                                                                                   |
+|--------------------------|-----------------------|---------------------------------------------------------------------------------------------------------------|
+| `$screens`               | See `Tokens` section. | Sets a list of breakpoint tokens.                                                                             |
+| `$clean-sweep`           | `false`               | Erase the default `$screens` config for helping you on a fresh start with your own custom tokens.             |
+| **DEPRECATED** `$strict` | `true`                | Subtract `1px` on `max-width` value, `960px` come `959px`. Available only with the deprecated `styles` mixin. |
 
-### Screens
+### Tokens
 
-| Name  | Value    |
+| Key   | Value    |
 |-------|----------|
 | `xs`  | `360px`  |
 | `sm`  | `480px`  |
@@ -64,7 +65,28 @@ You can also define new size:
 );
 ```
 
-The new key name `3xl` is now available like any other default theme keys.
+The new token named `3xl` is now available like any others.
+
+#### Declare your own tokens with `$clean-sweep`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/breakpoint" with (
+    $clean-sweep: true,
+    $screens: (
+        "tablet": 768px,
+        "desktop": 960px
+    )
+);
+```
+
+...will produce the following tokens...
+
+| Key       | Value   |
+|-----------|---------|
+| `tablet`  | `768px` |
+| `desktop` | `960px` |
 
 ## Customization
 
