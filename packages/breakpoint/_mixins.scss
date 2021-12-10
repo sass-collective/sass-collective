@@ -42,7 +42,7 @@
 ///     }
 ///   }
 ///
-/// @see {mixin} breakpoint.up
+/// @see {function} functions.set-min
 ///
 @mixin up($token) {
     @if $token and not map.has-key(variables.$screens, $token) {
@@ -75,7 +75,7 @@
 ///     }
 ///   }
 ///
-/// @see {mixin} breakpoint.down
+/// @see {function} functions.set-max
 ///
 @mixin down($token) {
     @if $token and not map.has-key(variables.$screens, $token) {
@@ -108,7 +108,9 @@
 ///     }
 ///   }
 ///
-/// @see {mixin} breakpoint.only
+/// @see {function} functions.set-min
+/// @see {function} functions.set-max
+/// @see {function} functions.get-next
 ///
 @mixin only($token) {
     @if $token and not map.has-key(variables.$screens, $token) {
@@ -145,7 +147,8 @@
 ///     }
 ///   }
 ///
-/// @see {mixin} breakpoint.between
+/// @see {function} functions.set-min
+/// @see {function} functions.set-max
 ///
 @mixin between($min, $max) {
     @if $min and not map.has-key(variables.$screens, $min) {
