@@ -26,10 +26,10 @@ npm install @sass-collective/direction
 
 ### Tokens
 
-| Key   | Description                                 |
-|-------|---------------------------------------------|
-| `ltr` | Sets CSS rules for left-to-right direction. |
-| `rtl` | Sets CSS rules for right-to-left direction. |
+| Key   | Description                                   |
+|-------|-----------------------------------------------|
+| `rtl` | Sets CSS rules for `right-to-left` direction. |
+| `ltr` | Sets CSS rules for `left-to-right` direction. |
 
 ## API
 
