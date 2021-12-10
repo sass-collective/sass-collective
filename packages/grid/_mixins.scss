@@ -144,7 +144,7 @@
 }
 
 @mixin _breakpoint {
-    @each $key, $value in breakpoint.$styles {
+    @each $key, $value in breakpoint.$screens {
         @include breakpoint.up($key) {
             @include css.selector($key) {
                 @content;

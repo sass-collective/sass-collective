@@ -25,8 +25,8 @@
 /// @see {mixin} breakpoint.up
 ///
 @mixin up($value) {
-    @if $value and not map.has-key(variables.$styles, $value) {
-        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    @if $value and not map.has-key(variables.$screens, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
     }
 
     $min: functions.set-min($value);
@@ -58,8 +58,8 @@
 /// @see {mixin} breakpoint.down
 ///
 @mixin down($value) {
-    @if $value and not map.has-key(variables.$styles, $value) {
-        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    @if $value and not map.has-key(variables.$screens, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
     }
 
     $max: functions.set-max($value);
@@ -91,8 +91,8 @@
 /// @see {mixin} breakpoint.only
 ///
 @mixin only($value) {
-    @if $value and not map.has-key(variables.$styles, $value) {
-        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    @if $value and not map.has-key(variables.$screens, $value) {
+        @error "Invalid style, `#{$value}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
     }
 
     $min: functions.set-min($value);
@@ -128,10 +128,10 @@
 /// @see {mixin} breakpoint.between
 ///
 @mixin between($min, $max) {
-    @if $min and not map.has-key(variables.$styles, $min) {
-        @error "Invalid style, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    } @else if $max and not map.has-key(variables.$styles, $max) {
-        @error "Invalid style, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    @if $min and not map.has-key(variables.$screens, $min) {
+        @error "Invalid style, `#{$min}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    } @else if $max and not map.has-key(variables.$screens, $max) {
+        @error "Invalid style, `#{$max}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
     }
 
     $min: functions.set-min($min);
@@ -152,10 +152,10 @@
 /// @deprecated Use `up()`, `down()`, `only()` or `between()` mixins instead.
 ///
 @mixin styles($min-width: null, $max-width: null, $root-selector: null) {
-    @if $min-width and not map.has-key(variables.$styles, $min-width) {
-        @error "Invalid style, `#{$min-width}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
-    } @else if $max-width and not map.has-key(variables.$styles, $max-width) {
-        @error "Invalid style, `#{$max-width}` doesn't exist. Choose one of #{map.keys(variables.$styles)}.";
+    @if $min-width and not map.has-key(variables.$screens, $min-width) {
+        @error "Invalid style, `#{$min-width}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
+    } @else if $max-width and not map.has-key(variables.$screens, $max-width) {
+        @error "Invalid style, `#{$max-width}` doesn't exist. Choose one of #{map.keys(variables.$screens)}.";
     } @else if $root-selector and (string.slice($root-selector, 1, 1) != ".") and (string.slice($root-selector, 1, 1) != "#") {
         @error "The `#{$root-selector}` selector need to be ID or class.";
     }

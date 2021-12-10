@@ -2,6 +2,6 @@
 //                                             INDEX                                             //
 // ============================================================================================= //
 
-@forward "./variables";
+@forward "./variables" hide $styles;
 @forward "./mixins";
 @forward "./functions" hide set-value;

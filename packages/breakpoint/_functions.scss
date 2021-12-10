@@ -8,11 +8,11 @@
 @use "./variables";
 
 @function get-value($value) {
-    @return map.get(variables.$styles, $value);
+    @return map.get(variables.$screens, $value);
 }
 
 @function get-next($value) {
-    $keys: map.keys(variables.$styles);
+    $keys: map.keys(variables.$screens);
     $n: list.index($keys, $value);
 
     @return if($n < length($keys), list.nth($keys, $n + 1), null);
