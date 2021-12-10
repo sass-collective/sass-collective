@@ -98,6 +98,7 @@ The following Sass...
 | `down($value)`                                                  | Sets media rule for maximum with only.                                                                                         |
 | `only($value)`                                                  | Sets media rule for between minimum and maximum widths, but the maximum will be automatically set with next value of `$value`. |
 | `between($min, $max)`                                           | Sets media rule for between minimum and maximum widths.                                                                        |
+| `config($screens, $clean-sweep)`                                | Override top-level `with` configuration.                                                                                       |
 | **DEPRECATED** `styles($min-width, $max-width, $root-selector)` | Sets breakpoint rule.                                                                                                          |
 
 #### Declare rule with `breakpoint.up()`
@@ -196,8 +197,32 @@ The following Sass...
 }
 ```
 
+#### Declare new configuration with `breakpoint.config()`
+
+If variables are already configured on top-level, by another dependency for example, you can't use the `@use ... with`
+solution anymore, because the module can only be setup once, this is Sass restriction with **Module System**, but
+another solution exist for override the main configuration, with a mixin!
+
+```scss
+@include breakpoint.config((
+    "3xl": 1980px
+));
+
+// or
+
+@include breakpoint.config((
+    "tablet": 768px,
+    "desktop": 960px
+), true);
+```
+
+Insert `breakpoint.config();` before the first `breakpoint.xxx()` mixin call in your project or file.
+
+See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
+with mixins.
+
 ### Sass functions
 
-| Function            | Description                                                                           |
-|---------------------|---------------------------------------------------------------------------------------|
-| `get-value($value)` | Get value from the configured list. Ex. `@include breakpoint.get-value(lg); // 960px` |
+| Function            | Description                                                                                  |
+|---------------------|----------------------------------------------------------------------------------------------|
+| `get-value($value)` | Get value from the configured tokens list. Ex. `@include breakpoint.get-value(lg); // 960px` |
