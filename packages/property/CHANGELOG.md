@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [4.6.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.6.0...@sass-collective/property@4.6.1) (2021-12-10)
+
+**Note:** Version bump only for package @sass-collective/property
+
+
+
+
+
+
 ## [4.6.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.5.1...@sass-collective/property@4.6.0) (2021-11-19)
 
 

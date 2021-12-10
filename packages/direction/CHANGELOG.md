@@ -1,3 +1,21 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [4.0.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/direction@3.1.0...@sass-collective/direction@4.0.0) (2021-12-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **direction:** simplify tokens list
+
+### Features
+
+* **direction:** simplify tokens list ([b0e8614](https://github.com/sass-collective/sass-collective/commit/b0e8614d6b3f85f9faac553175e46ccde0da7f6b))
+
+
+
 # Release notes
 
 ## Unreleased

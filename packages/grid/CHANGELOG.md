@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.3.2...@sass-collective/grid@1.4.0) (2021-12-10)
+
+
+### Features
+
+* **breakpoint, grid:** use good breakpoint `$screens` variable ([d259533](https://github.com/sass-collective/sass-collective/commit/d259533e59772a989fb78a1d98e911ba458866d7))
+* **grid:** use latest breakpoint mixins ([dbd1a36](https://github.com/sass-collective/sass-collective/commit/dbd1a36cfc18c2580c3907cf0e0d26c8597e0edf))
+
+
+
+
 ### [1.3.2](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.3.1...@sass-collective/grid@1.3.2) (2021-11-19)
 
 **Note:** Version bump only for package @sass-collective/grid

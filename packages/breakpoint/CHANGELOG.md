@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.3.0...@sass-collective/breakpoint@2.4.0) (2021-12-10)
+
+
+### Features
+
+* **breakpoint:** add `$clean-sweep` option ([c245200](https://github.com/sass-collective/sass-collective/commit/c24520041b03230087550bcbf9bc6c7bbcf19386))
+* **breakpoint:** add `config` mixin ([a3b9691](https://github.com/sass-collective/sass-collective/commit/a3b9691bf76ddc97fc3e09a988ee029392502041))
+* **breakpoint, grid:** use good breakpoint `$screens` variable ([d259533](https://github.com/sass-collective/sass-collective/commit/d259533e59772a989fb78a1d98e911ba458866d7))
+
+
+
+
 ## [2.3.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/breakpoint@2.2.1...@sass-collective/breakpoint@2.3.0) (2021-11-19)
 
 
