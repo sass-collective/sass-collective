@@ -2,18 +2,56 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
-@use "sass:map";
+@use "sass:list";
 @use "./variables";
 
 ///
-/// Styles.
+/// @example - scss
+///   .foo {
+///     @include direction.styles {
+///       margin-left: 0;
+///       margin-right: 20px;
+///     }
+///   }
 ///
-@mixin styles($direction: right, $root-selector: null) {
-    @if not map.has-key(variables.$directions, $direction) {
-        @error "Invalid direction, `#{$direction}` doesn't exist. Choose one of #{map.keys(variables.$directions)} options.";
+/// @example - css
+///   [dir="rtl"] .foo {
+///     margin-left: 0;
+///     margin-right: 20px;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     @include direction.styles(ltr) {
+///       margin-left: 20px;
+///       margin-right: 0;
+///     }
+///   }
+///
+/// @example - css
+///   [dir="ltr"] .foo {
+///     margin-left: 20px;
+///     margin-right: 0;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     @include direction.styles($root-selector: .bar) {
+///       margin-left: 0;
+///       margin-right: 20px;
+///     }
+///   }
+///
+/// @example - css
+///   [dir="rtl"] .bar .foo {
+///     margin-left: 0;
+///     margin-right: 20px;
+///   }
+///
+@mixin styles($direction: rtl, $root-selector: null) {
+    @if not list.index(variables.$directions, $direction) {
+        @error "Invalid direction, `#{$direction}` doesn't exist. Choose one of #{variables.$directions} options.";
     }
-
-    $direction: map.get(variables.$directions, $direction);
 
     @if $root-selector {
         [dir="#{$direction}"] #{$root-selector} &,

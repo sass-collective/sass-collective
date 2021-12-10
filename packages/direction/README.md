@@ -24,13 +24,20 @@ npm install @sass-collective/direction
 @use "@sass-collective/direction";
 ```
 
+### Tokens
+
+| Key   | Description                                 |
+|-------|---------------------------------------------|
+| `ltr` | Sets CSS rules for left-to-right direction. |
+| `rtl` | Sets CSS rules for right-to-left direction. |
+
 ## API
 
 ### Sass mixins
 
-| Mixin                                | Description          |
-|--------------------------------------|----------------------|
-| `styles($direction, $root-selector)` | Sets direction rule. |
+| Mixin                                | Description                                                                               |
+|--------------------------------------|-------------------------------------------------------------------------------------------|
+| `styles($direction, $root-selector)` | Sets direction rule with optional `$root-selector` option. Default `$direction` is `rtl`. |
 
 #### Add direction rule with `direction.styles()`
 
@@ -44,13 +51,13 @@ The following Sass...
         margin-left: 0;
         margin-right: 20px;
     }
-    
-    @include direction.styles(left) {
+
+    @include direction.styles(ltr) {
         margin-left: 20px;
         margin-right: 0;
     }
-    
-    @include direction.styles($root-selector: .bar) {
+
+    @include direction.styles($root-selector:. bar) {
         margin-left: 0;
         margin-right: 20px;
     }
