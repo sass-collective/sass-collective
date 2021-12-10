@@ -11,7 +11,7 @@
         "@sass-collective/css": "^2.0.0",
         "@sass-collective/property": "^4.6.0",
         "@sass-collective/strip-unit": "^3.1.0",
-        "sass": "^1.43.5"
+        "sass": "^1.44.0"
     },
     "files": [
         "*.scss"

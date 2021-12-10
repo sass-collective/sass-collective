@@ -8,7 +8,7 @@
         "npm": ">=7.0.0"
     },
     "dependencies": {
-        "sass": "^1.43.5"
+        "sass": "^1.44.0"
     },
     "files": [
         "*.scss"
