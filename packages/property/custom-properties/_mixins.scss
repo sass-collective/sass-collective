@@ -35,8 +35,6 @@
 @mixin declaration($property, $custom-prop: null, $important: false) {
     $value: null;
 
-    @debug variables.$prefix;
-
     @if functions.is-custom-prop($property) {
         $custom-prop: $property;
 
