@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [4.6.2](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.6.1...@sass-collective/property@4.6.2) (2021-12-14)
+
+
+### Bug Fixes
+
+* **custom properties:** remove `[@debug](https://github.com/debug)` ([55ab455](https://github.com/sass-collective/sass-collective/commit/55ab4550e1c2bafceaa6332f961a1c27987315ce))
+
+
+
+
 ### [4.6.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/property@4.6.0...@sass-collective/property@4.6.1) (2021-12-10)
 
 **Note:** Version bump only for package @sass-collective/property
