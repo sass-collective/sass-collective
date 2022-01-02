@@ -1,0 +1,34 @@
+// ============================================================================================= //
+//                                           FUNCTIONS                                           //
+// ============================================================================================= //
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "./variables";
+
+///
+/// String replace.
+///
+@function replace($string, $search, $replace: "") {
+    $index: string.index($string, $search);
+
+    @if $index {
+        @return string.slice($string, 1, $index - 1) + $replace + replace(string.slice($string, $index + string.length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+///
+/// Convert string to number.
+///
+@function number($string) {
+    @if meta.type-of($string) != "string" {
+        @error "Invalid string type for `#{$string}` value. Use string type instead.";
+    } @else if meta.type-of($string) == "number" {
+        @return $string;
+    }
+
+    @return map.get(variables.$numbers, $string);
+}

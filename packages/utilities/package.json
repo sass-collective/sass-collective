@@ -1,0 +1,34 @@
+{
+    "name": "@sass-collective/utilities",
+    "version": "0.0.0",
+    "description": "Sass functions utilities.",
+    "main": "index.scss",
+    "engines": {
+        "node": ">=12.0.0",
+        "npm": ">=7.0.0"
+    },
+    "dependencies": {
+        "@sass-collective/strip-unit": "^3.1.1",
+        "sass": "^1.44.0"
+    },
+    "files": [
+        "*.scss"
+    ],
+    "keywords": [
+        "sass",
+        "css",
+        "utilities",
+        "front-end"
+    ],
+    "author": "The Sass Collective Authors",
+    "license": "MIT",
+    "homepage": "https://github.com/sass-collective/sass-collective/tree/master/packages/utilities",
+    "bugs": {
+        "url": "https://github.com/sass-collective/sass-collective/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sass-collective/sass-collective.git",
+        "directory": "packages/utilities"
+    }
+}
