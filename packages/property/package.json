@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@sass-collective/css": "^2.0.1",
-        "sass": "^1.44.0"
+        "sass": "^1.45.2"
     },
     "files": [
         "*.scss",
