@@ -6,6 +6,56 @@
 @use "sass:string";
 @use "../index" as css;
 
+@include describe("css.declaration()") {
+    @include it("Should return css declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    @include css.declaration(color, darkcyan);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return css declaration with `!important`.") {
+        @include assert {
+            @include output {
+                .foo {
+                    @include css.declaration(color, darkcyan, true);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    color: darkcyan !important;
+                }
+            }
+        }
+    }
+
+    @include it("Should return css declaration with mulitple value.") {
+        @include assert {
+            @include output {
+                .foo {
+                    @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+                }
+            }
+
+            @include expect {
+                .foo {
+                    box-shadow: 0 0 10px 5px rgba(0, 139, 139, 0.75), inset 0 0 10px 5px rgba(0, 139, 139, 0.75);
+                }
+            }
+        }
+    }
+}
+
 @include describe("css.unpack()") {
     @include it("Should return unpacked declaration with one value.") {
         @include assert {
