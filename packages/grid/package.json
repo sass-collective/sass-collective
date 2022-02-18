@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/grid",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "description": "Sass grid classes generator.",
     "main": "index.scss",
     "engines": {
@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@sass-collective/breakpoint": "^2.4.1",
-        "@sass-collective/css": "^2.0.2",
+        "@sass-collective/css": "^2.1.0",
         "sass": "^1.45.2"
     },
     "files": [
