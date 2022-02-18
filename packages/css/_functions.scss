@@ -2,6 +2,7 @@
 //                                           FUNCTIONS                                           //
 // ============================================================================================= //
 
+@use "sass:list";
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
@@ -43,4 +44,59 @@
     }
 
     @return $string;
+}
+
+///
+/// @example - scss
+///   .foo {
+///     margin: css.unpack(10px);
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 10px 10px 10px 10px;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     margin: css.unpack(10px 5px);
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 10px 5px 10px 5px;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     margin: css.unpack(10px 5px 12px);
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 10px 5px 12px 5px;
+///   }
+///
+/// @example - scss
+///   .foo {
+///     margin: css.unpack(10px 5px 12px 0);
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 10px 5px 12px 0;
+///   }
+///
+@function unpack($value) {
+    @if meta.type-of($value) == "map" or list.length($value) == 1 {
+        @return $value $value $value $value;
+    } @else if list.length($value) == 2 {
+        @return list.nth($value, 1) list.nth($value, 2) list.nth($value, 1) list.nth($value, 2);
+    } @else if list.length($value) == 3 {
+        @return list.nth($value, 1) list.nth($value, 2) list.nth($value, 3) list.nth($value, 2);
+    } @else if list.length($value) == 4 {
+        @return $value;
+    }
+
+    @error "Invalid CSS property value: '#{$value}' is more than 4 values";
 }

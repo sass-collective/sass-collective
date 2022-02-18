@@ -100,3 +100,33 @@ The following Sass...
     color: darkcyan;
 }
 ```
+
+### Sass functions
+
+| Function         | Description                                  |
+|------------------|----------------------------------------------|
+| `unpack($value)` | Unpacks shorthand values for CSS properties. |
+
+#### Add a new declaration with `css.unpack()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/css";
+
+.foo {
+    margin: css.unpack(10px);
+    padding: css.unpack(10px 5px);
+    border-radius: css.unpack(10px 5px 12px);
+}
+```
+
+...will produce the following CSS...
+
+```css
+.foo {
+    margin: 10px 10px 10px 10px;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px 5px 12px 5px;
+}
+```

@@ -2,6 +2,7 @@
     "private": true,
     "description": "The Sass Collective Collection.",
     "scripts": {
+        "test": "jest",
         "postinstall": "lerna bootstrap --hoist",
         "prepare": "husky install",
         "release:dry": "lerna version --no-push",
@@ -15,8 +16,11 @@
         "@commitlint/cli": "^16.2.1",
         "@commitlint/config-conventional": "^16.2.1",
         "@types/node": "^17.0.18",
+        "glob": "^7.2.0",
         "husky": "^7.0.4",
-        "lerna": "^4.0.0"
+        "jest": "^27.5.1",
+        "lerna": "^4.0.0",
+        "sass-true": "^6.0.1"
     },
     "author": "The Sass Collective Authors",
     "license": "MIT"

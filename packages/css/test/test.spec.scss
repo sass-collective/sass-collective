@@ -1,0 +1,73 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "sass:string";
+@use "../index" as css;
+
+@include describe("css.unpack()") {
+    @include it("Should return unpacked declaration with one value.") {
+        @include assert {
+            @include output {
+                .foo {
+                    margin: css.unpack(10px);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    margin: 10px 10px 10px 10px;
+                }
+            }
+        }
+    }
+
+    @include it("Should return unpacked declaration with two values.") {
+        @include assert {
+            @include output {
+                .foo {
+                    margin: css.unpack(10px 5px);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    margin: 10px 5px 10px 5px;
+                }
+            }
+        }
+    }
+
+    @include it("Should return unpacked declaration with three values.") {
+        @include assert {
+            @include output {
+                .foo {
+                    margin: css.unpack(10px 5px 12px);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    margin: 10px 5px 12px 5px;
+                }
+            }
+        }
+    }
+
+    @include it("Should return unpacked declaration with four values.") {
+        @include assert {
+            @include output {
+                .foo {
+                    margin: css.unpack(10px 5px 12px 0);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    margin: 10px 5px 12px 0;
+                }
+            }
+        }
+    }
+}
