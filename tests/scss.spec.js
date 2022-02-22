@@ -34,7 +34,15 @@ describe('Sass', () => {
             importer,
             file,
             includePaths: [
-                './node_modules'
+                './node_modules',
+                './packages/breakpoint/node_modules',
+                './packages/css/node_modules',
+                './packages/direction/node_modules',
+                './packages/em/node_modules',
+                './packages/grid/node_modules',
+                './packages/property/node_modules',
+                './packages/rem/node_modules',
+                './packages/strip-unit/node_modules'
             ]
         }, {
             describe,

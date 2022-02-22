@@ -1,0 +1,72 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "../index" as rem;
+
+@include describe("Function - rem.convert()") {
+    @include it("Should return single value declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    font-size: rem.convert(16px);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    @include it("Should return multiple number values declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    margin: rem.convert(20px 30px);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    margin: 1.25rem 1.875rem;
+                }
+            }
+        }
+    }
+
+    @include it("Should return multiple values declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    border: rem.convert(1px solid darkcyan);
+                }
+            }
+
+            @include expect {
+                .foo {
+                    border: 0.0625rem solid darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return args list values declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
+                }
+            }
+
+            @include expect {
+                .foo {
+                    box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+                }
+            }
+        }
+    }
+}

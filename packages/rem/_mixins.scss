@@ -21,14 +21,44 @@
 
 ///
 /// @example - scss
+///   .foo {
 ///     @include rem.convert(font-size, 16px);
-///     // font-size: 1rem;
+///   }
+///
+/// @example - css
+///   .foo {
+///     font-size: 1rem;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     @include rem.convert(margin, 20px 30px);
-///     // margin: 1.25rem 1.875rem;
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 1.25rem 1.875rem;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     @include rem.convert(border, 1px solid darkcyan);
-///     // border: 0.0625rem solid darkcyan;
+///   }
+///
+/// @example - css
+///   .foo {
+///     border: 0.0625rem solid darkcyan;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
-///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+///   }
+///
+/// @example - css
+///   .foo {
+///     box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+///   }
 ///
 /// @see {mixin} css.declaration
 /// @see {function} functions.convert

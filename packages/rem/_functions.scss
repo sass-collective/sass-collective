@@ -10,14 +10,44 @@
 
 ///
 /// @example - scss
+///   .foo {
 ///     font-size: rem.convert(16px);
-///     // font-size: 1rem;
+///   }
+///
+/// @example - css
+///   .foo {
+///     font-size: 1rem;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     margin: rem.convert(20px 30px);
-///     // margin: 1.25rem 1.875rem;
+///   }
+///
+/// @example - css
+///   .foo {
+///     margin: 1.25rem 1.875rem;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     border: rem.convert(1px solid darkcyan);
-///     // border: 0.0625rem solid darkcyan;
+///   }
+///
+/// @example - css
+///   .foo {
+///     border: 0.0625rem solid darkcyan;
+///   }
+///
+/// @example - scss
+///   .foo {
 ///     box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
-///     // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+///   }
+///
+/// @example - css
+///   .foo {
+///     box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+///   }
 ///
 /// @see {function} strip-unit.strip
 ///
