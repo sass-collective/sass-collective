@@ -63,8 +63,15 @@
 /// @see {mixin} css.declaration
 /// @see {function} functions.convert
 ///
-@mixin convert($property, $value, $important: false) {
+@mixin declaration($property, $value, $important: false) {
     @include css.declaration($property, functions.convert($value), $important);
+}
+
+///
+/// @deprecated Use 'declaration' mixin instead.
+///
+@mixin convert($property, $value, $important: false) {
+    @include declaration($property, $value, $important);
 }
 
 ///

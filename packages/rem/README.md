@@ -126,11 +126,11 @@ The following Sass...
 
 ### Sass mixins
 
-| Mixin                                    | Description                                                                         |
-|------------------------------------------|-------------------------------------------------------------------------------------|
-| `baseline`                               | Sets declaration with `font-size` property.                                         |
-| `convert($property, $value, $important)` | Sets declaration with conversion of `px` unit to `rem`, with optional `!important`. |
-| `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.  See ["Fallback"](#fallback) section.           |
+| Mixin                                        | Description                                                                         |
+|----------------------------------------------|-------------------------------------------------------------------------------------|
+| `baseline`                                   | Sets declaration with `font-size` property.                                         |
+| `declaration($property, $value, $important)` | Sets declaration with conversion of `px` unit to `rem`, with optional `!important`. |
+| `rem($property, $value, $important)`         | Fallback name to `convert()` mixin.  See ["Fallback"](#fallback) section.           |
 
 #### Baseline declaration with `rem.baseline()`
 
@@ -154,7 +154,7 @@ body {
 }
 ```
 
-#### Convert declaration with `rem.convert()`
+#### Convert declaration with `rem.declaration()`
 
 The following Sass...
 
@@ -162,10 +162,10 @@ The following Sass...
 @use "@sass-collective/rem";
 
 .foo {
-    @include rem.convert(font-size, 16px); // Single value.
-    @include rem.convert(margin, 20px 30px); // Multiple values.
-    @include rem.convert(border, 1px solid darkcyan); // Multiple mixed values.
-    @include rem.convert(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)); // Comma-separated values.
+    @include rem.declaration(font-size, 16px); // Single value.
+    @include rem.declaration(margin, 20px 30px); // Multiple values.
+    @include rem.declaration(border, 1px solid darkcyan); // Multiple mixed values.
+    @include rem.declaration(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)); // Comma-separated values.
 }
 ```
 
