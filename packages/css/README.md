@@ -22,6 +22,10 @@ npm install @sass-collective/css
 
 ```scss
 @use "@sass-collective/css";
+
+.foo {
+    @include css.declaration(color, darkcyan);
+}
 ```
 
 ## API
@@ -42,8 +46,8 @@ The following Sass...
 
 .foo {
     @include css.declaration(color, darkcyan);
-    @include css.declaration(color, darkseagreen, true);
-    @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75))); // Use parentheses for declare comma separated values list.
+    @include css.declaration(font-size, 16px, true);
+    @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75))); // Use parentheses for declare comma-separated values list.
 }
 ```
 
@@ -52,7 +56,7 @@ The following Sass...
 ```css
 .foo {
     color: darkcyan;
-    color: darkseagreen !important;
+    font-size: 16px !important;
     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 }
 ```
@@ -115,9 +119,9 @@ The following Sass...
 @use "@sass-collective/css";
 
 .foo {
-    margin: css.unpack(10px);
-    padding: css.unpack(10px 5px);
-    border-radius: css.unpack(10px 5px 12px);
+    margin: css.unpack(10px); // Single value.
+    padding: css.unpack(10px 5px); // Two values.
+    border-radius: css.unpack(10px 5px 12px); // Three values.
 }
 ```
 
