@@ -1,0 +1,5 @@
+## Files
+/packages/**/*.spec.scss
+
+## Folders
+/packages/**/test

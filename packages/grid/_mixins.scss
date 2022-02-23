@@ -291,6 +291,7 @@
     }
 
     @include _span-for(column, variables.$columns);
+
     @include _span-full-suffix {
         @include column-span(full);
     }
@@ -300,6 +301,7 @@
     // --------------------------------- //
 
     @include _start-for(column, variables.$columns);
+
     @include _start-auto-suffix {
         @include column-start(auto);
     }
@@ -309,6 +311,7 @@
     // --------------------------------- //
 
     @include _end-for(column, variables.$columns);
+
     @include _end-auto-suffix {
         @include column-end(auto);
     }
@@ -323,16 +326,19 @@
         }
 
         @include _span-for(column, variables.$columns);
+
         @include _span-full-suffix {
             @include column-span(full);
         }
 
         @include _start-for(column, variables.$columns);
+
         @include _start-auto-suffix {
             @include column-start(auto);
         }
 
         @include _end-for(column, variables.$columns);
+
         @include _end-auto-suffix {
             @include column-end(auto);
         }
@@ -350,6 +356,7 @@
     }
 
     @include _span-for(row, variables.$rows);
+
     @include _span-full-suffix {
         @include row-span(full);
     }
@@ -359,6 +366,7 @@
     // --------------------------------- //
 
     @include _start-for(row, variables.$rows);
+
     @include _start-auto-suffix {
         @include row-start(auto);
     }
@@ -368,6 +376,7 @@
     // --------------------------------- //
 
     @include _end-for(row, variables.$rows);
+
     @include _end-auto-suffix {
         @include row-end(auto);
     }
@@ -382,16 +391,19 @@
         }
 
         @include _span-for(row, variables.$rows);
+
         @include _span-full-suffix {
             @include row-span(full);
         }
 
         @include _start-for(row, variables.$rows);
+
         @include _start-auto-suffix {
             @include row-start(auto);
         }
 
         @include _end-for(row, variables.$rows);
+
         @include _end-auto-suffix {
             @include row-end(auto);
         }
