@@ -101,8 +101,8 @@
 ///     @use "@sass-collective/rem" as foo;
 ///     // @include foo.rem(font-size, 16px);
 ///
-/// @see {mixin} convert
+/// @see {mixin} declaration
 ///
 @mixin rem($property, $value, $important: false) {
-    @include convert($property, $value, $important);
+    @include declaration($property, $value, $important);
 }
