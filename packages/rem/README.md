@@ -20,138 +20,192 @@ npm install @sass-collective/rem
 
 ## Usage
 
-> **TIP:** you can declare each value without `px` unit, but be careful, if you use unit, only `px` will be allowed!
-
 ```scss
 @use "@sass-collective/rem";
 
 .foo {
     font-size: rem.convert(16px);
-    // font-size: 1rem;
-    
-    margin: rem.convert(20px 30px);
-    // margin: 1.25rem 1.875rem;
-    
-    border: rem.convert(1px solid darkcyan);
-    // border: 0.0625rem solid darkcyan;
-    
-    box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75));
-    // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
-}
-
-.bar {
-    @include rem.convert(font-size, 16px);
-    // font-size: 1rem;
-    
-    @include rem.convert(margin, 20px 30px);
-    // margin: 1.25rem 1.875rem;
-    
-    @include rem.convert(border, 1px solid darkcyan);
-    // border: 0.0625rem solid darkcyan;
-    
-    @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
-    // box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
-    // Use parentheses for declare comma separated values list.
 }
 ```
 
-## Namespace
+### Configuration
 
 ```scss
-@use "@sass-collective/rem" as foo;
+@use "@sass-collective/rem" with (
+    $baseline: 10px
+);
+```
 
-.foo {
-    font-size: foo.convert(16px);
-    // font-size: 1rem;
-}
+### Options
 
-.bar {
-    @include foo.convert(font-size, 16px);
-    // font-size: 1rem;
+| Variable    | Default | Description                      |
+|-------------|---------|----------------------------------|
+| `$baseline` | `16px`  | Sets baseline reference in `px`. |
+
+### Top-level config override
+
+If variables are already configured on top-level using `@use ... with`, by another dependency for example, you can't use
+this solution anymore, because the module can only be setup once, this is a Sass restriction with **Module System**, but
+another solution exist for override the main configuration, with a mixin!
+
+See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
+with mixins.
+
+| Mixin               | Description                              |
+|---------------------|:-----------------------------------------|
+| `config($baseline)` | Override top-level `with` configuration. |
+
+#### Configuration rule with `rem.config()`
+
+The following Sass will configure new parameters:
+
+```scss
+@use "@sass-collective/rem";
+
+@include rem.config(10px);
+// variables.$baseline: 10px;
+```
+
+## API
+
+### Sass functions
+
+| Function                | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `baseline($percentage)` | Sets root baseline value with default `$percentage` at `100%`.              |
+| `convert($values...)`   | Convert `px` unit to `rem`.                                                 |
+| `rem($values...)`       | Fallback name of `convert()` function. See ["Fallback"](#fallback) section. |
+
+#### Baseline with `rem.baseline()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/rem";
+
+html,
+body {
+    font-size: rem.baseline();
 }
 ```
 
-### Fallback name
+...will produce the following CSS...
 
-You can use the fallback name if your namespace is not enough explicit for what ever reason!
+```css
+html,
+body {
+    font-size: 100%
+}
+```
+
+#### Convert with `rem.convert()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/rem";
+
+.foo {
+    font-size: rem.convert(16px); // Single value.
+    margin: rem.convert(20px 30px); // Multiple values.
+    border: rem.convert(1px solid darkcyan); // Multiple mixed values.
+    box-shadow: rem.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)); // Comma-separated values.
+}
+```
+
+...will produce the following CSS...
+
+```css
+.foo {
+    font-size: 1rem;
+    margin: 1.25rem 1.875rem;
+    border: 0.0625rem solid darkcyan;
+    box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+}
+```
+
+### Sass mixins
+
+| Mixin                                    | Description                                                                         |
+|------------------------------------------|-------------------------------------------------------------------------------------|
+| `baseline`                               | Sets declaration with `font-size` property.                                         |
+| `convert($property, $value, $important)` | Sets declaration with conversion of `px` unit to `rem`, with optional `!important`. |
+| `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.  See ["Fallback"](#fallback) section.           |
+
+#### Baseline declaration with `rem.baseline()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/rem";
+
+html,
+body {
+    @include rem.baseline;
+}
+```
+
+...will produce the following CSS...
+
+```css
+html,
+body {
+    font-size: 100%
+}
+```
+
+#### Convert declaration with `rem.convert()`
+
+The following Sass...
+
+```scss
+@use "@sass-collective/rem";
+
+.foo {
+    @include rem.convert(font-size, 16px); // Single value.
+    @include rem.convert(margin, 20px 30px); // Multiple values.
+    @include rem.convert(border, 1px solid darkcyan); // Multiple mixed values.
+    @include rem.convert(box-shadow, 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)); // Comma-separated values.
+}
+```
+
+...will produce the following CSS...
+
+```css
+.foo {
+    font-size: 1rem;
+    margin: 1.25rem 1.875rem;
+    border: 0.0625rem solid darkcyan;
+    box-shadow: 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75), inset 0 0 0.625rem 0.3125rem rgba(0, 139, 139, 0.75);
+}
+```
+
+### Fallback
+
+You can use the fallback name if your namespace is not enough explicit for what ever reason...
 
 ```scss
 @use "@sass-collective/rem" as foo;
 
 .foo {
     font-size: foo.rem(16px);
-    // font-size: 1rem;
 }
 
 .bar {
     @include foo.rem(font-size, 16px);
-    // font-size: 1rem;
 }
 ```
 
-## Options
-
-### Baseline
+...or use more globally namespace... _(beware of conflicts with others modules)_
 
 ```scss
-@use "@sass-collective/rem" with (
-    $baseline: 10px
-);
-
-html,
-body {
-    @include rem.baseline;
-    // font-size: 62.5%;
-}
+@use "@sass-collective/rem" as *;
 
 .foo {
-    font-size: rem.convert(16px);
-    // font-size: 1.6rem;
+    font-size: rem(16px);
 }
 
 .bar {
-    @include rem.convert(font-size, 16px);
-    // font-size: 1.6rem;
+    @include rem(font-size, 16px);
 }
 ```
-
-### Top-level config override
-
-If variables are already configured on top-level, by another dependency for example, you can't use the `@use ... with`
-solution anymore, because the module can only be setup once, this is Sass restriction with **Module System**, but
-another solution exist for override the main configuration, with a mixin!
-
-```scss
-@include config(10px);
-// variables.$baseline: 10px;
-```
-
-Insert `@include rem.config(...);` before the first `@include rem.foo;` call in your project.
-
-See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
-with mixins.
-
-## API
-
-### Options
-
-| Variable    | Default |
-|-------------|---------|
-| `$baseline` | `16px`  |
-
-### Sass functions
-
-| Function              | Description                                                 |
-|-----------------------|-------------------------------------------------------------|
-| `convert($values...)` | Convert `px` unit to `rem`.                                 |
-| `baseline`            | Automatically add the correct baseline based on the option. |
-| `rem($values...)`     | Fallback name of `convert()` function.                      |
-
-### Sass mixins
-
-| Mixin                                    | Description                                                                      |
-|------------------------------------------|----------------------------------------------------------------------------------|
-| `config($baseline)`                      | Override top-level `with` configuration.                                         |
-| `convert($property, $value, $important)` | Sets property with conversion of `px` unit to `rem`, with optional `!important`. |
-| `baseline`                               | Automatically add the correct baseline based on the option.                      |
-| `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.                                              |

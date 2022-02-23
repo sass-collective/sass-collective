@@ -68,14 +68,20 @@
 }
 
 ///
-/// Automatically add the correct baseline based on the option.
-///
 /// @example - scss
-///     @include baseline;
-///     // font-size: 100%;
+///   html,
+///   body {
+///     @include rem.baseline;
+///   }
+///
+/// @example - css
+///   html,
+///   body {
+///     font-size: 100%;
+///   }
 ///
 /// @see {mixin} css.declaration
-/// @see {function} strip-unit.strip
+/// @see {function} functions.baseline
 ///
 @mixin baseline {
     @include css.declaration(font-size, functions.baseline());

@@ -78,8 +78,8 @@
 ///
 /// @see {function} strip-unit.strip
 ///
-@function baseline() {
-    @return math.div(100%, 16) * strip-unit.strip(variables.$baseline)
+@function baseline($percentage: 100%) {
+    @return math.div($percentage, 16) * strip-unit.strip(variables.$baseline)
 }
 
 ///
