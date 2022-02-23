@@ -70,3 +70,39 @@
         }
     }
 }
+
+@include describe("Function - rem.baseline()") {
+    @include it("Should return default declaration.") {
+        @include assert {
+            @include output {
+                .foo {
+                    font-size: rem.baseline();
+                }
+            }
+
+            @include expect {
+                .foo {
+                    font-size: 100%;
+                }
+            }
+        }
+    }
+
+    @include it("Should return custom percentage declaration.") {
+        @include assert {
+            @include output {
+                @include rem.config(10px);
+
+                .foo {
+                    font-size: rem.baseline();
+                }
+            }
+
+            @include expect {
+                .foo {
+                    font-size: 62.5%;
+                }
+            }
+        }
+    }
+}

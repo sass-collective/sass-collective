@@ -141,16 +141,17 @@ with mixins.
 
 ### Sass functions
 
-| Function              | Description                            |
-|-----------------------|----------------------------------------|
-| `convert($values...)` | Convert `px` unit to `rem`.            |
-| `rem($values...)`     | Fallback name of `convert()` function. |
+| Function              | Description                                                 |
+|-----------------------|-------------------------------------------------------------|
+| `convert($values...)` | Convert `px` unit to `rem`.                                 |
+| `baseline`            | Automatically add the correct baseline based on the option. |
+| `rem($values...)`     | Fallback name of `convert()` function.                      |
 
 ### Sass mixins
 
-| Mixin                                    | Description                                                                                  |
-|------------------------------------------|----------------------------------------------------------------------------------------------|
-| `config($baseline)`                      | Override top-level `with` configuration.                                                     |
-| `convert($property, $value, $important)` | Sets property with conversion of `px` unit to `rem`, with optional `!important`.             |
-| `baseline($percentage)`                  | Automatically add the correct baseline based on the option. Default `$percentage` at `100%`. |
-| `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.                                                          |
+| Mixin                                    | Description                                                                      |
+|------------------------------------------|----------------------------------------------------------------------------------|
+| `config($baseline)`                      | Override top-level `with` configuration.                                         |
+| `convert($property, $value, $important)` | Sets property with conversion of `px` unit to `rem`, with optional `!important`. |
+| `baseline`                               | Automatically add the correct baseline based on the option.                      |
+| `rem($property, $value, $important)`     | Fallback name to `convert()` mixin.                                              |

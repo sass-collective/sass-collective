@@ -76,6 +76,13 @@
 }
 
 ///
+/// @see {function} strip-unit.strip
+///
+@function baseline() {
+    @return math.div(100%, 16) * strip-unit.strip(variables.$baseline)
+}
+
+///
 /// Fallback function in case if your namespace if not enough explicit.
 ///
 /// @example - scss
