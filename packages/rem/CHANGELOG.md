@@ -9,7 +9,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * **rem:** add `baseline` function ([52cbd83](https://github.com/sass-collective/sass-collective/commit/52cbd838091b8695caedadb42be09d2682378518))
-* **rem:** add `declaration` mixins.spec ([4815d21](https://github.com/sass-collective/sass-collective/commit/4815d21adda63d5ef7ef4136a5493b4f345d69c2))
+* **rem:** add `declaration` mixins ([4815d21](https://github.com/sass-collective/sass-collective/commit/4815d21adda63d5ef7ef4136a5493b4f345d69c2))
 
 
 
