@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/rem",
-    "version": "2.5.6",
+    "version": "2.6.0",
     "description": "Sass function & mixin to convert pixel to rem.",
     "main": "index.scss",
     "engines": {

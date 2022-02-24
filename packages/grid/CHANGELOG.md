@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.3](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.4.2...@sass-collective/grid@1.4.3) (2022-02-24)
+
+**Note:** Version bump only for package @sass-collective/grid
+
+
+
+
+
+
 ### [1.4.2](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.4.1...@sass-collective/grid@1.4.2) (2022-02-18)
 
 **Note:** Version bump only for package @sass-collective/grid

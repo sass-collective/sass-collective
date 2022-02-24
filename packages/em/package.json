@@ -1,6 +1,6 @@
 {
     "name": "@sass-collective/em",
-    "version": "2.5.6",
+    "version": "2.5.7",
     "description": "Sass function & mixin to convert pixel to em.",
     "main": "index.scss",
     "engines": {
