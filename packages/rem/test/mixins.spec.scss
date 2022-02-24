@@ -6,7 +6,7 @@
 @use "../index" as rem;
 
 @include describe("Mixins") {
-    @include describe("rem.convert()") {
+    @include describe("rem.declaration()") {
         @include it("Should return single value declaration.") {
             @include assert {
                 @include output {

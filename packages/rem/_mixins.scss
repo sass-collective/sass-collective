@@ -22,7 +22,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include rem.convert(font-size, 16px);
+///     @include rem.declaration(font-size, 16px);
 ///   }
 ///
 /// @example - css
@@ -32,7 +32,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include rem.convert(margin, 20px 30px);
+///     @include rem.declaration(margin, 20px 30px);
 ///   }
 ///
 /// @example - css
@@ -42,7 +42,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include rem.convert(border, 1px solid darkcyan);
+///     @include rem.declaration(border, 1px solid darkcyan);
 ///   }
 ///
 /// @example - css
@@ -52,7 +52,7 @@
 ///
 /// @example - scss
 ///   .foo {
-///     @include rem.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+///     @include rem.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
 ///   }
 ///
 /// @example - css
