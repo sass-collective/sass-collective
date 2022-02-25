@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.4.3...@sass-collective/grid@1.5.0) (2022-02-25)
+
+
+### Features
+
+* **grid:** use new `css.selector` ([a40c1ef](https://github.com/sass-collective/sass-collective/commit/a40c1efbbf296fff8ae57b560542eae3f3e22350))
+
+
+
+
 ### [1.4.3](https://github.com/sass-collective/sass-collective/compare/@sass-collective/grid@1.4.2...@sass-collective/grid@1.4.3) (2022-02-24)
 
 **Note:** Version bump only for package @sass-collective/grid

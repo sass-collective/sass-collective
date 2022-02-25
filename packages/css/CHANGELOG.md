@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/css@2.1.0...@sass-collective/css@3.0.0) (2022-02-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* **css:** add `$selector` parameter on `selector()` mixin
+
+### Features
+
+* **css:** add `$selector` parameter on `selector()` mixin ([63bdda4](https://github.com/sass-collective/sass-collective/commit/63bdda43ec0880508d8fc9942617b8cba2f508df))
+
+
+
+
 ## [2.1.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/css@2.0.2...@sass-collective/css@2.1.0) (2022-02-18)
 
 

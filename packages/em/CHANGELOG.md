@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.5.8](https://github.com/sass-collective/sass-collective/compare/@sass-collective/em@2.5.7...@sass-collective/em@2.5.8) (2022-02-25)
+
+**Note:** Version bump only for package @sass-collective/em
+
+
+
+
+
+
 ### [2.5.7](https://github.com/sass-collective/sass-collective/compare/@sass-collective/em@2.5.6...@sass-collective/em@2.5.7) (2022-02-24)
 
 **Note:** Version bump only for package @sass-collective/em

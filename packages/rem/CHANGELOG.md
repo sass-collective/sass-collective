@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [2.6.1](https://github.com/sass-collective/sass-collective/compare/@sass-collective/rem@2.6.0...@sass-collective/rem@2.6.1) (2022-02-25)
+
+**Note:** Version bump only for package @sass-collective/rem
+
+
+
+
+
+
 ## [2.6.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/rem@2.5.6...@sass-collective/rem@2.6.0) (2022-02-24)
 
 
