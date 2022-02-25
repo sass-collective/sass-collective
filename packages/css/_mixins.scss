@@ -36,8 +36,7 @@
 ///
 /// @link https://sparkbox.com/foundry/responsive_class_suffixes_automating_classes_with_sass_mixins_and_sass_maps
 ///
-@mixin selector($key, $divider: ":", $suffix: false) {
-    $selector: #{&};
+@mixin selector($selector, $key, $divider: ":", $suffix: false) {
     $is-class: string.slice($selector, 1, $end-at: 1);
     $divider: string.unquote($divider);
 
@@ -52,11 +51,11 @@
     }
 
     @if $suffix {
-        &#{string.unquote("\\") + $divider}#{$key} {
+        .#{$selector}#{string.unquote("\\") + $divider}#{$key} {
             @content;
         }
     } @else {
-        @at-root .#{$key}#{string.unquote("\\") + $divider}#{$selector} {
+        .#{$key}#{string.unquote("\\") + $divider}#{$selector} {
             @content;
         }
     }

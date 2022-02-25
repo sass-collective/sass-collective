@@ -121,3 +121,69 @@
         }
     }
 }
+
+@include describe("css.selector()") {
+    @include it("Should return prefixed selector.") {
+        @include assert {
+            @include output {
+                @include css.selector(".foo", md) {
+                    background: darkcyan;
+                }
+            }
+
+            @include expect {
+                .md\:foo {
+                    background: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed selector with custom divider.") {
+        @include assert {
+            @include output {
+                @include css.selector(".foo", md, "@") {
+                    background: darkcyan;
+                }
+            }
+
+            @include expect {
+                .md\@foo {
+                    background: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector.") {
+        @include assert {
+            @include output {
+                @include css.selector(".foo", md, $suffix: true) {
+                    background: darkcyan;
+                }
+            }
+
+            @include expect {
+                .foo\:md {
+                    background: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector with custom divider.") {
+        @include assert {
+            @include output {
+                @include css.selector(".foo", md, "@", true) {
+                    background: darkcyan;
+                }
+            }
+
+            @include expect {
+                .foo\@md {
+                    background: darkcyan;
+                }
+            }
+        }
+    }
+}

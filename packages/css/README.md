@@ -32,10 +32,10 @@ npm install @sass-collective/css
 
 ### Sass mixins
 
-| Mixin                                        | Description                                                              |
-|----------------------------------------------|--------------------------------------------------------------------------|
-| `declaration($property, $value, $important)` | Generate CSS declaration, with optional `!important`.                    |
-| `selector($key, $divider, $suffix)`          | Add prefix or suffix key on selector, with optional default `:` divider. |
+| Mixin                                          | Description                                                              |
+|------------------------------------------------|--------------------------------------------------------------------------|
+| `declaration($property, $value, $important)`   | Generate CSS declaration, with optional `!important`.                    |
+| `selector($selector, $key, $divider, $suffix)` | Add prefix or suffix key on selector, with optional default `:` divider. |
 
 #### Add a new declaration with `css.declaration()`
 
@@ -68,10 +68,8 @@ The following Sass...
 ```scss
 @use "@sass-collective/selector";
 
-.foo {
-    @include css.selector(md) {
-        color: darkcyan;
-    }
+@include css.selector(".foo", md) {
+    color: darkcyan;
 }
 ```
 
@@ -90,10 +88,8 @@ The following Sass...
 ```scss
 @use "@sass-collective/selector";
 
-.foo {
-    @include css.selector(md, $suffix: true) {
-        color: darkcyan;
-    }
+@include css.selector(".foo", md, $suffix: true) {
+    color: darkcyan;
 }
 ```
 
