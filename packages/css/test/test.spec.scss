@@ -126,7 +126,7 @@
     @include it("Should return prefixed selector.") {
         @include assert {
             @include output {
-                @include css.selector(".foo", md) {
+                @include css.selector(".foo", "md") {
                     background: darkcyan;
                 }
             }
@@ -142,7 +142,7 @@
     @include it("Should return prefixed selector with custom divider.") {
         @include assert {
             @include output {
-                @include css.selector(".foo", md, "@") {
+                @include css.selector(".foo", "md", "@") {
                     background: darkcyan;
                 }
             }
@@ -158,7 +158,7 @@
     @include it("Should return suffixed selector.") {
         @include assert {
             @include output {
-                @include css.selector(".foo", md, $suffix: true) {
+                @include css.selector(".foo", "md", $suffix: true) {
                     background: darkcyan;
                 }
             }
@@ -174,7 +174,7 @@
     @include it("Should return suffixed selector with custom divider.") {
         @include assert {
             @include output {
-                @include css.selector(".foo", md, "@", true) {
+                @include css.selector(".foo", "md", "@", true) {
                     background: darkcyan;
                 }
             }

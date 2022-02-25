@@ -68,7 +68,7 @@ The following Sass...
 ```scss
 @use "@sass-collective/selector";
 
-@include css.selector(".foo", md) {
+@include css.selector(".foo", "md") {
     color: darkcyan;
 }
 ```
@@ -88,7 +88,7 @@ The following Sass...
 ```scss
 @use "@sass-collective/selector";
 
-@include css.selector(".foo", md, $suffix: true) {
+@include css.selector(".foo", "md", $suffix: true) {
     color: darkcyan;
 }
 ```
