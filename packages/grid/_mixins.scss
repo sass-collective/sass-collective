@@ -143,16 +143,6 @@
     grid-row-end: $value;
 }
 
-@mixin _breakpoint {
-    @each $key, $value in breakpoint.$screens {
-        @include breakpoint.up($key) {
-            @include css.selector($key) {
-                @content;
-            }
-        }
-    }
-}
-
 @mixin _auto-flow($value, $dense: false) {
     $is-dense: if($dense, "dense", "");
 
@@ -245,36 +235,36 @@
     @include column-gap($column-gap);
     @include row-gap($column-gap);
 
-    // --------------------------------- //
-    // Breakpoint
-    // --------------------------------- //
+    @each $key, $value in breakpoint.$screens {
+        @at-root {
+            @include breakpoint.up($key) {
+                @include css.selector(".grid-flow-col", $key) {
+                    @include _auto-flow(column);
+                }
 
-    @include _breakpoint {
-        &-flow-col {
-            @include _auto-flow(column);
-        }
+                @include css.selector(".grid-flow-col-dense", $key) {
+                    @include _auto-flow(column, true);
+                }
 
-        &-flow-col-dense {
-            @include _auto-flow(column, true);
-        }
+                @include css.selector(".grid-flow-row", $key) {
+                    @include _auto-flow(row);
+                }
 
-        &-flow-row {
-            @include _auto-flow(row);
-        }
+                @include css.selector(".grid-flow-row-dense", $key) {
+                    @include _auto-flow(row, true);
+                }
 
-        &-flow-row-dense {
-            @include _auto-flow(row, true);
-        }
+                @for $i from 1 through $columns {
+                    @include css.selector(".grid-cols-#{$i}", $key) {
+                        @include _columns($i);
+                    }
+                }
 
-        @for $i from 1 through $columns {
-            &-cols-#{$i} {
-                @include _columns($i);
-            }
-        }
-
-        @for $i from 1 through $rows {
-            &-rows-#{$i} {
-                @include _rows($i);
+                @for $i from 1 through $rows {
+                    @include css.selector(".grid-rows-#{$i}", $key) {
+                        @include _rows($i);
+                    }
+                }
             }
         }
     }
@@ -320,27 +310,43 @@
     // Breakpoint
     // --------------------------------- //
 
-    @include _breakpoint {
-        @include _auto-suffix {
-            @include column-span(auto);
-        }
+    @each $key, $value in breakpoint.$screens {
+        @at-root {
+            @include breakpoint.up($key) {
+                @include css.selector(".col-auto", $key) {
+                    @include column-span(auto);
+                }
 
-        @include _span-for(column, variables.$columns);
+                @for $i from 1 through variables.$columns {
+                    @include css.selector(".col-span-#{$i}", $key) {
+                        @include _column-span($i);
+                    }
+                }
 
-        @include _span-full-suffix {
-            @include column-span(full);
-        }
+                @include css.selector(".col-span-full", $key) {
+                    @include column-span(full);
+                }
 
-        @include _start-for(column, variables.$columns);
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-start-#{$i}", $key) {
+                        @include _column-start($i);
+                    }
+                }
 
-        @include _start-auto-suffix {
-            @include column-start(auto);
-        }
+                @include css.selector(".col-start-auto", $key) {
+                    @include column-start(auto);
+                }
 
-        @include _end-for(column, variables.$columns);
+                @for $i from 1 through variables.$columns + 1 {
+                    @include css.selector(".col-end-#{$i}", $key) {
+                        @include _column-end($i);
+                    }
+                }
 
-        @include _end-auto-suffix {
-            @include column-end(auto);
+                @include css.selector(".col-end-auto", $key) {
+                    @include column-end(auto);
+                }
+            }
         }
     }
 }
@@ -385,27 +391,43 @@
     // Breakpoint
     // --------------------------------- //
 
-    @include _breakpoint {
-        @include _auto-suffix {
-            @include row-span(auto);
-        }
+    @each $key, $value in breakpoint.$screens {
+        @at-root {
+            @include breakpoint.up($key) {
+                @include css.selector(".row-auto", $key) {
+                    @include row-span(auto);
+                }
 
-        @include _span-for(row, variables.$rows);
+                @for $i from 1 through variables.$rows {
+                    @include css.selector(".row-span-#{$i}", $key) {
+                        @include _row-span($i);
+                    }
+                }
 
-        @include _span-full-suffix {
-            @include row-span(full);
-        }
+                @include css.selector(".row-span-full", $key) {
+                    @include _row-span(full);
+                }
 
-        @include _start-for(row, variables.$rows);
+                @for $i from 1 through variables.$rows + 1 {
+                    @include css.selector(".row-start-#{$i}", $key) {
+                        @include _row-start($i);
+                    }
+                }
 
-        @include _start-auto-suffix {
-            @include row-start(auto);
-        }
+                @include css.selector(".row-start-auto", $key) {
+                    @include _row-start(auto);
+                }
 
-        @include _end-for(row, variables.$rows);
+                @for $i from 1 through variables.$rows + 1 {
+                    @include css.selector(".row-end-#{$i}", $key) {
+                        @include _row-end($i);
+                    }
+                }
 
-        @include _end-auto-suffix {
-            @include row-end(auto);
+                @include css.selector(".row-end-auto", $key) {
+                    @include column-end(auto);
+                }
+            }
         }
     }
 }
