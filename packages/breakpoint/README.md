@@ -12,6 +12,9 @@
 
 Easily manage your CSS breakpoint rules.
 
+> **Note:** this code has been moved to [`@unsass/breakpoint`](https://github.com/unsass/breakpoint) new package, use
+> this one for better support.
+
 ## Installing
 
 ```shell
@@ -118,7 +121,7 @@ The following Sass...
 ...will produce the following CSS...
 
 ```css
-@media (min-width: 960px) { 
+@media (min-width: 960px) {
     .foo {
         color: darkcyan;
     }
@@ -203,8 +206,8 @@ If variables are already configured on top-level, by another dependency for exam
 solution anymore, because the module can only be setup once, this is Sass restriction with **Module System**, but
 another solution exist for override the main configuration, with a mixin!
 
-> See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override configuration
-with mixins.
+> See [official documentation](https://sass-lang.com/documentation/at-rules/use#with-mixins) about override
+> configuration with mixins.
 
 ```scss
 @include breakpoint.config((
