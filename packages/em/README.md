@@ -12,6 +12,9 @@
 
 Sass function & mixin to convert pixel to em.
 
+> **Note:** this code has been moved to [`@unsass/em`](https://github.com/unsass/em) new package, use this one for
+> better support.
+
 ## Installing
 
 ```shell
@@ -28,13 +31,13 @@ npm install @sass-collective/em
 .foo {
     font-size: em.convert(16px, 16px);
     // font-size: 1em;
-    
+
     margin: em.convert(20px 30px, 16px);
     // margin: 1.25em 1.875em;
-    
+
     border: em.convert(1px solid darkcyan, 16px);
     // border: 0.0625em solid darkcyan;
-    
+
     box-shadow: em.convert(0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75), 16px);
     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
     // Use parentheses for declare comma separated values list.
@@ -43,13 +46,13 @@ npm install @sass-collective/em
 .bar {
     @include em.convert(font-size, 16px, 16px);
     // font-size: 1em;
-    
+
     @include em.convert(margin, 20px 30px, 16px);
     // margin: 1.25em 1.875em;
-    
+
     @include em.convert(border, 1px solid darkcyan, 16px);
     // border: 0.0625em solid darkcyan;
-    
+
     @include em.convert(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)), 16px);
     // box-shadow: 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75), inset 0 0 0.625em 0.3125em rgba(0, 139, 139, 0.75);
     // Use parentheses for declare comma separated values list.

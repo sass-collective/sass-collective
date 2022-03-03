@@ -12,6 +12,9 @@
 
 Sass function & mixin to convert pixel to rem.
 
+> **Note:** this code has been moved to [`@unsass/rem`](https://github.com/unsass/rem) new package, use this one for
+> better support.
+
 ## Installing
 
 ```shell
@@ -130,7 +133,7 @@ The following Sass...
 |----------------------------------------------|-------------------------------------------------------------------------------------|
 | `baseline`                                   | Sets declaration with `font-size` property.                                         |
 | `declaration($property, $value, $important)` | Sets declaration with conversion of `px` unit to `rem`, with optional `!important`. |
-| `rem($property, $value, $important)`         | Fallback name to `convert()` mixin.  See ["Fallback"](#fallback) section.           |
+| `rem($property, $value, $important)`         | Fallback name to `convert()` mixin. See ["Fallback"](#fallback) section.           |
 
 #### Baseline declaration with `rem.baseline()`
 

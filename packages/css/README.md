@@ -12,6 +12,9 @@
 
 Generate CSS declaration.
 
+> **Note:** this code has been moved to [`@unsass/css`](https://github.com/unsass/css) new package, use this one for
+> better support.
+
 ## Installing
 
 ```shell
