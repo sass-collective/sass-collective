@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.0](https://github.com/sass-collective/sass-collective/compare/@sass-collective/em@2.5.8...@sass-collective/em@2.6.0) (2022-03-23)
+
+
+### Features
+
+* **em, property, rem:** use `@unsass/css` ([15a8f02](https://github.com/sass-collective/sass-collective/commit/15a8f02d494a48387b5417329c85237cdf80f05a))
+
+
+
+
 ### [2.5.8](https://github.com/sass-collective/sass-collective/compare/@sass-collective/em@2.5.7...@sass-collective/em@2.5.8) (2022-02-25)
 
 **Note:** Version bump only for package @sass-collective/em
